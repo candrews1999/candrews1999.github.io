@@ -31,8 +31,6 @@ body{
 
 .green {
 	color: #498A42;
-	text-transform:uppercase;
-	letter-spacing: 1px;
 }
 
 .nodeco {
@@ -47,35 +45,42 @@ body{
 }
 
 h1 {
-	font-size: 40px;
+	font-size: 33px;
 	font-weight: bold;
 	color: #498A42;
-	line-height: 45px;
+	line-height: 39px;
 }
 
 h2 {
-	font-size: 21px;
+	font-size: 19px;
 	font-weight: normal;
-	line-height: 26px;
+	line-height: 23px;
+}
+
+h3 {
+	font-size: 15px;
+	font-weight: lighter;
+	color: dimgray;
+	line-height: 21px;
 }
 
 h4 {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
-	line-height: 23px;
+	line-height: 21px;
 }
 
 h5 {
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: normal;
 	color: dimgray;
-	line-height: 20px;
+	line-height: 16px;
 }
 
-h3, p, li {
-	font-size: 17px;
+p, li {
+	font-size: 15px;
 	font-weight: lighter;
-	line-height: 23px;
+	line-height: 21px;
 	color: dimgray;
 }
 
@@ -131,7 +136,7 @@ h3, p, li {
 }
 
 .navleft, .navright {
-	flex: 2;
+  flex: 2;
 }
 
 /*Home Page*/
@@ -235,8 +240,8 @@ footer {
 }
 
 .bodypad {
-	padding-left: 16%;
-	padding-right: 16%;
+	padding-left: 23%;
+	padding-right: 23%;
 }
 
 .inlineblock {
@@ -291,32 +296,6 @@ footer {
 	flex-basis: 100%;
 }
 
-/*Index Text content*/
-div.bodypad div h1, 
-div.bodypad div h2, 
-div.bodypad div h3, 
-div.bodypad div h4, 
-div.bodypad div h5, 
-div.bodypad div h6, 
-div.bodypad div p, 
-div.bodypad div li,
-div.bodypad div div.aboutbtns{
-	margin-left: 13.5%;
-	margin-right: 13.5%;
-}
-
-div.bodypad div div div h1, 
-div.bodypad div div div h2, 
-div.bodypad div div div h3, 
-div.bodypad div div div h4, 
-div.bodypad div div div h5, 
-div.bodypad div div div h6, 
-div.bodypad div div div p, 
-div.bodypad div div div li{
-	margin-left: 0%;
-	margin-right: 0%;
-}
-
 /*Hovering on Imgs*/
 img:hover {
 	cursor: pointer;
@@ -359,11 +338,11 @@ img:hover {
 
 /*Small Desktop*/
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1350px) {
 	
 	.bodypad {
-		padding-left: 12%;
-		padding-right: 1%;
+		padding-left: 16%;
+		padding-right: 16%;
 	}
 	
 	.navright{
@@ -471,32 +450,6 @@ img:hover {
 	.emailbtn {
 		width: 100%;
 	}
-
-	/*Index Text content*/
-	div.bodypad div h1, 
-	div.bodypad div h2, 
-	div.bodypad div h3, 
-	div.bodypad div h4, 
-	div.bodypad div h5, 
-	div.bodypad div h6, 
-	div.bodypad div p, 
-	div.bodypad div li,
-	div.bodypad div div.aboutbtns{
-		margin-left: 10%;
-		margin-right: 10%;
-	}
-
-	div.bodypad div div div h1, 
-	div.bodypad div div div h2, 
-	div.bodypad div div div h3, 
-	div.bodypad div div div h4, 
-	div.bodypad div div div h5, 
-	div.bodypad div div div h6, 
-	div.bodypad div div div p, 
-	div.bodypad div div div li{
-		margin-left: 0%;
-		margin-right: 0%;
-	}
 }
 
 /*Phone Size*/
@@ -539,33 +492,7 @@ img:hover {
 		padding-left: 2%;
 		padding-right: 2%;
 		padding-bottom: 1%;
-	}
-	
-	/*Index Text content*/
-	div.bodypad div h1, 
-	div.bodypad div h2, 
-	div.bodypad div h3, 
-	div.bodypad div h4, 
-	div.bodypad div h5, 
-	div.bodypad div h6, 
-	div.bodypad div p, 
-	div.bodypad div li,
-	div.bodypad div div.aboutbtns{
-		margin-left: 0%;
-		margin-right: 0%;
-	}
-
-	div.bodypad div div div h1, 
-	div.bodypad div div div h2, 
-	div.bodypad div div div h3, 
-	div.bodypad div div div h4, 
-	div.bodypad div div div h5, 
-	div.bodypad div div div h6, 
-	div.bodypad div div div p, 
-	div.bodypad div div div li{
-		margin-left: 0%;
-		margin-right: 0%;
-	}
+	}	
 }
 
 /*Slideshow*/
@@ -574,7 +501,7 @@ img:hover {
   	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
   	z-index: 2; /* Sit on top */
-	left: 0;
+  	left: 0;
     top: 0;
   	width: 100vw; /* Full width */
   	height: 100vh; /* Full height */
@@ -584,7 +511,6 @@ img:hover {
 }
 
 .slideimg {
-	z-index: 3; /* Sit on top */
 	display: table-cell;
     vertical-align: middle;
 	margin: auto;
@@ -595,10 +521,10 @@ img:hover {
 .close {
 	position:absolute;
 	right: 20px;
-	color: white;
-	font-size: 50px;
+  	color: white;
+  	font-size: 50px;
 	text-shadow: 0px 0px 12px black;
-	font-weight:normal;
+  	font-weight:normal;
 	overflow: hidden;
 	padding-left: 7px;
 	padding-right: 7px;
@@ -614,7 +540,7 @@ img:hover {
 	display: none;
 }
 
-/*Scaling Pictures for Slideshow NOT USED*/
+/*Scaling Pictures for Slideshow*/
 
 .scaleDownSquare {
 	width: 75vh;
@@ -655,7 +581,7 @@ img:hover {
 /*Our Space*/
 
 .phonewebdiv{
-	display: flex;
+  	display: flex;
 }
 
 .phone {
@@ -670,7 +596,7 @@ img:hover {
 
 .img {
 	width: 100%;
-	height: auto;
+  	height: auto;
 }
 
 /*Youtube Embeded*/
@@ -689,3 +615,20 @@ img:hover {
     width:100%;
     position:absolute;
 }
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
