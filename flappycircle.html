@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<title>CJ Andrews</title>
+	<meta name="viewport" content="width=device-width, initial-scale-1.0">
+	<link href="https://fonts.googleapis.com/css?family=Hind:500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="favicon.png">
+	<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+	<div id="nav-bar">
+		<div class="navleft"> 
+			<a href="index.html" class="nodeco"> <h2 class="gray btnword bold about aboutnav">CJ Andrews</h2> </a>
+		</div>
+		<div class="navright"> 
+			<a href="index.html" class="nodeco"> <h3 class="green btnword navitem">Work</h3> </a>
+			<a href="about.html" class="nodeco"> <h3 class="gray regular btnword navitem aboutnav">About</h3> </a>
+		</div>
+	</div>
+	<div class="padstart projectheader ">
+		<div class="inlineblock">
+			<h5 class="gray">HTML - CSS - Javascript - D3</h5>
+			<h5 class="gray right">Created in Programming Basics Course</h5>
+		</div>
+		<h1 class="">Flappy Circle</h1>
+		<h3 class="">This HTML game is based on the popular app Flappy Bird. The animation and game mechanics are programmed using the D3.js library and Javascript. The goal is to help the yellow circle avoid the green pipes by pressing the spacebar to raise it to the right height. I also programmed a scoreboard that records high scores for each session of play.</h3>
+		<div class="aboutbtns">
+			<a target="_blank" rel="noopener noreferrer" href="flappycirclegame.html" class="nodeco"> <button class="btn">View Project</button> </a>
+		</div>
+	</div>
+	<div class="bodypad">
+		<a onclick="slideshow(0)"><img src="images/flappycircle/FC1.jpg" class="singleimg"></a>
+		<a onclick="slideshow(1)"><img src="images/flappycircle/FC2.jpg" class="singleimg"></a>
+		<h2 class="padsection bold">Notes from the Programming Process</h2>
+		<ul class="gray">
+			<li>D3 data joins are used for accessing the elements from the array list of pipes that are still in still on screen.</li>
+			<li>Buttons were created and styled with HTML and CSS but their effects were implemented in Javascript and D3.</li>
+			<li>The game is programmed to be over when the circle falls below the bottom of the screen or when the circle overlaps in some capacity with a pipe.</li>
+			<li>The animation and spawning of pipes are timed using the Javascript setInterval method.</li>
+			<li>Pipes travel leftward with every tick from setInterval and are removed once offscreen to prevent unnecessary data tracking.</li>
+			<li>Insertion sort was used to update the leaderboard with each incoming high score.</li>
+		</ul>
+		<h2 class="padsection bold">Visual Design Spec</h2>
+		<a onclick="slideshow(2)"><img src="images/flappycircle/FC3.jpg" class="singleimg shrink"></a>
+		<a onclick="slideshow(3)"><img src="images/flappycircle/FC4.jpg" class="singleimg shrink"></a>
+	</div>
+	<div class="blur">
+		<span class="close">&times;</span>
+		<div class="slideimg">
+		</div>
+	</div>
+	<!--	List of All Captions for Page-->
+	<div>
+		<h4 class="caption">Final Visual Design: Gameplay</h4>
+		<h4 class="caption">Final Visual Design: Leaderboard</h4>
+		<h4 class="caption">Draft Visual Design: Gameplay</h4>
+		<h4 class="caption">Draft Visual Design: Leaderboard</h4>
+	</div>
+	<script src="js/script.js"></script>
+	<footer>
+		<div class="nextprev center">
+			<a href="ourspace.html" class="nodeco"><p class="btnword">Prev</p></a>
+			<p class="">&nbsp;&nbsp;/&nbsp;&nbsp;</p>
+			<a href="multimedia.html" class="nodeco"><p class="btnword">Next</p></a>
+		</div>
+	<p class="center gray">Coded and Designed by CJ Andrews</p>
+	<div class="iconcontain">
+		<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
+		<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
+		<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
+	</div>
+	</footer>
+</body>
+</html>

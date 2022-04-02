@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Big Brother Demographics By Season</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="narrative">
+                <div id="title">
+                    <h1 class="less-bottom-padding less-top-padding">Big Brother Demographics By Season</h1>
+                    <h3 class="less-top-padding">CJ Andrews | ARTG 5530</h3>
+                </div>
+                <div id="intro">
+                    <h2 class="less-top-padding">Introduction</h2>
+                    <p>From a young age, I grew up watching <b>Big Brother</b>, a CBS reality tv competition in which a house of 12-17 players must strategize to be the last "houseguest" remaining. Each week, players compete for powers to control the nominations for eviction from the game. Then, one of the nominees is voted out.</p>
+                    <h3>The overall strategy involves:</h3>
+                    <ol>
+                        <li>Creating alliances to be in the house majority</li>
+                        <li>Persuading/lying to other players to keep yourself safe</li>
+                        <li>Winning competitions for safety or power</li>
+                        <li>Generally being well liked by other players</li>
+                    </ol>
+                    <p>Throughout its past seasons, it has been very clear that Big Brother advantages white, male players because of the <b>lack of diversity</b> in its casting. White players are the majority each season, with sparing Latinx, Black, and Asian representation. Year after year, majority alliances <b>exclude minorities and women</b>, resulting in an even more white, male dominated season after a few weeks of gameplay.</p>
+                </div>
+                <div id="analysis-viz">
+                    <h2 class="less-top-padding">Analysis</h2>
+                    <p>Based on a <a href="https://github.com/vdixon3/big-brother-diversity-data/blob/master/big_brother_data.csv" target="_blank">dataset</a> from Github user @vdixon3, the following stacked bar chart illustrates the severity of Big Brother's casting problem. To prepare the dataset, I limited the number of ethnicities that appear in the dataset to avoid overwhelming the user. I also removed data on seasons 1-2 because they featured a different game format.</p>
+                    <p>To capture the CSV into stacked bar segments, I used Javascript to manipulate the instances of players into a 2D array, the outer list representing each season and the internal list representing the ethnicity breakdowns for each season. Using the filter function, I isolated the players into groups based on their ethnicity and season to push object entries into the internal list that include the group's size and highest placing player. As filters are manipulated, the 2D array is reformatted without the demographics of players that were filtered out by the user through the UI.</p>
+                    <h2>Visualization</h2>
+                    <p>Below, explore the demographics of Big Brother seasons 3-22. Filter by <b>ethnicity</b> or  <b>gender</b> to better understand the casting breakdown. Toggle between <b>placement rank percent</b> to see how the demographics change over the course of each season as players are voted out.</p>
+                    <p>The visualization proves that not only do white players make up the overwhelming majority of the overall cast, but they are also the most likely to survive until the end the game. See for yourself how severe Big Brother's minority disadvantage is...</p>
+                </div>
+            </div>
+            <div id="visualization">
+                <div id="filters">
+                    <div id="reset">
+                        <button id="resetBtn" value="reset">Reset Filters</button>
+                    </div>
+                    <div id="ethnicity-filters">
+                        <h3 class="less-bottom-padding"><span class="smallcaps">FILTER</span> Ethnicity</h3>
+                    </div>
+                    <br>
+                    <div id="gender-filters">
+                        <h3 class="less-bottom-padding"><span class="smallcaps">FILTER</span> Gender</h3>
+                    </div>
+                    <br>
+                    <div id="rank-filters">
+                        <h3 class="less-bottom-padding"><span class="smallcaps">SELECT</span> Placement Rank Percent</h3>
+                    </div>
+                    <br>
+                </div>
+                <figure id="chart"></figure>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

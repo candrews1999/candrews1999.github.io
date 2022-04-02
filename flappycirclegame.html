@@ -1,0 +1,518 @@
+<html>
+<head>
+	<title>FlappyCircle!</title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet">
+	<link rel="icon" href="favicon.png">
+</head>
+<style>
+	body{
+		font-family: 'Jockey One', sans-serif;
+		text-align: center;
+		background: rgb(54,130,215);
+		background: linear-gradient(0deg, rgba(54,130,215,1) 0%, rgba(178,207,222,1) 100%);
+	}
+	h1{
+		font-size: 100px;
+		color: #1b9a22;
+		text-shadow: 2px 2px yellow;
+	}
+	h2{
+		font-size: 20px;
+		padding-right: 15%;
+		padding-left: 15%;
+	}
+	h3 {
+		font-size: 15px;
+	}
+	#buttons {
+		padding:0px;
+		width:100%;
+		padding-bottom: 10px;
+	}
+
+	#input {
+		padding-left:20px;
+		display:inline-block;
+	}
+
+	#name {
+		font-size:15px;
+		display:inline-block;
+	}
+
+	#submit {
+		font-size:10px;
+		font-family: 'Jockey One', sans-serif;
+		height: 18px;
+		width: 60px;
+		border:none;
+		background-color: #2273d6;
+		letter-spacing: 1.5px;
+	}
+
+
+	#restart {
+		display:inline-block;
+		height: 30px;
+		width: 100px;
+		background-color: #2273d6;
+		font-family: 'Jockey One', sans-serif;
+		font-size: 18px;
+		border:none;
+		margin-bottom: 20;
+		letter-spacing: 2px;
+	}
+
+	#submit:hover {
+		background-color: #2287d6;
+	}
+
+	#restart:hover {
+		background-color: #2287d6;
+	}
+
+</style>
+<body>
+	<h1>Flappy Circle!</h1>
+	<h2>Help the bright yellow circle escape death by the dreaded green pipes. All you need to do is press SPACE to help our hero fly towards the correct height to pass through the pipe gaps. Good luck on your journey, however long it may last...</h2>
+	<div id="buttons">
+		<button id="restart" onclick="restart()">RESTART</button>
+		<div id="input">
+			<h3>Enter Player Name</h3>
+			<input id="name" type="text" name="Player Name">
+			<button id="submit" onclick="getInput()">SUBMIT</button>
+		</div>
+	</div>
+	<script>
+		var playerName = "Anonymous Circle";
+		//used to restart the game conditions when restart button is pressed
+		function restart() {
+			pace = 60;
+			birdRadius = 21;
+			birdFallCount = 0;
+			newPipeCount = 20;
+			newPipeAt = 55;
+			circleHeight= 0;
+			score = 0;
+			isGameOver = false;
+		}
+
+		function getInput() {
+			playerName = document.getElementById('name').value
+			document.getElementById('name').value = "";
+			if (isGameOver) {
+				updateMostRecentName();
+			}
+		}
+
+		var highScores = new Array();
+		var numScoreSlots = 7;
+		//game
+		var score = 0;
+		var isGameOver = false;
+		var pace = 60;
+
+		var width = 800;
+		var height = 500;
+		var canvas = d3.select("body")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", height);
+
+		var counter = setInterval(main, pace);
+
+		//runs all functionality of the game when told to by setInterval
+		function main() {
+			if (!(isGameOver)) {
+				gameOver();
+				if (!(isGameOver)) {
+					onTick();
+					toDraw();
+				} 
+			}
+		}; 
+
+		//circle
+		var circleXCoord = width/7;
+		var circleHeight = 0;
+		var birdFallCount = 0;
+		var birdRadius = 21; 
+
+		//pipes
+		var pipeWidth = 65;
+		var pipesInGame = new Array();
+		var newPipeCount = 20;
+		var newPipeAt = 55;
+
+		//gets random ints in range of given (not inclusive of given)
+		function getRandomInt(maxNotInclusive) {
+  			return Math.floor(Math.random() * maxNotInclusive); 
+		};
+		//MODEL__________________________________________________________________________________
+
+		//if space is pressed, fly up and draw the circle at the new position
+		document.addEventListener("keydown", function(event) {
+			if ((event.code == "Space") || (event.code == " ") || (event.code == "32")){
+				canvas.selectAll("*").remove();
+				flyUp();
+				toDraw();
+			}
+		});
+
+		//carry out these data changing functions when game is not over
+		function onTick() {
+			if (!(isGameOver)) {
+				movePipesLeft();
+				generateNewPipe();
+				fallDown();
+				removeOffScreenPipe();
+				gameOver();
+			}
+		};   
+
+		//increase height of the circle if height is greater than 0
+		function flyUp(){
+			if (circleHeight > 0) {
+        		circleHeight = circleHeight - 35;
+        	}
+		};
+
+		//decrease height of bird due to gravity
+		function fallDown(){
+			birdFallCount++;
+			if (birdFallCount == pace / 20) {
+				circleHeight = circleHeight + 30;
+				birdFallCount = 0;
+			}
+		};
+
+		//make new pipes and as these new pipes are made, increase speed of pipe generation and decrease radius of circle to make the game harder as it goes on
+		function generateNewPipe(){
+			newPipeCount++;
+			if (newPipeCount == newPipeAt) {
+				makeNewPipe();
+				score++;
+				newPipeCount = 0;
+				if (newPipeAt >= 36) {
+					newPipeAt = newPipeAt - 1;
+					birdRadius = birdRadius - .3;
+				}
+			}
+		};
+
+		//move pipes left to simulate movement of bird
+		function movePipesLeft(){
+			pipesInGame.forEach(function(p) {
+				p.xCoord = p.xCoord - 10;
+			});
+		};
+
+		//randomly adds a new pipe or pipes to the pipesInGame
+		function makeNewPipe() {
+			var randomPipe = getRandomInt(5);
+			//upper pipe
+			if (randomPipe == 0) {
+				pipesInGame.push({xCoord: width + pipeWidth, yCoord: 0, pipeHeight: 350});
+			}
+
+			//lower pipe
+			if (randomPipe == 1) {
+				pipesInGame.push({xCoord: width + pipeWidth, yCoord: height - 300, pipeHeight: 300});
+			}
+
+			//double pipe
+			if (randomPipe == 2) {
+				pipesInGame.push({xCoord: width + pipeWidth, yCoord: 0, pipeHeight: 200});
+				pipesInGame.push({xCoord: width + pipeWidth, yCoord: height - 150, pipeHeight: 150});
+			}
+
+			//double pipe
+			if (randomPipe == 3) {
+				pipesInGame.push({xCoord: width + pipeWidth, yCoord: 0, pipeHeight: 80});
+				pipesInGame.push({xCoord: width + pipeWidth, yCoord: height - 300, pipeHeight: 300});
+			}
+
+			//upper pipe
+			if (randomPipe == 4) {
+				pipesInGame.push({xCoord: width + pipeWidth, yCoord: 0, pipeHeight: 350});
+			}
+		};
+
+		//removes pipes that have traveled off screen
+		function removeOffScreenPipe() {
+			if (pipesInGame.length != 0) {
+				var numToCheck = 1;
+				if (pipesInGame >= 2) {
+					numToCheck++;
+				}
+				for (i = 0; i < numToCheck; i++) {
+					var checkPipe = pipesInGame[i];
+					if (checkPipe.xCoord <= (-1 * pipeWidth)) {
+						pipesInGame.shift();
+					}
+				}
+			}
+		};
+
+		//determine if the game is over 
+		function gameOver() {
+			//has circle fallen below screen 
+			if ((circleHeight > (height + (birdRadius * 5))) || collision()) {
+				isGameOver = true;
+				removePipes();
+				//update Score History taking into account maintaining numerical order
+				var check = {name: playerName, score: score, lastAdded: true};
+				//make lastAdded false for all previous entries
+				for (i = 0; i < highScores.length; i++) {
+					var curr = highScores[i];
+					curr.lastAdded = false;
+				}
+				//update score slots
+				for (i = 0; i < numScoreSlots; i++) {
+					var saved = highScores[i];
+					//if slots have not been filled yet
+					if (i >= highScores.length) {
+						highScores.push(check);
+						toDraw();
+						i = numScoreSlots;
+						return;
+					}
+					//else if check's score is bigger than the saved score in the current spot
+					else if(check.score > saved.score) {
+						var j = i;
+						var currJ = highScores[j];
+						while (j < numScoreSlots) {
+							var oldNext;
+							//if end of the list has not yet been reached, put old high score in current slot in the next slot
+							if (highScores.length >= j + 2) {
+								oldNext = highScores[j + 1];
+							}
+							//else end has been reached so return null
+							else {
+								oldNext = null;
+							}
+							highScores[j + 1] = currJ;
+							j++;
+							//if null, then get rid of excess value
+							if (oldNext == null) {
+								while (highScores.length > numScoreSlots) {
+									highScores.pop();
+								}
+								j = numScoreSlots;
+							}
+							var currJ = oldNext;
+						}
+						//put check at current slot
+						highScores[i] = check;
+						toDraw();
+						i = numScoreSlots;
+						return;
+					}
+				}
+			}
+		}
+
+		//updates most recent player name
+		function updateMostRecentName() {
+			for (i = 0; i < highScores.length; i++) {
+				var curr = highScores[i];
+				if (curr.lastAdded == true) {
+					curr.name = playerName;
+					console.log(curr.name);
+				}
+			}
+			toDraw();
+		}
+
+		function removePipes() {
+			while (pipesInGame.length > 0) {
+				pipesInGame.shift();
+			}
+		}
+
+		//Determine if the last two pipes have a collision with a bird (pipes are only generated max 2 at a time)
+		function collision() {
+			console.log(pipesInGame.length);
+			var numToCheck;
+			//if no pipes are in game, no collision is possible.
+			if (pipesInGame.length == 0) {
+				return false;
+			}
+			if (pipesInGame.length == 1) {
+				numToCheck = 1;
+			}
+			//max number of pipes that a bird could collide with is two because sometimes two pipes are generated at the same time.
+			if (pipesInGame.length > 1) {
+				numToCheck = 2;
+			}
+			for (i = 0; i < numToCheck; i++) {
+				var checkPipe = pipesInGame[i];
+				var circleX = circleXCoord;
+				var circleY = circleHeight;
+				var circleRad = birdRadius * 0.7;
+				var rectX = checkPipe.xCoord;
+				var rectY = checkPipe.yCoord;
+				var rectHeight = checkPipe.pipeHeight;
+				var rectWidth = pipeWidth;
+				var rRight = rectX + rectWidth;
+    			var rLeft = rectX;
+    			var rTop = rectY;
+    			var rBottom = rectY + rectHeight;
+    			if((circleX + circleRad > rLeft) && (circleX - circleRad < rRight) &&
+    			(circleY + circleRad > rTop) && (circleY - circleRad < rBottom)) {
+    				return true;
+    			}
+    		}
+    		return false;
+		}
+
+		//VIEW___________________________________________________________________________________
+
+		//draw scene based on if game is over or not
+		function toDraw() {
+			if (isGameOver) {
+				canvas.selectAll("*").remove();
+				drawBackground();
+				drawEnd();
+				drawScore();
+			}
+			else {
+				drawBackground();
+				drawPipes();
+				drawBird();
+				drawScore();
+			}
+		};
+
+		//draw blue background with circle clouds
+		function drawBackground() {
+			canvas.append("rect")
+				.attr("width", "100%")
+				.attr("height", "100%")
+				.attr("fill", "lightblue");
+			canvas.append("circle")
+				.attr("cx",100)
+				.attr("cy", 400)
+				.attr("r", height / 3)
+				.attr("fill", "white")
+				.attr("fill-opacity", .6);
+			canvas.append("circle")
+				.attr("cx",300)
+				.attr("cy", 510)
+				.attr("r", height / 3)
+				.attr("fill", "white")
+				.attr("fill-opacity", .9);
+			canvas.append("circle")
+				.attr("cx",600)
+				.attr("cy", 450)
+				.attr("r", height / 2)
+				.attr("fill", "white")
+				.attr("fill-opacity", .7);
+		};
+
+		//draw pipes active in game
+		function drawPipes() {
+			canvas.selectAll("g")
+			.data(pipesInGame)
+			.enter()
+			.append("rect")
+				.attr("x", function(d){ return d.xCoord})
+				.attr("y", function(d){ return d.yCoord})
+				.attr("width", pipeWidth)
+				.attr("height", function(d){ return d.pipeHeight})
+				.attr("fill", "#1b9a22");
+
+			canvas.selectAll("g")
+			.data(pipesInGame)
+			.enter()
+			.append("rect")
+				.attr("x", function(d){ return d.xCoord +13})
+				.attr("y", function(d){ return d.yCoord})
+				.attr("width", pipeWidth / 4)
+				.attr("height", function(d){ return d.pipeHeight})
+				.attr("fill", "#20b928");	
+			drawPipeHeads();	
+		};
+
+		//draw bird at its current position
+		function drawBird() {
+			canvas.append("circle")
+				.attr("cx", circleXCoord)
+				.attr("cy", circleHeight)
+				.attr("r", birdRadius)
+				.attr("fill", "#fcec01");
+			canvas.append("circle")
+				.attr("cx", circleXCoord)
+				.attr("cy", circleHeight)
+				.attr("r", birdRadius / 1.5)
+				.attr("fill", "yellow");
+		};
+
+		//draw score of the game
+		function drawScore() {
+			canvas.append("text")
+				.attr("x", width - (width/5))
+				.attr("y", height / 7)
+				.text("Score: " + score)
+				.attr("font-size", "30px");
+		};
+
+		//draw the end of the game
+		function drawEnd() {
+			drawBackground();
+			//draw GameOver
+			canvas.append("text")
+				.attr("x", width/3 + 140)
+				.attr("y", height/4)
+				.text("GAME OVER")
+				.attr("font-size", "40px")
+				.attr("text-anchor", "middle");
+			yCoordForScore = height/3.5;
+			//draw leader board
+			canvas.selectAll("g")
+				.data(highScores)
+				.enter()
+				.append("text")
+				.attr("x", width/3 + 140)
+				.attr("y", function(d) {
+					console.log(d)
+					yCoordForScore = yCoordForScore + 35;
+					return yCoordForScore;
+				})
+				.text(function(d) {
+					return d.name + " - High Score of " + d.score + "\n";
+				})
+				.attr("font-size", "20px")
+				.attr("text-anchor", "middle");
+		};
+
+		function drawPipeHeads() {
+				canvas.selectAll("g")
+				.data(pipesInGame)
+				.enter()
+				.append("rect")
+					.attr("x", function(d){ 
+							if (d.yCoord == 0) {
+								return d.xCoord - 10;
+							}
+							else {
+								return d.xCoord - 10;
+							}
+						})
+					.attr("y", function(d){ 
+							if (d.yCoord == 0) {
+								return d.pipeHeight - 30;
+							}
+							else {
+								return d.yCoord;
+							}
+						})
+
+					.attr("width", pipeWidth + 20)
+					.attr("height", 30)
+					.attr("fill", "green");	
+		}
+	</script>
+</body>
+</html>

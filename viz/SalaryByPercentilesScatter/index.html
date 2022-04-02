@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Starting vs Mid-Career Salary By College Type</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="narrative">
+                <div id="title">
+                    <h1 class="less-bottom-padding less-top-padding">Starting vs Mid-Career Salary By College Type</h1>
+                    <h3 class="less-top-padding">CJ Andrews | ARTG 5530</h3>
+                </div>
+                <div id="intro">
+                    <h2 class="less-top-padding">Introduction</h2>
+                    <p>In the United States, around 71.1% of students attend a 4-year institution after graduating high school. To pay the steep college price tag, many students take out student loans to cover their tuition. After graduation, it is important that the job opportunities waiting for them can pay off their debt for financial security.</p>
+                    <p>As students weigh the pros of higher education with the cons of costs, it is important to consider how the type of college a student chooses to attend impacts their chances for future earnings. <b>State</b> and <b>party</b> schools offer a more traditional college experience. <b>Engineering</b> schools prepare students for technical careers, while <b>liberal arts</b> schools allow for a wider breadth of study. At the top, sits the prestigious <b>ivy league</b> that many students dream of attending. However, the dim realities of debt force many students to focus their decision not on the college experience, but rather potential salary after graduation and mid-career.</p>
+                </div>
+                <div id="analysis-viz">
+                    <h2 class="less-top-padding">Analysis</h2>
+                    <p>Based on a WSJ <a target="_blank" href="https://www.kaggle.com/wsj/college-salaries?select=salaries-by-region.csv">Kaggle dataset</a>, the following scatterplot offers insight into the salary earnings of college graduates. To format the dataset for use with d3.js, I began by removing commas between salary and university name instances. Commas were the delimiters for the csv, so it was important that the character was reserved only for separation between variable columns for proper data organization. Then, I used the filter method to remove "N/A" instances of salaries from the visualization. Furthermore, I removed duplicate college instances that were listed twice in the dataset as both a party and liberal arts/state school.</p>
+                    <h2>Visualization</h2>
+                    <p>Below, explore the reported salary earnings of schools from throughout the United States. Filter by <b>college type</b> for a clearer look at where schools of your desired type fall in terms of starting vs mid-career salaries. Toggle between median <b>mid-career</b> earnings and the 10th, 25th, 75th, and 90th percentiles of mid-career salaries.</p>
+                    <p>The visualization shows that ivy league schools lead to the highest paying salaries, especially at the median and >75th percentiles. However, many technical schools, and certain state and liberal arts schools, aren't too far behind at lower percentiles...</p>
+                </div>
+            </div>
+            <div id="visualization">
+                <div id="filters">
+                    <div id="school-filters">
+                        <h3 class="less-bottom-padding">College Types</h3>
+                    </div>
+                    <br>
+                    <div id="percentile-filters">
+                        <h3 class="less-bottom-padding">Mid-Career Percentile</h3>
+                    </div>
+                </div>
+                <figure id="chart"></figure>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+/* Overall  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin:0px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+div#container {
+    padding:0vw;
+    margin:0px;
+    width:100vw;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 35px;
+    line-height: 30px;
+    font-weight: 900;
+    color: #0f4c81;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 900;
+    color: #71A8D6;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #8a8a8a;
+}
+
+p, li{
+    font-size: 18px;
+    line-height: 24px;
+    color: #515151;
+}
+
+a {
+    font-weight: bold;
+    color: #3695E7 !important;
+    text-decoration: none;
+}
+
+a:hover  {
+    color: #2780CE !important;
+}
+
+label{
+    font-size: 18px;
+    font-weight: 700;
+    color: #515151;
+}
+
+.less-top-padding {
+    margin-top: 1.5px;
+    padding-top: 1.5px;
+}
+
+.less-bottom-padding {
+    margin-bottom: 1.5px;
+    padding-bottom: 1.5px;
+}
+
+/* Graph Formatting */
+
+.axisLabel, .annotation {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tick {
+    font-size: 20px;
+}
+
+.tick > text {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+text.axisLabel {
+    font-size: 20px;
+    fill: #8a8a8a;
+}
+
+g > path, g > line {
+    stroke: #8a8a8a;
+    stroke-opacity: 0.75;
+    stroke-width: 2px;
+}
+
+/* Narrative */
+
+div#narrative{
+    display: grid;
+    grid-template-columns: 0.25fr 2fr 2fr;
+    grid-template-areas: 
+        ". title title"
+        ". intro analysis-viz";
+    gap: 0px .5%;
+    align-items: stretch;
+    padding:5vw;
+    margin:0px;
+    width: 100%;
+    overflow: hidden;
+    background: #EEF6FC;
+}
+
+div#title{
+    grid-area: title;
+    padding:0px;
+    margin:0px;
+}
+
+div#intro{
+    grid-area: intro;
+    padding-right: 5vw;
+    overflow-y: auto;
+}
+
+div#analysis-viz{
+    grid-area: analysis-viz;
+    overflow-y: auto;
+}
+
+/* Visualization */
+
+div#visualization{
+    display: grid;
+    grid-template-columns: .4fr 4fr;
+    grid-template-areas: 
+        "filters chart";
+    gap: 0px .5%;
+    align-items: stretch;
+    background-color: white;
+    padding:1vw;
+    padding-top: 0px;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+figure#chart {
+    grid-area: chart;
+    overflow: hidden;
+    position: relative;
+}
+
+div#filters {
+    grid-area: filters;
+}
+
+div#filters, figure#chart {
+    padding:0px;
+    margin:0px;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: white;
+}
+
+/* Tool Tip */
+
+.tooltip-right, .tooltip-left {
+    /* THE FOLLOWING PROPERTIES
+    ARE REQUIRED TO MAKE THE TOOLTIP
+    WORK CORRECTLY */
+    position: absolute;
+    top: 0px;
+    visibility: hidden;
+    pointer-events: none;
+    
+    /* THE FOLLOWING PROPERTIES ARE
+    OPTIONAL AND AESTHETIC */
+    font-size: 14pt;
+    background-color:rgba(97, 97, 97, 0.85);
+    border-radius: 3.5px;
+    color: white;
+    padding: 2px;
+}
+
+/* leftward tool tip styles */
+.tooltip-left {
+    text-align: left;
+    left: 0px;
+}
+
+/* rightward tool tip styles */
+.tooltip-right {
+    text-align: right;
+    right: 0px;
+}
+
+/* Medium screen */
+@media only screen and (max-width: 1350px) {
+
+    /* Visualization */
+
+    div#visualization{
+        grid-template-columns: 0.8fr 4fr;
+    }
+}
+
+/* Phone screen */
+@media only screen and (max-width: 900px) {
+
+    /* Narrative */
+
+    div#narrative {
+        grid-template-columns: 1fr 1.25fr;
+        grid-template-areas: 
+            "title title"
+            "intro intro"
+            "analysis-viz analysis-viz";
+        padding:3vw;
+    } 
+
+    div#intro{
+        grid-area: intro;
+        padding-right: 3vw;
+    }
+
+    /* Visualization */
+
+    div#visualization{
+        grid-template-columns: 1.1fr 4fr;
+    }
+
+    /* Typography */
+
+    p, li{
+        font-size: 16px;
+        line-height: 19.5px;
+        color: #515151;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 900;
+        color: #0f4c81;
+    }
+
+    h2 {
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: 900;
+        color: #71A8D6;
+    }
+
+    text.axisLabel {
+        font-size: 18px;
+        fill: #8a8a8a;
+    }
+
+    label{
+        font-size: 16px;
+        font-weight: 700;
+        color: #515151;
+    }
+}
