@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- IMPORTANT NOTE! In order for the responsive design patterns to work, we must include
+        the following <meta> element for the viewport! -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="./style/style.css">
+        <!-- Libraries below -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <div id="narrative">
+            <div id="title">
+                <h1 class="less-bottom-padding less-top-padding">US Presidential Election Returns By State Since 1976 🗳</h1>
+                <h3 class="less-top-padding">CJ Andrews | ARTG 5430</h3>
+            </div>
+            <div id="intro">
+                <h2 class="less-top-padding">Introduction</h2>
+                <p>In United States history, <b>5 presidents</b> have lost the nationwide popular vote, but still won the election: John Quincy Adams, Rutherford B. Hayes, Benjamin Harrison, George W. Bush, and Donald Trump. In the wake of <b>Hillary Clinton's</b> loss in 2016, despite winning the popular vote, we saw a reawakening of the national conversation surrounding the electoral college's place in contemporary US politics.</p>
+                <h3>The electoral college...</h3>
+                <ol>
+                    <li>Allows minority elected president to take office</li>
+                    <li>Enables faithless state electors to go against their constituent's will</li>
+                    <li>May play a role in suppressing voter turnout</li>
+                    <li>Has the potential to go against the national popular will</li>
+                </ol>
+                <p>It is important to consider these reasons when crafting your viewpoint about the <b>electoral college vs popular vote</b> debate. The sake of democracy and human rights  might just depend on it.</p>
+            </div>
+            <div id="analysis-viz">
+                <h2 class="less-top-padding">Analysis</h2>
+                <p>Based on a <a href="https://dataverse.harvard.edu/file.xhtml?fileId=4299753&version=6.0" target="_blank">dataset</a>  by the Harvard Dataverse and MIT Election Data + Science Lab, the following beeswarm chart illustrates the popular vote proportions from the 1976-2020 US presidential elections. For each election year, the top four candidates, their party, and their vote returns are displayed.</p>
+                <p>The CSV dataset is organized into rows of state party vote returns. In order to organize these rows by election year, I used Javascript <b>Maps</b> to efficiently group the vote returns into a multi-level data structure in which an ElectionYear class contains its top four CandidateOption class instances, which in turn each has its own accumulated array of StateVote class instances. Then I used D3.js <b>force layouts</b> and <b>data joins</b> to visualize this custom data structure into clusters.</p>
+                <h2>Visualization</h2>
+                <p>Below, explore the popular vote proportions for yourself. <b>Flip between</b> the 12 available election years and <b>hover over</b> the circular state vote return representations to see what <b>party</b> and <b>state</b> each vote subsection is from.</p>
+                <p>The visualization not only helps to conceptualize the popular vote returns from recent elections, but it also helps track the movement in political parties over the past 5 decades.</p>
+                <h3>Get ready to explore some votes 🇺🇸</h3>
+            </div>
+        </div>
+        <div id="visualization-container">
+            <div id="chart-outer">
+                <div id="chart"></div>
+            </div>
+            <div id="top-center-controls">
+                <div id="controls">
+                    <a id="prev" class="skipbtn">&#8249;</a>
+                    <h1 id="election-year"></h1>
+                    <a id="next" class="skipbtn">&#8250;</a>
+                </div>
+                <h2 id="presidential-election-label">Presidential Election <span style="font-weight: 500;">State Results</span></h2>
+            </div>
+            <div id="top-left-annotation"></div>
+            <div id="top-right-annotation"></div>
+            <div id="bottom-left-annotation"></div>
+            <div id="bottom-right-annotation"></div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
