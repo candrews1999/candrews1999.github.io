@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Chart */
+
+#visualization-container{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:"chart-outer";
+  align-items: stretch;
+  padding:0px;
+  margin:0px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#chart-outer {
+  display: grid;
+  grid-area: chart-outer;
+  grid-template-areas:"chart";
+  grid-template-columns: auto;
+  align-items: center;
+  position: relative;
+}
+
+#chart{
+  position: relative;
+  grid-area: chart;
+  z-index: 2;
+}
+
+
+
+/* Annotations */
+
+#top-left-annotation {
+  position: absolute;
+  left: 1vw;
+  top: 3vw;
+  z-index: 0;
+}
+
+#top-right-annotation {
+  position: absolute;
+  right: 1vw;
+  top: 3vw;
+  text-align: right;
+  z-index: 0;
+}
+
+#bottom-left-annotation {
+  position: absolute;
+  left: 1vw;
+  bottom: 1.5vw;
+  transform: translateY(1%);
+  z-index: 0;
+}
+
+#bottom-right-annotation {
+  position: absolute;
+  right: 1vw;
+  bottom: 1.5vw;
+  text-align: right;
+  transform: translateY(1%);
+  z-index: 0;
+}
+
+/* Text stylings for annotations */
+
+.president-annotation, 
+.place-number-annotation,
+.place-suffix-annotation,
+.party-annotation,
+.vote-count-annotation {
+  margin: 1px;
+}
+
+.president-annotation {
+  font-size: 20px;
+  color: #515151;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+.party-annotation {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 13px;
+}
+
+.vote-count-annotation {
+  font-size: 17px;
+  font-weight: 500;
+  color: #515151;
+  line-height: 20px;
+}
+
+.nationwide-candidate-vote-total {
+  font-weight: 600;
+}
+
+.place-number-annotation {
+  font-size: 70px;
+  color:#8a8a8a;
+  font-weight: 900;
+}
+
+.place-suffix-annotation {
+  font-size: 25px;
+  fill:#8a8a8a;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.place-suffix-annotation,
+.place-number-annotation {
+  line-height: 42px;
+}
+
+
+/* Controls for Visualization */
+
+#top-center-controls {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  /* top: 0%; */
+  transform: translate(-50%, -1vw);
+  z-index: 4;
+}
+
+#election-year {
+  font-size: 80px;
+  padding: 0px;
+  line-height: 0px;
+  text-align: center;
+  color: #E74E65;
+  display: inline-block;
+}
+
+#presidential-election-label {
+  line-height: 0px;
+  text-align: center;
+  margin: 0px;
+  color: #515151;
+}
+
+.skipbtn {
+  margin: 0px;
+  display: inline-block;
+  font-size: 40px;
+  line-height: 0px;
+}
+
+.skipbtn-icon {
+  font-size: 55px;
+  font-family: serif;
+}
+
+/* Type */
+
+h1 {
+  font-size: 35px;
+  line-height: 30px;
+  font-weight: 900;
+  color: #0f4c81;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 900;
+  color: #71A8D6;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #8a8a8a;
+}
+
+p, li{
+  font-size: 18px;
+  line-height: 24px;
+  color: #515151;
+}
+
+a {
+  font-weight: bold;
+  color: #3695E7 !important;
+  text-decoration: none;
+}
+
+a:hover  {
+  color: #2780CE !important;
+  cursor:pointer;
+}
+
+.smallcaps {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+label{
+  font-size: 18px;
+  font-weight: 700;
+  color: #515151;
+}
+
+.less-top-padding {
+  margin-top: 1.5px;
+  padding-top: 1.5px;
+}
+
+.less-bottom-padding {
+  margin-bottom: 1.5px;
+  padding-bottom: 1.5px;
+}
+
+/* Narrative */
+
+div#narrative{
+  display: grid;
+  grid-template-columns: 0.25fr 2fr 2fr;
+  grid-template-areas: 
+      ". title title"
+      ". intro analysis-viz";
+  gap: 0px .5%;
+  align-items: stretch;
+
+  padding:5vw;
+  margin:0px;
+  width: 100%;
+  overflow: hidden;
+  background: #EEF6FC;
+}
+
+div#title{
+  grid-area: title;
+  padding:0px;
+  margin:0px;
+}
+
+div#intro{
+  grid-area: intro;
+  padding-right: 5vw;
+  overflow-y: scroll;
+}
+
+div#analysis-viz{
+  grid-area: analysis-viz;
+  overflow-y: scroll;
+}
+
+/* Tool Tip */
+
+/* common tooltip styles between left and right tooltips*/
+.tooltip-right, .tooltip-left {
+  /* THE FOLLOWING PROPERTIES
+  ARE REQUIRED TO MAKE THE TOOLTIP
+  WORK CORRECTLY 
+  abosolute position removes element from standard page flow*/
+  position: absolute;
+  top: 0px;
+  visibility: hidden;
+  pointer-events: none;
+  
+  /* THE FOLLOWING PROPERTIES ARE
+  OPTIONAL AND AESTHETIC */
+  font-size: 14pt;
+  background-color:rgba(97, 97, 97, 0.85);
+  border-radius: 3.5px;
+  color: white;
+  padding: 2px;
+  z-index: 3;
+}
+
+/* leftward tool tip styles for rightward positioning*/
+.tooltip-left {
+  text-align: left;
+  left: 0px;
+}
+
+/* rightward tool tip styles for leftward positioning*/
+.tooltip-right {
+  text-align: right;
+  right: 0px;
+}
+
+
+/* Reshapes typography and layout for smaller screen sizes */
+@media only screen and (max-width: 950px) {
+
+  /* Narrative */
+
+  div#narrative {
+      grid-template-columns: 1fr 1.25fr;
+      grid-template-areas: 
+          "title title"
+          "intro intro"
+          "analysis-viz analysis-viz";
+      padding:3vw;
+  } 
+
+  /* Typography */
+
+  p, li{
+    font-size: 16px;
+    line-height: 19.5px;
+    color: #515151;
+  }
+
+  h1 {
+      font-size: 28px;
+      line-height: 28px;
+      font-weight: 900;
+      color: #0f4c81;
+  }
+
+  h2 {
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 900;
+      color: #71A8D6;
+  }
+
+  /* Tooltip resizing */
+
+  .tooltip-right, .tooltip-left {
+    font-size: 12pt;
+  }
+
+  .smallcaps {
+    font-size: 13px !important;
+  }
+
+  /* Annotations */
+
+  #bottom-left-annotation {
+    position: absolute;
+    bottom: 3vw;
+    transform: translateY(2%);
+  }
+  
+  #bottom-right-annotation {
+    position: absolute;
+    bottom: 3vw;
+    transform: translateY(2%);
+  }
+
+  /* Controls for Visualization */
+
+  #top-center-controls {
+    width: 100vw;
+    text-align: center;
+  }
+  
+  #election-year {
+    font-size: 55px;
+  }
+  
+  .skipbtn {
+    font-size: 30px;
+  }
+  
+  .skipbtn-icon {
+    font-size: 40px;
+  }
+}
+
+/* Moves top corner annotations down to allow control panel to take up top section of page */
+@media only screen and (max-width: 675px) {
+  #top-left-annotation {
+    top: 30vw;
+  }
+
+  #top-right-annotation {
+    top: 30vw;
+  }
+}
+
+/* Add margins on right and left for screen sizes that are long and short. Add small margins for larger heights at 
+widths greater than 950px and longer margins for smaller heights to avoid svg from getting cut off height wise.*/
+@media only screen and (min-width: 950px) and (max-height: 900px){
+  #chart-outer {
+    margin-left: calc(29% - 50vh);
+    margin-right: calc(29% - 50vh);
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-height: 855px){
+  #chart-outer {
+    margin-left: calc(33% - 50vh);
+    margin-right: calc(33% - 50vh);
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-height: 775px){
+  #chart-outer {
+    margin-left: calc(18% - 5vh);
+    margin-right: calc(18% - 5vh);
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-height: 600px){
+  #chart-outer {
+    margin-left: calc(30% - 5vh);
+    margin-right: calc(30% - 5vh);
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-height: 350px){
+  #chart-outer {
+    margin-left: calc(35% - 5vh);
+    margin-right: calc(35% - 5vh);
+  }
+}
