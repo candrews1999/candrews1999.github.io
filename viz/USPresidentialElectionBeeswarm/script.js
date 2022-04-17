@@ -587,7 +587,7 @@ function toggleDesktopOrMobileSVG(svg, mobileSVG) {
         svg.style("display", "initial");
         mobileSVG.style("display", "none");
     }
-    //mobile svg active for window widths less than 950 with heights greater than 350
+    //mobile svg active for window widths less than 950 with heights greater than or equal to 450
     else {
         mobileSVG.style("display", "initial");
         svg.style("display", "none");
