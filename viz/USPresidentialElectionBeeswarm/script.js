@@ -577,12 +577,17 @@ function drawCircles(svgCanvas, currYearStateVotes, fillScale, rScale) {
 
 //toggle between desktop and mobile svg based on window width to optimize for mobile and desktop views
 function toggleDesktopOrMobileSVG(svg, mobileSVG) {
-    //desktop svg active for window widths greater than 950 [or heights less than 700]
-    if (window.innerWidth > 950 || window.innerHeight < 700) {
+    //desktop svg active for window widths greater than 950 and heights that are not less than 700]
+    if (window.innerWidth > 950) {
         svg.style("display", "initial");
         mobileSVG.style("display", "none");
     }
-    //mobile svg active for window widths greater than 950
+    //else if window width is less than 950 and window height is less than 450 then desktop svg should be active
+    else if (window.innerWidth < 950 && window.innerHeight < 450) {
+        svg.style("display", "initial");
+        mobileSVG.style("display", "none");
+    }
+    //mobile svg active for window widths less than 950 with heights greater than 350
     else {
         mobileSVG.style("display", "initial");
         svg.style("display", "none");
