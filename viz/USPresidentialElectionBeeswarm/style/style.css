@@ -41,7 +41,6 @@ html, body {
 }
 
 
-
 /* Annotations */
 
 #top-left-annotation {
@@ -393,37 +392,54 @@ div#analysis-viz{
 
 /* Add margins on right and left for screen sizes that are long and short. Add small margins for larger heights at 
 widths greater than 950px and longer margins for smaller heights to avoid svg from getting cut off height wise.*/
-@media only screen and (min-width: 950px) and (max-height: 900px){
+
+/* Desktop SVG resizing */
+@media only screen and (min-width: 850px) and (max-height: 900px){
   #chart-outer {
     margin-left: calc(29% - 50vh);
     margin-right: calc(29% - 50vh);
   }
 }
 
-@media only screen and (min-width: 950px) and (max-height: 855px){
+@media only screen and (min-width: 850px) and (max-height: 855px){
   #chart-outer {
     margin-left: calc(33% - 50vh);
     margin-right: calc(33% - 50vh);
   }
 }
 
-@media only screen and (min-width: 950px) and (max-height: 775px){
+@media only screen and (min-width: 850px) and (max-height: 775px){
   #chart-outer {
     margin-left: calc(18% - 5vh);
     margin-right: calc(18% - 5vh);
   }
 }
 
-@media only screen and (min-width: 950px) and (max-height: 600px){
+@media only screen and (min-width: 850px) and (max-height: 600px){
   #chart-outer {
     margin-left: calc(30% - 5vh);
     margin-right: calc(30% - 5vh);
   }
 }
 
-@media only screen and (min-width: 950px) and (max-height: 350px){
+@media only screen and (min-width: 850px) and (max-height: 350px){
   #chart-outer {
     margin-left: calc(35% - 5vh);
     margin-right: calc(35% - 5vh);
+  }
+}
+
+/* Smaller Desktop Resizing */
+@media only screen and (min-width: 700px) and (max-width: 849px) and (max-height: 450px){
+  #chart-outer {
+    margin-left: calc(29% - 25vh);
+    margin-right: calc(29% - 25vh);
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 849px) and (max-height: 350px){
+  #chart-outer {
+    margin-left: calc(29% - 10vh);
+    margin-right: calc(29% - 10vh);
   }
 }

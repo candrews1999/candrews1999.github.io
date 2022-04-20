@@ -136,7 +136,7 @@ p, li {
 }
 
 .navleft, .navright {
-  flex: 2;
+    flex: 2;
 }
 
 /*Home Page*/
@@ -501,7 +501,7 @@ img:hover {
   	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
   	z-index: 2; /* Sit on top */
-  	left: 0;
+    left: 0;
     top: 0;
   	width: 100vw; /* Full width */
   	height: 100vh; /* Full height */
@@ -521,10 +521,10 @@ img:hover {
 .close {
 	position:absolute;
 	right: 20px;
-  	color: white;
-  	font-size: 50px;
+    color: white;
+    font-size: 50px;
 	text-shadow: 0px 0px 12px black;
-  	font-weight:normal;
+    font-weight:normal;
 	overflow: hidden;
 	padding-left: 7px;
 	padding-right: 7px;
@@ -581,7 +581,7 @@ img:hover {
 /*Our Space*/
 
 .phonewebdiv{
-  	display: flex;
+    display: flex;
 }
 
 .phone {
@@ -596,7 +596,7 @@ img:hover {
 
 .img {
 	width: 100%;
-  	height: auto;
+    height: auto;
 }
 
 /*Youtube Embeded*/
@@ -615,20 +615,3 @@ img:hover {
     width:100%;
     position:absolute;
 }
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
