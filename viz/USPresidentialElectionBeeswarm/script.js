@@ -586,6 +586,11 @@ function toggleDesktopOrMobileSVG(svg, mobileSVG) {
         svg.style("display", "initial");
         mobileSVG.style("display", "none");
     }
+    //else if window width is less than or equal to 500 and window height is less than 450 then desktop svg should be active
+    else if (window.innerWidth <= 500 && window.innerHeight < 450) {
+        svg.style("display", "initial");
+        mobileSVG.style("display", "none");
+    }
     //else mobile svg is active
     else {
         mobileSVG.style("display", "initial");
