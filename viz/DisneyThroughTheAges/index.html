@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- IMPORTANT NOTE! In order for the responsive design patterns to work, we must include
+        the following <meta> element for the viewport! -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Disney Cinema Through the Ages 🐭</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./style/style.css">
+        <!-- Libraries below -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="intro-section">
+            <div id="overall-project-intro">
+                <h1 id="project-title"><span id="h1-mega-highlight">Disney Cinema</span><br>Through the Ages 🐭</h1>
+                <h2>Disney's movie history is largely thought to be comprised of seven uniquely defined periods. Let's explore what each era of magic holds! ✨</h2>
+                <p class="credit">
+                    Disney era explanations sourced from <a>Dizavenu</a>.<br>
+                    Data sourced from 
+                        <a href="https://github.com/vdixon3/big-brother-diversity-data/blob/master/big_brother_data.csv" target="_blank">Sameer Patel</a>, 
+                        <a href="https://www.omdbapi.com/" target="_blank">OMBD</a>, & 
+                        <a href="https://www.themoviedb.org/" target="_blank">The Movie DB</a>.
+                </p>
+            </div>
+            <div id="disney-timeline">
+                <div class="era-descript">
+                    <h1><span class="year-intro">1937-1942</span> Golden Age</h1>
+                    <p>Beginning with <span class="movie-title-p">Snow White and the Seven Dwarfs</span> and ending with <span class="movie-title-p">Bambi</span>, these films were all overseen by Walt himself, and established Walt Disney Studios as one of the leaders in animated filmmaking. With the exception of <span class="movie-title-p">Snow White</span> and <span class="movie-title-p">Dumbo</span>, in terms of financial success, the “Golden Age” wasn’t all that golden. This era is known for its dramatic jumps from <span class="bold-word">dark to sweet</span>.</p>
+                </div>
+                <div class="era-descript">
+                    <h1><span class="year-intro">1943-1949</span> Wartime Era</h1>
+                    <p>With the arrival of World War II, Disney Studios faced <span class="bold-word">lower budgets</span> and smaller teams of animators available for their films. This era, also known as the “Package Era”, features films that are comprised of multiple <span class="bold-word">short films</span> within each. They are considered some of the more <span class="bold-word">obscure films</span> in Disney history, and were not wildly popular.</p>
+                </div>
+                <div class="era-descript">
+                    <h1><span class="year-intro">1950-1969</span> Silver Age</h1>
+                    <p>Also known as the “Restoration Age”, the Silver Age marks Disney’s return to making <span class="bold-word">big-budget</span> full-length films. This era is marked by its beautiful animation with ornate backgrounds with soft colors. These films have an <span class="bold-word">otherworldly</span> feel, and make even common day settings look magical. The background animation in <span class="movie-title-p">Sleeping Beauty</span>, for example, was designed to look like a painting. This era featured fairytale storytelling like <span class="movie-title-p">Cinderella</span> and <span class="movie-title-p">The Sword in the Stone</span>, as well as stories from popular books like <span class="movie-title-p">Alice in Wonderland</span> and <span class="movie-title-p">Peter Pan</span>.</p>
+                </div>
+                <div class="era-descript">
+                    <h1><span class="year-intro">1970-1988</span> Bronze Age</h1>
+                    <p>After the <span class="bold-word">death of Walt Disney</span>, this era was a time of decline for Disney. Disney Studios struggled to find their way without the guidance and imagination of Walt. The era also shied away from fairytales and focused more on <span class="bold-word">darker, secular stories</span>. During this time, there was a shift from hand-inked films to the use of <span class="bold-word">xerography</span>. This saved both time and money, allowing animators to directly print their drawings onto cells. However, the initial explorations of this method were criticized for the <span class="bold-word">heavy black lines</span> that the technique required.</p>
+                </div>
+                <div class="era-descript">
+                    <h1><span class="year-intro">1989-1999</span> Disney Renaissance</h1>
+                    <p>This era saw profound success in the box office, with its movies returning to the <span class="bold-word">musical fairytale storytelling</span> that Disney was known for. With <span class="movie-title-p">The Little Mermaid</span>, Disney had produced the best achievement using <span class="bold-word">xerography</span>. Disney also began the <span class="bold-word">Broadway formula</span>, the idea that musical films could easily be translated into live performances. This was also the advent of animators Ashman and Alan Menken, animaters key to Disney's musical success.</p>
+                </div>
+                <div class="era-descript">
+                    <h1><span class="year-intro">2000-2009</span> Post-Renaissance Era</h1>
+                    <p>With little common narrative themes, what really defines this era is Disney Studios <span class="bold-word">exploring</span> new methods of storytelling, such as that of Pixar’s. With the exception of <span class="movie-title-p">Lilo and Stitch</span>, films during this time were overshadowed by big movie franchises. Though it is often overlooked, <span class="movie-title-p">Dinosaur</span> got Disney interested in <span class="bold-word">CGI animation</span>, which has been used in recent years to create immensely popular films for the company.</p>
+                </div>
+                <div class="era-descript">
+                    <h1><span class="year-intro">2010-Present</span> Revival Era</h1>
+                    <p>With John Lasseter taking over the animation division in 2006 and Disney’s eventual <span class="bold-word">purchase of Pixar</span>, this era is seen as the second Disney Renaissance. The 2009 release of <span class="movie-title-p">The Princess and the Frog</span> was praised for its return to original Disney animation while also taking in nearly $270 million worldwide. However, <span class="movie-title-p">Tangled</span>,  blending <span class="bold-word">CGI with traditional animation</span> techniques, which was later used for successes like <span class="movie-title-p">Frozen</span> and <span class="movie-title-p">Big Hero 6</span>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="barchart-sect">
+            <div class="bar-chart-introduction">
+                <div class="sect-header-text">
+                    <h1>Average <span class="h1-highlight">Box Office Earnings</span> 💰 Across Each Disney Era</h1>
+                    <h3>Compare theatrical earnings on the movies that comprise each era of Disney cinema! ✨</h3>
+                </div>
+            </div>
+            <div id="chart-boxoffice"></div>
+        </div>
+        <div class="barchart-sect">
+            <div class="bar-chart-introduction">
+                <div class="sect-header-text">
+                    <h1>Average <span class="h1-highlight">Critic vs Fan Ratings</span> 🍿 Across Each Disney Era</h1>
+                    <h3>Compare critic and fan opinions on the movies that comprise each era of Disney cinema! ✨</h3>
+                </div>
+            </div>
+            <div id="chart-rating"></div>
+        </div>
+        <div id="poster-sect">
+            <div class="selector-element">
+                <div class="sect-header-text">
+                    <h1 class="selector-label">Top <span class="h1-highlight">Fan Rated</span> ⭐️ Movies from</h1>
+                </div>
+                <select class="form-select form-select-lg mb-3" id="era-selector" aria-label=".form-select-lg">
+                    <option value="0">Golden Age (1937-1942)</option>
+                    <option value="1">Wartime Era (1943-1949)</option>
+                    <option value="2">Silver Age (1950-1969)</option>
+                    <option value="3">Bronze Age (1970-1988)</option>
+                    <option value="4">Disney Renaissance (1989-1999)</option>
+                    <option value="5">Post-Renaissance Era (2000-2009)</option>
+                    <option value="6">Revival Era (2010-Present)</option>
+                    <option value="7">All Eras (1937-Present)</option>
+                </select>
+            </div>
+            <div id="poster-container"></div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

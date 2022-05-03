@@ -1,0 +1,183 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+  display: block;
+  z-index: 1;
+}
+
+#my-sketch {
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ToolTip */
+
+#tooltip {
+  position: absolute;
+
+  /* center tooltip on screen */
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  width: 55vw;
+  height: 53vh;
+
+  display: grid;
+  grid-template-rows: 0.2fr 1fr;
+  grid-template-areas:
+    "namecontainer" 
+    "info";
+  align-items: stretch;
+  gap: 0px 2%;
+
+  visibility: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;  
+  font-size: 16px;
+  background-color: whitesmoke;
+  padding: 1% 1% 1% 1%;
+  border-radius: 10px;
+} 
+
+#namecontainer {
+  grid-area: namecontainer;
+  display: grid;
+  grid-template-columns: 1.0fr auto;
+  grid-template-areas: "name closecontainer";
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 2%;
+}
+
+#name {
+  grid-area: name;
+  width:100%;
+  height:100%;
+  position: relative;
+  text-anchor: middle;
+}
+
+/* close button on modal */
+#closecontainer {
+  grid-area: closecontainer;
+}
+#close {
+  text-anchor: middle;
+  font-size: 25px;
+  font-weight: bold;
+  color: #548547;;
+}
+
+#close:hover {
+  color: #88B87A;
+  cursor: pointer;
+}
+
+/* info panel */
+
+#info {
+  z-index: 10;
+  grid-area: info;
+  display: grid;
+  grid-template-columns: 0.5fr auto 1fr;
+  grid-template-areas: "companyorinvestorlabels investmenttotals bars";
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 2%;
+  min-height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px;
+}
+
+#companyorinvestorlabels {
+  padding-left: 1.5%;
+  grid-area: companyorinvestorlabels;
+  white-space:nowrap;
+  overflow-x: hidden;
+}
+
+#bars {
+  grid-area: bars;
+}
+
+#investmenttotals {
+  grid-area: investmenttotals;
+  white-space:nowrap;
+}
+
+.totalbar {
+  left: 0px;
+  background-color: #348498;
+  height: 12px;
+  padding: 0px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+.investmenttotal {
+  left: 0px;
+  font-size: 15px;
+  padding: 0px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  max-width: 100%;
+}
+
+/* shows the name of the investor or company and its type */
+#modalname {
+  font-size: 22px;
+  padding: none;
+}
+
+#typestring {
+  font-size: 14px;
+  font-weight: bold;
+  padding: none;
+  color: dimgrey;
+}
+
+#typestring:hover{
+  cursor: text;
+}
+
+/* shows the total amount for a company or investor in tooltip */
+#totalamt {
+  font-size: 16px;
+  color: #348498;
+}
+
+#totallabel {
+  font-size: 13px;
+  font-weight: bold;
+  padding: none;
+  color: #348498;
+}
+
+@media only screen and (max-width: 1000px) {
+  #tooltip {
+    width: 80vw;
+    height: 48vh;
+    padding: 1.5%;
+  }
+
+  #info {
+    gap: 4%;
+    grid-template-columns: 0.5fr auto 0.5fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #tooltip {
+    width: 90vw;
+    height: 48vh;
+  }
+}
