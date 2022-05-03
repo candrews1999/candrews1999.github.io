@@ -112,14 +112,14 @@ a:hover  {
 
 #project-title {
   font-weight: 900;
-  font-size: 4.4vw;
-  line-height: 4.9vw;
+  font-size: 4.3vw;
+  line-height: 4.8vw;
 }
 
 #h1-mega-highlight {
   font-family: 'Mouse Memoirs', sans-serif;
-  font-size: 9vw; 
-  line-height: 9.5vw;
+  font-size: 8.8vw; 
+  line-height: 9.3vw;
   font-weight: 600;
   color: #EE6E6D;
   letter-spacing: 3px;
@@ -221,17 +221,21 @@ a:hover  {
 .era-bar-label {
   fill: white;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 @media only screen and (max-height: 550px) {
   /* Adjust proportions of bar text when svg becomes taller at window height breakpoint*/
   .fan-bar-label-percent, .critic-bar-label-percent, .boxoffice-bar-label-percent {
-    font-size: 5.75vh;
+    font-size: 6.66vh;
   }
 
   .critic-bar-label, .fan-bar-label, .boxoffice-bar-label {
     font-size: 3.25vh;
+  }
+
+  .era-bar-label {
+    font-size: 22px;
   }
 }
 
