@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #1C1E2B;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 45px;
+  line-height: 47px;
+  font-weight: 650;
+  color: #71A8D6;
+}
+
+.h1-highlight {
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 58px; 
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #EE6E6D;
+}
+
+.sect-header-text > h1 {
+  font-size: 48px; 
+  line-height: 50px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+h3 {
+  font-size: 23px;
+  line-height: 25px;
+  font-weight: 700;
+  color: white;
+}
+
+p{
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+}
+
+a {
+  font-weight: bold;
+  color: #3695E7 !important;
+  text-decoration: none;
+}
+
+a:hover  {
+  color: #2780CE !important;
+  cursor:pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  h2 {
+    font-size: 23px;
+    line-height: 25px;
+  }
+}
+
+/* General Section Layout */
+
+.barchart-sect, #poster-sect {
+  margin-top: 7%;
+}
+
+#overall-project-intro,  .bar-chart-introduction, .selector-element {
+  padding-top: 3vh;
+  padding-bottom: 1vh;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.sect-header-text {
+  position: relative;
+  align-self: center;
+}
+
+#disney-timeline, #poster-container, #chart {
+  padding-top: 6%;
+}
+
+@media only screen and (max-width: 1450px) {
+  #overall-project-intro,  .bar-chart-introduction, .selector-element  {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #overall-project-intro,  .bar-chart-introduction, .selector-element {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+/* Overall Project Intro */
+
+#project-title {
+  font-weight: 900;
+  font-size: 4.4vw;
+  line-height: 4.9vw;
+}
+
+#h1-mega-highlight {
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 9vw; 
+  line-height: 9.5vw;
+  font-weight: 600;
+  color: #EE6E6D;
+  letter-spacing: 3px;
+}
+
+.movie-title-p {
+  font-style: italic;
+  font-weight: 850;
+}
+
+.bold-word {
+  font-weight: 850;
+}
+
+.credit {
+  font-size: 15px;
+  line-height: 19px;
+  color: white;
+}
+
+#disney-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6vw;
+  row-gap: 5vh;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.year-intro {
+  font-family: 'Mouse Memoirs', sans-serif;
+  color: #FEF58E;
+  letter-spacing: 3px;
+}
+
+@media only screen and (max-width: 1450px) {
+  #project-title {
+    font-size: 5.4vw;
+    line-height: 5.9vw;
+  }
+  
+  #h1-mega-highlight {
+    font-size: 11vw; 
+    line-height: 11.5vw;
+  }
+
+  #disney-timeline {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  #disney-timeline {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 3vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  #project-title {
+    font-size: 9.4vw;
+    line-height: 9.9vw;
+  }
+  
+  #h1-mega-highlight {
+    font-size: 19vw; 
+    line-height: 19.5vw;
+  }
+
+  #disney-timeline {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+}
+
+/* Bar Chart */
+
+#chart-boxoffice, #chart-rating {
+  display: grid;
+  justify-content: space-around;
+}
+
+.fan-bar-label-percent, .critic-bar-label-percent, .boxoffice-bar-label-percent{
+  fill: #FEF58E;
+  font-family: 'Mouse Memoirs', sans-serif;
+  letter-spacing: 1.75px;
+  font-size: 4.75vh;
+  font-weight: 1000;
+}
+
+.critic-bar-label, .fan-bar-label, .boxoffice-bar-label {
+  fill: white;
+  font-size: 2.25vh;
+  font-weight: 900;
+}
+
+.era-bar-label {
+  fill: white;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+@media only screen and (max-height: 550px) {
+  /* Adjust proportions of bar text when svg becomes taller at window height breakpoint*/
+  .fan-bar-label-percent, .critic-bar-label-percent, .boxoffice-bar-label-percent {
+    font-size: 5.75vh;
+  }
+
+  .critic-bar-label, .fan-bar-label, .boxoffice-bar-label {
+    font-size: 3.25vh;
+  }
+}
+
+/* Select UI Element*/
+
+.selector-element{
+  background-color: #1C1E2B;
+  position: sticky;
+  top:-1vh !important;
+}
+
+select {
+  cursor: pointer !important;
+}
+
+.selector-label {
+  padding-bottom: 0.25%;
+}
+
+/* Movie Posters */
+
+#poster-container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  overflow-x: hidden;
+}
+
+#poster-container > .poster-div{
+  align-self: end;
+  background-color: #3969A9;
+  margin-bottom: 10%;
+}
+
+.poster {
+  width: 100%;
+}
+
+.poster-rating-div {
+  padding: 0px;
+  display: grid;
+  justify-content: center;
+  row-gap: 1%;
+}
+
+.poster-rating {
+  margin-top: 3%;
+  margin-bottom: 4%;
+  text-align:left;
+  color: #FEF58E;
+}
+
+.poster-rating-label {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: white;
+}
+
+.fan-score-label {
+  color: #FFE8C6;
+}
+
+.hide-text {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 1400px) {
+  /* Reduce rows to 5 movie posters */
+  #poster-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  /* Reduce rows to 4 movie posters */
+  #poster-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Reduce rows to 3 movie posters */
+  #poster-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .poster-rating {
+    font-size: 21px;
+  }
+  .poster-rating-label {
+    font-size: 13px !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  /* Reduce rows to 2 movie posters */
+  #poster-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .poster-rating {
+    font-size: 21.5px;
+  }
+  .poster-rating-label {
+    font-size: 13.5px !important;
+  }
+}
