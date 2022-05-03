@@ -184,7 +184,7 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
 
         //at small window heights, svg takes up more width real estate
         if (window.innerHeight < 550) {
-            svgHeight = window.innerHeight * 1.2;
+            svgHeight = window.innerHeight * 1.4;
         }
 
         // update/set the svg height and width (for rating svg and box office svg) using current width and height values for svg
@@ -267,9 +267,9 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
             svgBoxOffice.append("text")
                 .attr("class","boxoffice-bar-label")
                 .attr("text-anchor", "middle")
-                .attr("alignment-baseline", "after-edge")
+                .attr("alignment-baseline", "hanging")
                 .attr("x", margin.left + ((xScaleBoxOffice(d.averageBoxOffice)-margin.left)/2))
-                .attr("y", yScale(listOfEraText[index]) + yScale.bandwidth())
+                .attr("y", yScale(listOfEraText[index]) + yScale.bandwidth() * 0.65)
                 .text("Avg Box Office Earnings");
 
             //Fan Rating Bar Label
@@ -283,9 +283,9 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
             svgRating.append("text")
                 .attr("class","fan-bar-label")
                 .attr("text-anchor", "middle")
-                .attr("alignment-baseline", "after-edge")
+                .attr("alignment-baseline", "hanging")
                 .attr("x", margin.left + ((xScaleRating(d.averageFanRating)-margin.left)/2))
-                .attr("y", yScale(listOfEraText[index]) + yScale.bandwidth())
+                .attr("y", yScale(listOfEraText[index]) + yScale.bandwidth() * 0.65)
                 .text("Avg Fan Score");
 
             //Critic Rating Bar Label
@@ -299,9 +299,9 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
             svgRating.append("text")
                 .attr("class","critic-bar-label")
                 .attr("text-anchor", "middle")
-                .attr("alignment-baseline", "after-edge")
+                .attr("alignment-baseline", "hanging")
                 .attr("x", xScaleRating(d.averageFanRating) + ((xScaleRating(d.averageCriticRating)-margin.left)/2))
-                .attr("y", yScale(listOfEraText[index]) + yScale.bandwidth())
+                .attr("y", yScale(listOfEraText[index]) + yScale.bandwidth() * 0.65)
                 .text("Avg Critic Score");
         });
     }
