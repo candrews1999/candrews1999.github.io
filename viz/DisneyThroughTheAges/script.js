@@ -93,7 +93,15 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
 
     /* Create Chart */
 
-    // global variables to edit later
+    // margin should not change, so make it a const
+    const margin = {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0
+    }
+
+    // global svg width and height variables to edit later
     let svgWidth, svgHeight;
 
     // append the SVGs, but don't assign any attr yet
@@ -145,33 +153,9 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
             .attr("opacity", 0.8)
             .attr("fill", "#3969A9");
 
-    //initialize bar Era labels for each svg (ratings and box office)
-    listOfEraSummary.forEach(function(d, index) {
-        svgBoxOffice.append("text")
-            .attr("class","era-bar-label")
-            .attr("text-anchor", "center")
-            .attr("alignment-baseline", "middle");
-    })
-
-    listOfEraSummary.forEach(function(d, index) {
-        svgRating.append("text")
-            .attr("class","era-bar-label")
-            .attr("text-anchor", "center")
-            .attr("alignment-baseline", "middle");
-    })
-    console.log(listOfEraSummary)
-
-    // everything in this function depends on either our width or height variable updating
+    // resize svg width and height for both bar charts and reformat bars and text for new svg dimensions
     // it will fire anytime the browser window is resized
     function updateChartSize() {
-
-        // margin should not change, so make it a const
-        const margin = {
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0
-        }
 
         // calculate width and height based on screenWidth and desired dimensions
         svgWidth = window.innerWidth * 0.8;
@@ -182,7 +166,7 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
             svgWidth = window.innerWidth * 0.94;
         }
 
-        //at small window heights, svg takes up more width real estate
+        //at small window heights, svg takes up more width real estate than just window height
         if (window.innerHeight < 550) {
             svgHeight = window.innerHeight * 1.4;
         }
@@ -191,7 +175,7 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
         svgBoxOffice.attr("width", svgWidth).attr("height", svgHeight);
         svgRating.attr("width", svgWidth).attr("height", svgHeight);
         
-        // redefine the pixel range for x and y scale
+        // redefine the pixel range for x and y scales
         xScaleBoxOffice.range([margin.left, svgWidth - margin.right]);
         xScaleRating.range([margin.left, svgWidth - margin.right]);
         yScale.range([svgHeight - margin.bottom, margin.top]);
@@ -246,7 +230,6 @@ d3.csv("./csv/DisneyMovieswithRatingsAndBoxOffice.csv").then(function(data) {
                 .attr("y", yScale(listOfEraText[index]) - yScale.bandwidth()/5)
                 .attr("opacity", 1.0)
                 .text(listOfEraText[index]);
-                
             svgRating.append("text")
                 .attr("class","era-bar-label")
                 .attr("text-anchor", "start")
@@ -388,7 +371,6 @@ function addPoster(movieName, year, fanRating, criticRating, boxOffice) {
             //if no poster results are provided by the Movie DB based on the given movieName and year, then erase currDiv and stop function
             if (json.results.length == 0) {
                 currDiv.style("display", "none")
-                console.log("undefined")
                 return false;
             }
 
@@ -401,7 +383,7 @@ function addPoster(movieName, year, fanRating, criticRating, boxOffice) {
             let currRatingDiv = currDiv.append("div")
                 .attr("class", "poster-rating-div");
             
-            //add rating labels below the poster as a caption
+            //add data labels below the poster as a caption
             currRatingDiv.append("h2")
                 .html(ifNaNThenBreakElseSpanFormat(fanRating, "FAN SCORE")
                 + ifNaNThenBreakElseSpanFormat(criticRating, "CRITIC SCORE")

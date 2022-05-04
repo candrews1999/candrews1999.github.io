@@ -85,23 +85,18 @@ a:hover  {
   padding-right: 30%;
 }
 
-.sect-header-text {
-  position: relative;
-  align-self: center;
+#disney-timeline, #poster-container, #chart-boxoffice, #chart-rating {
+  padding-top: 5%;
 }
 
-#disney-timeline, #poster-container, #chart {
-  padding-top: 6%;
-}
-
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1400px) {
   #overall-project-intro,  .bar-chart-introduction, .selector-element  {
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 16%;
+    padding-right: 16%;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   #overall-project-intro,  .bar-chart-introduction, .selector-element {
     padding-left: 3%;
     padding-right: 3%;
@@ -155,15 +150,15 @@ a:hover  {
   letter-spacing: 3px;
 }
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1400px) {
   #project-title {
-    font-size: 5.4vw;
-    line-height: 5.9vw;
+    font-size: 5.9vw;
+    line-height: 6.4vw;
   }
   
   #h1-mega-highlight {
-    font-size: 11vw; 
-    line-height: 11.5vw;
+    font-size: 11.5vw; 
+    line-height: 12vw;
   }
 
   #disney-timeline {
@@ -179,7 +174,7 @@ a:hover  {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
 
   #project-title {
     font-size: 9.4vw;
