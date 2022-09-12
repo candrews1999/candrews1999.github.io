@@ -1,129 +1,165 @@
 <!DOCTYPE html>
 
 <html>
-
 	<head>
 		<title>CJ Andrews</title>
 		<meta name="viewport" content="width=device-width, initial-scale-1.0">
 		<meta property='og:title' content='Design Portfolio // Charles Andrews '/>
 		<meta property='og:image' content='images/covers/voter.jpg'/>
-		<meta property='og:description' content='Check out my projects from my university studies and professional experiences!'/>
-		<meta property='og:url' content='//www.crandrews.com'/>
+		<meta property='og:description' content='Porfolio site for Chicago Based Designer'/>
 		<link href="https://fonts.googleapis.com/css?family=Hind:500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="icon" href="favicon.png">
 		<link href="css/style.css" rel="stylesheet"/>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="js/script.js"></script>
 	</head>
-	<body class="padstart">
-		<div id="nav-bar">
-			<div class="navleft"> 
-				<a href="index.html" class="nodeco"> <h2 class="gray btnword bold about aboutnav">CJ Andrews</h2> </a>
-			</div>
-			<div class="navright"> 
-				<a href="index.html" class="nodeco"> <h3 class="green btnword navitem">Work</h3> </a>
-				<a href="about.html" class="nodeco"> <h3 class="gray regular btnword navitem aboutnav">About</h3> </a>
+	<body class="">
+		<div class="homepagesplash fullpage">
+			<div id="canvas"></div>
+			<div id="canvas2"></div>
+			<div class="splashcontent">
+				<div class="nintypercentpage pic-with-background">
+					<h1 class="project-name norightleftpadding splashmaintext">Hey, I'm CJ!</h1>
+					<h2 class="norightleftpadding" style="font-weight: 450;">A <span style="font-weight: 700;">UX/UI Designer</span> headed for Chicago in January 2023.</h2>
+				</div>
 			</div>
 		</div>
-		<div class="flexcont">
-			<div onmouseover="fadecover(0)" class="panel">
-				<a href="voter.html" class="nodeco"> 
-				<img src="images/covers/voter.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Voter</h4>
-					<h5 class="center">App Design - Service Identity</h5>
+		<div class="bodypad" id="projects">
+			<div>
+				<div class="padstart" id="casestudies">
+					<h2 class="norightleftpadding">Case Studies</h2>
+					<div class="flexpanels3">
+						<div onmouseover="" class="panel">
+							<a href="voter.html" class="nodeco"> 
+							<img src="images/covers/voter.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Voter</h4>
+								<h5 class="center">App Design - Service Identity</h5>
+							</div>
+							</a>
+						</div>
+						<div onmouseover="" class="panel">
+							<a href="frontrow.html" class="nodeco"> 
+							<img src="images/covers/frontrow.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Front Row</h4>
+								<!-- <h5 class="center">App Design - Competitor Analysis</h5> -->
+								<h5 class="center">COMING SOON</h5>
+							</div>
+							</a>
+						</div>
+					</div>
 				</div>
-				</a>
-			</div>
-			<div onmouseover="fadecover(1)" class="panel">
-				<a href="toast.html" class="nodeco"> 
-				<img src="images/covers/toast.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Toast Internship</h4>
-					<h5 class="center">Graphic Design - Branding - Social Media</h5>
+				<div class="padstart" id="professionalexperiences">
+					<h2 class="norightleftpadding">Professional Experiences</h2>
+					<div class="flexpanels3">
+						<div onmouseover="" class="panel">
+							<a href="" class="nodeco"> 
+							<img src="images/covers/wm.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Language U</h4>
+								<!-- <h5 class="center nostartblock">Web Design - Social Media</h5> -->
+								<h5 class="center">COMING SOON</h5>
+							</div>
+							</a>
+						</div>
+						<div onmouseover="" class="panel">
+							<a href="" class="nodeco"> 
+							<img src="images/covers/toast.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Toast Internship</h4>
+								<!-- <h5 class="center nostartblock">Graphic Design - Branding - Social Media</h5> -->
+								<h5 class="center">COMING SOON</h5>
+							</div>
+							</a>
+						</div>
+					</div>
 				</div>
-				</a>
-			</div>
-			<div onmouseover="fadecover(2)" class="panel">
-				<a href="frontrow.html" class="nodeco"> 
-				<img src="images/covers/frontrow.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Front Row</h4>
-					<h5 class="center">App Design - Competitor Analysis</h5>
+				<div class="padstart" id="moreprojects">
+					<h2 class="norightleftpadding">More Projects</h2>
+					<div class="flexpanels3">
+						<div onmouseover="" class="panel">
+							<a href="" class="nodeco"> 
+							<img src="images/covers/gd.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Graphic Design</h4>
+								<!-- <h5 class="center nostartblock">Branding - Info Design - Typography</h5> -->
+								<h5 class="center">COMING SOON</h5>
+							</div>
+							</a>
+						</div>
+						<div onmouseover="" class="panel">
+							<a href="" class="nodeco"> 
+							<img src="images/covers/flappycircle.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Flappy Circle</h4>
+								<!-- <h5 class="center nostartblock">HTML - CSS - JS - D3</h5> -->
+								<h5 class="center">COMING SOON</h5>
+							</div>
+							</a>
+						</div>
+						<div onmouseover="" class="panel">
+							<a href="" class="nodeco"> 
+							<img src="images/covers/mm.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Multimedia</h4>	
+								<!-- <h5 class="center nostartblock">Video Editing - Photography</h5> -->
+								<h5 class="center">COMING SOON</h5>
+							</div>
+							</a>
+						</div>
+						<div onmouseover="" class="panel">
+							<a href="" class="nodeco"> 
+							<img src="images/covers/art.jpg" class="cover noclickbright">
+							<div class="project-descript">
+								<h4 class="center">Fine Art</h4>
+								<!-- <h5 class="center nostartblock">Acrylic - Charcoal - Pencil - Pastel</h5> -->
+								<h5 class="center">COMING SOON</h5>
+							</div>
+							</a>
+						</div>
+					</div> 
 				</div>
-				</a>
+				<div class="padstart" id="about"></div>
+				<div class="fullpage brand-background-color padmidsectiontopbottom">
+					<div class="bodypad walkthrough-flex" id="professionalexperiences">
+						<div class="text-cont">
+							<h1 class="norightleftpadding notopmarginblock">Nice to Meet You </h1>
+							<h4 class ="gray">Hey there! I am a recent graduate from Northeastern University's Interaction Design program.</h4>
+							<p class="light-callout">Through coursework in typography, UX, computer science, and information visualization, I have gained a wide understanding of the skills needed to be successful as a creative in the tech industry.</p> 
+							<p class="light-callout">Currently, I am working towards a career in UX/UI/product design by designing full-time at <a target="_blank" rel="noopener noreferrer" href="https://www.morsecorp.com/" class="nodeco btnword-for-p">MORSE Corp</a> and part-time at <a target="_blank" rel="noopener noreferrer" href="https://www.languageuniv.com/" class="nodeco btnword-for-p">Language University</a>.
+							<p class="light-callout"> I try to approach every day as an opportunity to learn and improve as a designer and human being. In my projects, I aim to simplify, innovate, and collaborate, all with the <span class="callout">user at the top of mind.</span></p>
+
+
+						</div>
+						<div class="video-cont">
+							<img src="images/about/headshot.jpg" class="rounded-corners singleimg vcenter">
+						</div>
+					</div>
+					<h4 class="center nobottommarginblock-light padmidsection" style="font-weight: 600;">Coded and Designed by <span class="bold">CJ Andrews</span>&nbsp;👻</h4>
+					<div class="iconcontain">
+						<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
+						<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
+						<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="flexcont">
-			<div onmouseover="fadecover(3)" class="panel">
-				<a href="web-management.html" class="nodeco"> 
-				<img src="images/covers/wm.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Web Management</h4>
-					<h5 class="center">Web Design - Social Media</h5>
-				</div>
-				</a>
-			</div>
-			<div onmouseover="fadecover(4)" class="panel">
-				<a href="graphicdesign.html" class="nodeco"> 
-				<img src="images/covers/gd.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Graphic Design</h4>
-					<h5 class="center">Branding - Info Design - Typography</h5>
-				</div>
-				</a>
-			</div>
-			<div onmouseover="fadecover(5)" class="panel">
-				<a href="ourspace.html" class="nodeco"> 
-				<img src="images/covers/ourspace.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Our Space</h4>
-					<h5 class="center">Web Design - Benchmarking - User Testing</h5>
-				</div>
-				</a>
-			</div>
+	<!-- Script -->
+	<!-- nav bar -->
+	<div id="nav-bar">
+		<div id="navleft"> 
+			<a href="index.html" class="nodeco"> <h2 class="btnword navitem ">CJ Andrews</h2> </a>
 		</div>
-		<div class="flexcont">
-			<div onmouseover="fadecover(6)" class="panel">
-				<a href="flappycircle.html" class="nodeco"> 
-				<img src="images/covers/flappycircle.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Flappy Circle</h4>
-					<h5 class="center">HTML - CSS - JS - D3</h5>
-				</div>
-				</a>
-			</div>
-			<div onmouseover="fadecover(7)" class="panel">
-				<a href="multimedia.html" class="nodeco"> 
-				<img src="images/covers/mm.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Multimedia</h4>	
-					<h5 class="center">Video Editing - Photography</h5>
-				</div>
-				</a>
-			</div>
-			<div onmouseover="fadecover(8)" class="panel">
-				<a href="fineart.html" class="nodeco"> 
-				<img src="images/covers/art.jpg" class="cover noclickbright">
-				<div class="project-descript">
-					<h4 class="center">Fine Art</h4>
-					<h5 class="center">Acrylic - Charcoal - Pencil - Pastel</h5>
-				</div>
-				</a>
-			</div>
-		</div> 
-		<div class="blur">
-			<span class="close">&times;</span>
-			<div class="slideimg">
-			</div>
+		<div id="navright"> 
+			<a href="index.html#casestudies" class="nodeco"> <h4 class="btnword navitem currentpage nav-sect">Work</h4> </a>
+			<a href="index.html#about" class="nodeco"> <h4 class="btnword navitem nav-sect">About</h4></a>
 		</div>
-	<script src="js/script.js"></script>
-	<footer>
-		<p class="center gray">Coded and Designed by CJ Andrews</p>
-		<div class="iconcontain">
-			<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
-			<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
-			<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
-		</div>
-	</footer>
+	</div>
+	<script>
+		drawMovingCloudsOnSplash("#canvas", 0, "white");
+		drawMovingCloudsOnSplash("#canvas2", 6000, "#AED6EA");
+	</script>
 </body>
 </html>
