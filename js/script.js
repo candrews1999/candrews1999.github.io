@@ -94,12 +94,29 @@ class CloudCircle {
 //draw moving clouds animation
 function drawMovingCloudsOnSplash(id, delay, color) {
 
-	//start from scratch on resize
+	//start from scratch on resize if width was change but for height just update svg height
 	d3.select(window).on("resize", function(e) {
-		//reload page on window resize IN THE FUTURE FIGURE OUT HOW TO UNSET TIMERS
-		location.reload();
-		// d3.selectAll("svg").remove();
-		// drawMovingCloudsOnSplash(id, delay, color);
+
+		//save previous svg width and height
+		prevSvgWidth = svgWidth;
+		prevSvgHeight = svgWidth;
+
+		//get new window widths and save them as the current svgWidth and height
+		svgWidth = window.innerWidth * 1.0;
+		svgHeight = window.innerHeight * 1.0;
+
+		//if window width was changed in resize reload page becauce animation will be messed up
+		if (svgWidth != prevSvgWidth) {
+			location.reload();
+		}
+		//else just window height was resized so just resize svg canvas and animation continues
+		else {
+			svgWidth = window.innerWidth * 1.0;
+			svgHeight = window.innerHeight * 1.0;
+
+			// update/set the svg height and width using current width and height values for svg
+			d3.selectAll("svg").attr("width", svgWidth).attr("height", svgHeight);
+		}
 	});
 
 	// append the SVGs, but don't assign any attr yet
