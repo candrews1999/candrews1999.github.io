@@ -7,247 +7,236 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="icon" href="favicon.png">
 	<link href="css/style.css" rel="stylesheet"/>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/script.js"></script>
 </head>
-<body>
-	<div id="nav-bar">
-		<div class="navleft"> 
-			<a href="index.html" class="nodeco"> <h2 class="gray btnword bold about aboutnav">CJ Andrews</h2> </a>
-		</div>
-		<div class="navright"> 
-			<a href="index.html" class="nodeco"> <h3 class="green btnword navitem">Work</h3> </a>
-			<a href="about.html" class="nodeco"> <h3 class="gray regular btnword navitem aboutnav">About</h3></a>
-		</div>
-	</div>
-	<div class="padstart projectheader ">
-		<div class="inlineblock">
+<body>	
+	<div class="bodypad">
+		<div class="projectheader">
 			<h5 class="gray">Mobile App Design - Service Identity</h5>
-			<h5 class="gray right">From Interaction Design II Course</h5>
-		</div>
-		<h1 class="">Voter</h1>
-		<h3 class="">Voter allows you to plan out your ballot for upcoming local, state, and federal elections based on the things important to you. Compare candidates by economic and social issue stances, news, questions and answers, and endorsments. See how their platforms align with your own political leanings and get registered to vote for the next election. Getting involved in the political process can feel intimidating and time consuming. Voter provides the facts and information necessary to make informed decisions, without the noise.</h3>
-		<div class="aboutbtns">
-			<a target="_blank" rel="noopener noreferrer" href="https://xd.adobe.com/view/03683016-d352-4bed-8700-c86bcc088442-563b/?fullscreen" class="nodeco"> <button class="btn">App Prototype</button> </a>
-			<div class="emailbtn">
+			<h1 class="project-name">Voter</h1>
+			<h3>Voter allows you to plan out your ballot for upcoming local, state, and federal elections based on the things important to you.</h3>
+			<p>Compare candidates by economic and social issue stances, news, Q&As, and endorsements. See how their platforms align with your own political leanings and get registered to vote for the next election. Getting involved in the political process can feel intimidating and time consuming. Voter provides the facts and information necessary to make informed decisions, without the noise.</p>
+			<div class="btns">
+				<a target="_blank" rel="noopener noreferrer" href="https://xd.adobe.com/view/03683016-d352-4bed-8700-c86bcc088442-563b/?fullscreen" class="nodeco"> <button class="btn">App Prototype</button> </a>
 				<a target="_blank" rel="noopener noreferrer" href="images/voter/Experience Prototype - Voter.pdf" class="nodeco"> <button class="btn">EXP Prototype</button> </a>
-			</div>
-			<div class="emailbtn">
 				<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/presentation/d/1t77Ez8z99JKEzc1zu04Pl6uKp-UcCmmIRVwdJ1Jdr3Q/edit?usp=sharing" class="nodeco"> <button class="btn">Process Deck</button> </a>
 			</div>
 		</div>
-	</div>
-	<div class="bodypad">
-		<div class="flextwopics">
-			<div class="padleftdoubleimg">
-				<a onclick="slideshow(0)"><img src="images/voter/mock/mock1.jpg" class="doubleimg"></a>
-			</div>
-			<div class="padleftdoubleimg padrightdoubleimg">
-				<a onclick="slideshow(1)"><img src="images/voter/mock/mock2.jpg" class="doubleimg"></a>
-			</div>
-			<div class="padrightdoubleimg">
-				<a onclick="slideshow(2)"><img src="images/voter/mock/mock3.jpg" class="doubleimg"></a>
-			</div>
+		<div class="fullpage mockup padsection">
+			<img src="images/voter/mock/voter-mockup.png" class="doubleimg background-color">
 		</div>
-		<h2 class="padsection center bold green">Features</h2>
-		<div class="">
-			<div class="padmidsection">
-					<h2 class="bold">Plan Out Your Ballot Before Election Day</h2>
-					<p class="gray">Based on your zip code, Voter determines which local, state, and federal races you will be voting in. From there, you can compare candidates based on the key points of their platform and how well they match with your own political beliefs.</p>
-			</div>
-			<div class="flextwopics padmidsection">
-				<div class="padleftdoubleimg">
-					<a onclick="slideshow(3)"><img src="images/voter/screens/Ballot Plan.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Ballot Plan</h4>
-					<h5 class="gray textpadsides">View all of the races in the upcoming election and get updates on your top election topics with swipe through stories.</h5>
-				</div>
-				<div class="padleftdoubleimg padrightdoubleimg">
-					<a onclick="slideshow(4)"><img src="images/voter/screens/Top Priorities.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Compare with a Glance</h4>
-					<h5 class="gray textpadsides">Compare candidates by the top priorities of their campaign or by the details of their platform.</h5>
-				</div>
-				<div class="padrightdoubleimg">
-					<a onclick="slideshow(5)"><img src="images/voter/screens/Endorsements.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Gage Supporters</h4>
-					<h5 class="gray textpadsides">See which organizations and politicians endorse the candidates to better understand their loyalties.</h5>
-				</div>
-			</div>
-			<div class="padsection">
-				<h2 class="bold">Voter Understands Your Politics</h2>
-				<p class="gray">After registering, Voter uses your political beliefs and top election issues to guide your user experience.</p>
-			</div>
-			<div class="flextwopics padmidsection">
-				<div class="padleftdoubleimg">
-					<a onclick="slideshow(6)"><img src="images/voter/screens/Create Your Account.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">For All Areas of the Country</h4>
-					<h5 class="gray textpadsides">Upon creating an account, you select your zip code so that Voter can provide you with specific information for your district.</h5>
-				</div>
-				<div class="padleftdoubleimg padrightdoubleimg">
-					<a onclick="slideshow(7)"><img src="images/voter/screens/Select Issues and Political Party Democrat.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Your Top 5 Election Issues</h4>
-					<h5 class="gray textpadsides">Select your top 5 issues so that Voter can keep you updated on what candidates are saying about them.</h5>
-				</div>
-				<div class="padrightdoubleimg">
-					<a onclick="slideshow(8)"><img src="images/voter/screens/Political Leanings Inventory.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Political Leanings Inventory</h4>
-					<h5 class="gray textpadsides">The quiz you take while registering allows Voter to determine percent match scores for candidates' platforms.</h5>
-				</div>
-			</div>
-			<div class="padsection">
-				<h2 class="bold">Compare Candidates Based on the Facts</h2>
-				<p class="gray">See how candidates stack up in the news, question and answers, endorsements, and their platforms. For each comparison subject, candidates are given a percent match score, representing to what extent their beliefs align with your own.</p>
-			</div>
-			<div class="flextwopics padmidsection">
-				<div class="padleftdoubleimg">
-					<a onclick="slideshow(9)"><img src="images/voter/screens/Data Privacy.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">By the Issues</h4>
-					<h5 class="gray textpadsides">Compare candidates' stances on each of the issues, starting with your top 5 issues.</h5>
-				</div>
-				<div class="padleftdoubleimg padrightdoubleimg">
-					<a onclick="slideshow(10)"><img src="images/voter/screens/News.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">In the News</h4>
-					<h5 class="gray textpadsides">Read major stories in a summarized, bullet pointed format.</h5>
-				</div>
-				<div class="padrightdoubleimg">
-					<a onclick="slideshow(11)"><img src="images/voter/screens/Questions and Answers.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Questions and Answers</h4>
-					<h5 class="gray textpadsides">Enhance your understanding of the candidates with Q&A's.</h5>
-				</div>
-			</div>
-			<div class="padsection">
-				<h2 class="bold">Get Registered and Stay Updated</h2>
-				<p class="gray">Stay informed of important election deadlines and dates and learn more about America's political process with swipe through education modules.</p>
-			</div>
-			<div class="flextwopics padmidsection">
-				<div class="padleftdoubleimg">
-					<a onclick="slideshow(12)"><img src="images/voter/screens/Get Registered to Vote.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Registration Help</h4>
-					<h5 class="gray textpadsides">Important election dates and answers to FAQ's help keep you on track and in the know.</h5>
-				</div>
-				<div class="padleftdoubleimg padrightdoubleimg">
-					<a onclick="slideshow(13)"><img src="images/voter/screens/Learning Module.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Education Modules</h4>
-					<h5 class="gray textpadsides">Discover new information about topics important the USA's election process with swipe through modules.</h5>
-				</div>
-				<div class="padrightdoubleimg">
-					<a onclick="slideshow(14)"><img src="images/voter/screens/Healthcare Focus Story.png" class="shadowimg doubleimg"></a>
-					<h4 class="textpadsides">Issue Focused Stories</h4>
-					<h5 class="gray textpadsides">Stay updated on what candidates in all races are saying about your top 5 election topics with swipe through stories.</h5>
-				</div>
-			</div>
-		</div>
-		<h2 class="padsection center bold green">The Process</h2>
 		<div>
 			<div>
-				<h2 class="bold padmidsection">The Problem</h2>
-				<p class="gray">How can Americans make more informed decisions when voting in elections while living busy lives outside of the world of politics?</p>
+				<h2 class="padsection">Fake News as a Starting Point</h2>
+				<h3>I began this project by looking generally into issues surrounding the political landscape.</h3>
+				<p>I became immediately interested in the concept of "fake news" and how it impacts our views towards and relationship with politics.</p>
+				<h4 class="">I found that...</h4>
+				<p>Fake news is more readily available on Facebook than real news, at a time when Facebook's largest growing user group is adults 65+.</p>
+				<p>Older adults are four times more likely to share fake news than their younger counterparts.</p>
+				<p>The quick circulation of fake news makes it hard to figure out where the original source is or where misinformation stemmed from.</p>
+				<p>Older adults often lack technological literacy skills to discern reliable news websites from non-reliable alternatives.</p>
 			</div>
 			<div>
-				<h2 class="padsection bold">Fake News and Its Relation to Older Adults</h2>
-				<ul class="gray">
-					<li>One of the major issues with the modern political climate is misinformation. In recent years, older adults have been found to be statistically more likely to circulate and cite biased news sources.</li>
-					<li>My Findings:</li>
-					<ul>
-						<li>Fake news is more readily available on Facebook than real news, at a time when Facebook's largest growing user group is adults 65+.</li>
-						<li>Older adults are four times more likely to share fake news than their younger counterparts.</li>
-						<li>The quick circulation of fake news makes it hard to figure out where the original source is or where misinformation stemmed from.</li>
-						<li>Older adults often lack technological literacy skills to discern reliable news websites from non-reliable alternatives.</li>
-					</ul>
-				</ul>
+				<h2 class="padmidsection">Arriving at a Formal Problem</h2>
+				<p>Reflecting on this research, I began to see how issues like fake news can affect one's ability to access credible information about politics.</p>
+				<p>Many people do not always have the time or energy to verify the important information surrounding the elected officials that run their communities, state, or nation.</p>
+				<p>Issues such as misinformation logically lead <span class="text-accent-color">towards disengagement</span> from the world of politics.</p>
+				<h3 class="callout">Around two-thirds of Americans have reported feeling worn out by media surrounding politics each year since 2016 according to Pew Research.</h3>
+				<p>Thinking back to past elections, I remember finding value in social media posts from politically like-minded users that suggested how to vote across your ballot. This was especially helpful when choosing local or state candidates that may be lesser known due to the media's focus on national government.</p>
+				<p>Knowing the values and character of those running for each position on your ballot is a time-consuming, scavenger hunt of a task.<span class="callout"> How could there be a better way to explore candidates for yourself in a timely manner?</span></p>
+				<p>It was with this that I formulated my problem statement and narrowed in on my target demographic: <b>Americans without the time or stamina to keep up with politics.</b></p>
+			</div>
+			<div class="norightleftpadding nintypercentpage">
+				<h2 class="padsection">PROBLEM STATEMENT</h2>
+				<h1 class="gray">How can Americans make more informed decisions when voting in elections while living busy lives outside of the world of politics?</h1>
 			</div>
 			<div>
-				<h2 class="padsection bold">Arriving at a Solution</h2>
-				<ul class="gray">
-					<li>Having done research on fake news and older adults, it made me think about my original problem statement in terms of voters who are less engaged with politics.</li>
-					<ul>
-						<li>Around two-thirds of Americans have reported feeling worn out by constant political news each year since 2016 according to Pew Research.</li>
-					</ul>
-					<li>I thought back to past elections and remembered how politically active young people were using Instagram as a platform to announce who they were voting for down the ballot. Providing this information to like minded, but less engaged voters allowed them to make more informed decisions without much research.</li>
-					<li>In today's media climate, it is increasingly difficult for those not keeping up with politics to keep up with the multifaceted, constantly evolving election cycle.</li>
-					<li>It was with this that I shifted Voter's target demographic to Americans without the time or personal interest to keep up with politics.</li>
-					<li>Voter would focus on providing the necessary facts in a summarized format so that Americans can make more informed election decisions in a timely, straightforward manner.</li>
-				</ul>
-			</div>
-			<div>
-				<h2 class="bold padsection">Service Identity</h2>
-				<p class="gray">In order to plan out my final solution, I needed to hammer out how Voter would be used in relation to the election process and its features. This helped me identify areas in the election process that would allow Voter to stand out against competition and be seen as a necessary tool.</p>
-				<h4 class="padmidsection">Service Model</h4>
-				<a onclick="slideshow(15)"><img src="images/voter/finalpresentation/Slide2.png" class="singleimg"></a>
-				<h4 class="padmidsection">Brand Audit</h4>
-				<a onclick="slideshow(16)"><img src="images/voter/finalpresentation/Slide1.png" class="singleimg"></a>
+				<h2 class="padsection">Service Identity</h2>
+				<p>Voter, the eventual solution to my problem statement, would focus on providing users with the <span class="text-accent-color">necessary facts in a summarized format</span> so that Americans can make more informed election decisions in an information rich, yet straightforward manner.</p>
+				<h3>In planning my final solution, I needed to envision exactly how Voter could improve the election process and allow citizens to make more informed ballot decisions.</h3>
+				<p class="gray">This helped me identify areas in the election process that would instill value in Voter to stand out against other voting-related applications in the space.</p>
+				<div class="sixtypercentpage">
+					<h4 class="padmidsection norightleftpadding">Service Model</h4>
+					<div class="fullpage background-color">
+						<div class="sixtypercentpage pic-with-background">
+							<img src="images/voter/finalpresentation/Slide2.svg" class="singleimg padmidsectionbottom padmidsection">
+						</div>
+					</div>
+				</div>
+				<h4 class="padmidsection norightleftpadding">Brand Audit</h4>
+				<img src="images/voter/finalpresentation/Slide1.png" class="singleimg">
 			</div>	
 			<div>
-				<h2 class="bold">Crafting a User Persona</h2>
-				<p class="gray">With the "less-engaged voter" as my primary target user, I moved to craft a persona that would embody the primary frustrations and motivations of this user group.</p>
-				<h4 class="padmidsection">User Persona: Anne</h4>
-				<a onclick="slideshow(17)"><img src="images/voter/finalpresentation/Slide3.png" class="singleimg"></a>
-				<h4 class="padmidsection">Anne's Hero Journey</h4>
-				<a onclick="slideshow(18)"><img src="images/voter/finalpresentation/Slide4.png" class="singleimg"></a>
+				<h2 class="padsection">A User's Journey</h2>
+				<p class="gray">With the <span class="text-accent-color">"less-engaged voter"</span> as my primary target user, I moved to craft a persona that would embody the primary frustrations and motivations of this user group.</p>
+				<img src="images/voter/finalpresentation/Slide3.png" class="singleimg padmidsection">
+				<div class="nintypercentpage padmidsection">
+					<h4 class="padmidsection norightleftpadding">Anne's Hero Journey</h4>
+					<img src="images/voter/finalpresentation/Slide4.svg" class="singleimg">
+				</div>
 			</div>	
 			<div>
-				<h2 class="bold padsection">Planning the Workflows</h2>
-				<p class="gray">Next, I created UI specs to help determine how users would navigate the functionality within the application.</p>
-				<h4 class="padmidsection">Login/Sign Up Sequence</h4>
-				<a onclick="slideshow(19)"><img src="images/voter/finalpresentation/Slide5.png" class="singleimg"></a>
-				<h4 class="padmidsection">Overall Application Heirarchy</h4>
-				<a onclick="slideshow(20)"><img src="images/voter/finalpresentation/Slide6.png" class="singleimg"></a>
-				<h4 class="padmidsection">Candidate Comparison Subject Options</h4>
-				<a onclick="slideshow(21)"><img src="images/voter/finalpresentation/Slide7.png" class="singleimg"></a>
-				<h4 class="padmidsection">Registration/Education Module Sequence</h4>
-				<a onclick="slideshow(22)"><img src="images/voter/finalpresentation/Slide8.png" class="singleimg"></a>
+				<h2 class="padsection">Branding Guide</h2>
+				<p class="gray">Being a tool for communicating important election information, I wanted Voter's typography to have a formal, yet modern feel. Thus, I chose <span class="text-accent-color">Helvetica Neue</span> as the app's font. I also sought to incorporate the red and blue of the USA's leading political parties, but in a brighter tint to liven up this patriotic color combo.</p>
+				<h3>Overall, this branding is meant to embody Voter's desire to make the election process more approachable for everyday Americans.</h3>
+				<h4 class="padmidsection norightleftpadding">Branding Style Guide</h4>
+				<img src="images/voter/finalpresentation/Slide9.png" class="singleimg">
+				<p class="gray padmidsection">In imagining a logo for the brand, I was naturally inspired by the imagery associated with poll stations and voting booths. The final logo features a check mark you might inscribe when filling out a handwritten ballot.</p>
+				<h3>The logo is intended to communicate Voter's positioning as a ballot planning application.</h3>
+				<div class="flex-imgs nintypercentpage padmidsection">
+					<h4 class="norightleftpadding norightleftpadding">Logo Design</h4>
+				</div>
+				<div class="background-color fullpage">
+					<div class="flex-imgs nintypercentpage pic-with-background">
+						<div>
+							<h5 class="text-accent-color2"> </h5>
+							<img src="images/voterlogo/vl1.svg" class="">
+							<h5 class="text-accent-color2">Final Logo</h5>
+						</div>
+						<div>
+							<h5 class="text-accent-color2"> </h5>
+							<img src="images/voterlogo/vl2.svg" class="">
+							<h5 class="">Previous Iteration</h5>
+						</div>
+						<div>
+							<img src="images/voterlogo/vl3.svg" class="">
+							<h5 class="">Previous Iteration</h5>
+						</div>
+						<div>
+							<img src="images/voterlogo/vl4.svg" class="">
+							<h5 class="">Previous Iteration</h5>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div>
-				<h2 class="bold padsection">Branding Guide</h2>
-				<p class="gray">Being a tool for commucating important election news, I wanted Voter's typography to have a formal, yet modern feel. Thus, I chose Helvetica Neue as the app's font. I also sought to incorporate the red and blue of the USA's leading political parties, but a brighter tint to liven up the interface.</p>
-				<h4 class="padmidsection">Branding Style Guide</h4>
-				<a onclick="slideshow(23)"><img src="images/voter/finalpresentation/Slide9.png" class="singleimg"></a>
+				<h2 class="padsection">Story Boarding and UI</h2>
+				<p class="gray">With the brand in place, I turned towards visualizing the UI and primary functionality within the application.</p>
+				<h3> UI exploration was driven by the story telling surrounding my persona's (Anne's) user journey.</h3>
+				<p>Thus, I drew out a visual story board with accompanying screen sketches to discern how the UI would aid users throughout the election cycle.</p>
+				<div class="norightleftpadding eightypercentpage">
+					<a target="_blank" rel="noopener noreferrer" href="images/voter/storyboard/Storyboard Sketches - Voter.pdf" class="nodeco"> <h4 class="padmidsection norightleftpadding btnword">Storyboard and UI Sketching</h4> </a>
+					<img src="images/voter/storyboard/storyboardsketch.jpg" class="singleimg">
+				</div>
+				<div>
+					<h3 class="padmidsection">Finally, I transferred these UI sketches to high fidelity mockups incorporating the branding.</h3>
+					<p>I discerned a more complete list of necessary screens by laying out the UI specs in workflow diagrams (seen below).</p>
+					<div class="norightleftpadding">
+						<h4 class="padmidsection norightleftpadding">Login/Sign Up Sequence</h4>
+						<img src="images/voter/finalpresentation/Slide5.png" class="singleimg">
+						<h4 class="padmidsection norightleftpadding">Overall Application Heirarchy</h4>
+						<img src="images/voter/finalpresentation/Slide6.png" class="singleimg">
+						<h4 class="padmidsection norightleftpadding">Candidate Comparison Subject Options</h4>
+						<img src="images/voter/finalpresentation/Slide7.png" class="singleimg">
+						<div class="singleimg fortypercentpage">
+							<h4 class="padmidsection norightleftpadding">Registration/Education Module Sequence</h4>
+							<img src="images/voter/finalpresentation/Slide8.png" class="singleimg">
+						</div>
+					</div>
+				</div>
+				<h3 class="padmidsection">These high-fidelity specs were then paired with original photography to bring the user journey to life.</h3>
+				<div class="norightleftpadding">
+					<div class="norightleftpadding padimg">
+						<a target="_blank" rel="noopener noreferrer" href="images/voter/Experience Prototype - Voter.pdf" class="nodeco"> <h4 class="padmidsection norightleftpadding btnword">Experience Prototype</h4> </a>
+						<img src="images/voter/storyboard/experienceprototype.jpg" class="singleimg">
+					</div>
+				</div>
+			</div>
+			<div class="padsection background-color fullpage">
+				<div class="seventypercentpage pic-with-background">
+					<h3 class="center">INTRODUCING...</h3>
+					<img src="images/voterlogo/vl1.svg" class="singleimg">
+					<h1 class="center">Democracy Needs You</h1>
+				</div>
+			</div>
+			<div class="">
+				<div class="walkthrough-flex padsection">
+					<div class="text-cont">
+						<h2 class="">Voter Understands Your Politics</h2>
+						<h3 class="">The registration process allows Voter to learn your poll location, political leanings, and top election issues.</h3>
+						<p>Voter uses your <span class="text-accent-color">zip code</span> to populate your ballot with local, state, and federal races you will be voting in.</p>
+						<p>Ranking your <span class="text-accent-color">top 5 voting issues</span> helps Voter keep you updated on the conversations surrounding your priorities.</p>
+						<p>The <span class="text-accent-color">political leanings inventory</span> calculates which candidates are most suitable to your beliefs, without hiding the candidates that might disagree with you. You find your political beliefs aligning with a candidate you haven't considered.</p>
+					</div>
+					<div class="video-cont">
+						<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+							<source src="images/voter/walkthrough/signup.mp4" type="video/mp4">
+							Your browser does not support video.
+						</video>
+					</div>
+				</div>
+				<div class="walkthrough-flex padsection">
+					<div class="text-cont">
+						<h2 class="">Plan Out Your Ballot Before Election Day</h2>
+						<h3 class="">Voter identifies and scores the local, state, and federal candidates that are eligible for your vote, based on your party and zip code.</h3>
+						<p>Regardless of if it's the primary or main election is approaching, plan out <span class="text-accent-color">each line of your ballot</span>. Make your vote count and be ready for the voting booth... or mail-in ballot!</p>
+						<p>Learn about each race at a high-level with <span class="text-accent-color">match scores</span> for each candidate that identify how closely the candidate is aligned with your core beliefs.</p>
+						<p>Delve deeper with <span class="text-accent-color">summarized information</span> about each candidate's top priorities, endorsements, issue stances, and news.</p>
+					</div>
+					<div class="video-cont">
+						<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+							<source src="images/voter/walkthrough/race-info.mp4" type="video/mp4">
+							Your browser does not support video.
+						</video>
+					</div>
+				</div>
+				<div class="walkthrough-flex padsection">
+					<div class="text-cont">
+						<h2 class="">Get Registered and Stay Updated</h2>
+						<h3 class="">Voter guides users through registration and vote by mail processes, while continuing to update users with information specific to their top five election issues.</h3>
+						<p>Access daily updated stories surrounding your <span class="text-accent-color">top 5 voting issues</span> that highlight aggregated content from various local, state, and federal candidates on your ballot.</p>
+						<p>Personalized <span class="text-accent-color">registration deadlines</span> and links to voter registration site are all in one place. Registration is the first step towards making your voice heard!</p>
+						<p><span class="text-accent-color">FAQs</span> and <span class="text-accent-color">election process education modules</span> clear up any confusion users might have as they prepare to vote.</p>
+					</div>
+					<div class="video-cont">
+						<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+							<source src="images/voter/walkthrough/top-issues-and-get-registered.mp4" type="video/mp4">
+							Your browser does not support video.
+						</video>
+					</div>
+				</div>
+			</div>
+			<div>
+				<h1 class="norightleftpadding padsection center">See More About This Project</h1>
+				<div class="btns btnscenter">
+					<a target="_blank" rel="noopener noreferrer" href="https://xd.adobe.com/view/03683016-d352-4bed-8700-c86bcc088442-563b/?fullscreen" class="nodeco"> <button class="btn">App Prototype</button> </a>
+					<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/presentation/d/1t77Ez8z99JKEzc1zu04Pl6uKp-UcCmmIRVwdJ1Jdr3Q/edit?usp=sharing" class="nodeco"> <button class="btn">Process Deck</button> </a>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="blur">
-		<span class="close">&times;</span>
-		<div class="slideimg">
+	<!-- set color of h1 and h2 and background for the project -->
+	<script>
+		setPageColor("#EAEAEA", "#6363D3", "#D35353");
+	</script>
+	<!-- nav bar -->
+	<div id="nav-bar">
+		<div id="navleft"> 
+			<a href="index.html" class="nodeco"> <h2 class="btnword navitem ">CJ Andrews</h2> </a>
+		</div>
+		<div id="navright"> 
+			<a href="index.html#casestudies" class="nodeco"> <h4 class="btnword navitem currentpage nav-sect">Work</h4> </a>
+			<a href="index.html#about" class="nodeco"> <h4 class="btnword navitem nav-sect">About</h4></a>
 		</div>
 	</div>
-	
-	<!--	List of All Captions for Page-->
-	<div>
-		<h4 class="caption">Mockup: Login Screen</h4>
-		<h4 class="caption">Mockup: Ballot Plan</h4>
-		<h4 class="caption">Mockup: Select Top 5 Election Issues</h4>
-		<h4 class="caption">Your Ballot Plan</h4>
-		<h4 class="caption">Compare Candidates with a Glance</h4>
-		<h4 class="caption">Gage Endorsements</h4>
-		<h4 class="caption">For All Areas of the Country</h4>
-		<h4 class="caption">Your Top 5 Election Topics</h4>
-		<h4 class="caption">Political Leanings Inventory</h4>
-		<h4 class="caption">Compare By the Issues</h4>
-		<h4 class="caption">Candidates in the News</h4>
-		<h4 class="caption">Questions and Answers</h4>
-		<h4 class="caption">Voter Registration Help</h4>
-		<h4 class="caption">Election System Education Modules</h4>
-		<h4 class="caption">Issue Focused Stories</h4>
-		<h4 class="caption">Service Model</h4>
-		<h4 class="caption">Brand Audit</h4>
-		<h4 class="caption">User Persona: Anne</h4>
-		<h4 class="caption">Anne's Hero Journey</h4>
-		<h4 class="caption">Login/Sign Up Sequence</h4>
-		<h4 class="caption">Overall Application Heirarchy</h4>
-	  	<h4 class="caption">Candidate Comparison Subject Options</h4>
-		<h4 class="caption">Registration/Education Module Sequence</h4>
-		<h4 class="caption">Branding Style Guide</h4>
-	</div>
-	<script src="js/script.js"></script>
-	<footer>
-		<div class="nextprev center">
-			<a href="fineart.html" class="nodeco"><p class="btnword">Prev</p></a>
-			<p class="">&nbsp;&nbsp;/&nbsp;&nbsp;</p>
-			<a href="toast.html" class="nodeco"><p class="btnword">Next</p></a>
+	<!-- footer -->
+	<footer class="fullpage brand-background-color padmidsectiontopbottom padmidsection">	
+		<div class="">
+			<h5 class="center callout nomarginblock padsection">EXPLORE...</h5>
+			<div class="center" id="morework">
+				<a href="index.html#casestudies" class="nodeco"><h3 class="btnword">Case Studies</h3></a>
+				<a href="index.html#professionalexperiences" class="nodeco"><h3 class="btnword">Professional Experiences</h3></a>
+				<a href="index.html#moreprojects" class="nodeco"><h3 class="btnword">More Projects</h3></a>
+			</div>
+		<h4 class="center nobottommarginblock-light coded-design-statement" style="font-weight: 600;">Coded and Designed by <span class="bold">CJ Andrews</span>&nbsp;👻</h4>
+		<div class="iconcontain">
+			<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
 		</div>
-	<p class="center gray">Coded and Designed by CJ Andrews</p>
-	<div class="iconcontain">
-		<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
-		<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
-		<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
-	</div>
+		</div>
 	</footer>
 </body>
 </html>

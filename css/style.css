@@ -1,36 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+/* Big Picture Layout */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
 
-a:hover {
-	color: #0686B1;
+* {
+	box-sizing: border-box;
 }
 
 body{
-	background-color: white;
 	color: black;
-	font-family: 'Hind', sans-serif;
-	padding-right: 0px;
-	padding-left: 0px;
+	font-family: 'Source Sans Pro', sans-serif;
+	padding: 0px;
+	margin: 0px;
 }
 
-/*Styles*/
 
-.btnword {
-	color: #045A77;
+/* Type */
+
+h1 {
+	font-size: 50px;
+	line-height: 57px;
+	font-weight: 900;
+	color: #304A47;
 }
 
-.btnword:hover {
-	color: #0686B1;
+h1.project-name {
+	font-size: 55px;
+	line-height: 62px;
+}
+
+h2 {
+	font-size: 36px;
+	line-height: 42px;
+	font-weight: 650;
+	color: #515151;
+	letter-spacing: 0.4px;;
+}
+
+h3 {
+	font-size: 26px;
+	line-height: 35px;
+	font-weight: 650;
+	color: #515151;
+}
+
+h4 {
+	font-size: 23px;
+	font-weight: 625;
+	line-height: 30px;
+	color: #335464;
+}
+
+h5 {
+	font-size: 16px;
+	font-weight: 600;
+	color: #515151;
+	line-height: 23px;
+}
+
+p, li{
+	font-size: 18.5px;
+	line-height: 25.5px;
+	color: #494949;
+	font-weight: 500;
+}
+
+/* Extra text stylings */
+
+.callout {
+	font-weight: 700;
+}
+
+.light-callout {
+	font-weight: 500;
 }
 
 .gray {
 	color: dimgray;
 }
 
-.green {
-	color: #498A42;
+.blue {
+	color: #AED6EA;
 }
 
 .nodeco {
@@ -38,54 +91,24 @@ body{
 	color:black;
 }
 
+a:hover {
+	color: #0686B1;
+}
+
+.right {
+	text-align: right;
+}
+
+/* Content Styling Extras */
+
+.center {
+	text-align: center;
+}
+
 .centerpic {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-h1 {
-	font-size: 33px;
-	font-weight: bold;
-	color: #498A42;
-	line-height: 39px;
-}
-
-h2 {
-	font-size: 19px;
-	font-weight: normal;
-	line-height: 23px;
-}
-
-h3 {
-	font-size: 15px;
-	font-weight: lighter;
-	color: dimgray;
-	line-height: 21px;
-}
-
-h4 {
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 21px;
-}
-
-h5 {
-	font-size: 13px;
-	font-weight: normal;
-	color: dimgray;
-	line-height: 16px;
-}
-
-p, li {
-	font-size: 15px;
-	font-weight: lighter;
-	line-height: 21px;
-	color: dimgray;
-}
-
-.center {
-	text-align: center;
 }
 
 .vcenter {
@@ -103,92 +126,317 @@ p, li {
 }
 
 .padstart {
-	padding-top: 100px;
+	padding-top: 10vh;
+}
+
+.notoppad {
+	padding-top: 0px;
+}
+
+.brand-background-color {
+	background: rgba(198,226,240,1) 3%;
+	background: linear-gradient(180deg, rgb(255, 255, 255) 3%, rgb(198,226,240,1) 97%);
 }
 
 /*Navigation Bar*/
 
 #nav-bar{
-	z-index: 1;
 	display: flex;
 	align-items: center;
 	top:0px;
 	left:0px;
 	width: 100%;
-	height:60px;
-	box-shadow: 0 4px 5px -2px lightgray;
-	color:black;
-	background-color: white;
+	height:85px;
 	position:fixed;
+	color:black;
+	z-index: 5;
+	background-color: rgb(255, 255, 255, 0.0);
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
-.navright{
-	padding-right: 10%;
-	text-align: right;
+@media only screen and (max-width: 1350px) {
+	#nav-bar{
+		height: 65px;
+	}
 }
 
-.navleft {
-	padding-left: 10%;
+#navleft h2 {
+	font-weight: 750;
+}
+
+#navright {
+	display: flex;
+	gap: 15px;
+	justify-content: flex-end;
+	width:50%;
+}
+
+#navleft {
+	width:50%;
 }
 
 .navitem {
-	display: inline-block;
+	color: #727272;
+	text-decoration-line:none !important;
 }
 
-.navleft, .navright {
-  flex: 2;
-}
 
 /*Home Page*/
 
-.flexcont {
-	display: flex;
-	padding-left: 18%;
-	padding-right: 18%;
-	padding-bottom: 1%;
+.flexpanels3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 	justify-content: space-between;
-	display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row;
+	column-gap: 2.5vw;
+	row-gap: 2.5vw;
+}
+
+.flexpanels2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-between;
+	column-gap: 10vw;
+	row-gap: 2.5vw;
 }
 
 .cover{
-	width: 80%;
+	width: 100%;
+	flex: 1;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	border-radius: 7px;
 }
 
 .panel {
-	padding-top: 30px;
+	border-radius: 8px;
+	background-color: white;
+	transition: all 0.3s;
 }
 
 .panel:hover {
-	box-shadow: .5px 2px 8px 2px lightgray;
+	box-shadow: 0.5px 3px 10px 3px rgba(0, 0, 0, .1);
+	padding-left: 4%;
+	padding-right: 4%;
+	padding-top: 4%;
+	padding-bottom: 4%;
 }
+
+.panel>.cover:hover {
+	width: 92%;
+}
+
+/* Resize width of project panels for small desktop */
+
+@media only screen and (max-width: 1600px) {
+	div#casestudies,
+	div#professionalexperiences,
+	div#moreprojects,
+	div#about {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-36.5vw + 50%) !important;
+		width: 73vw !important;
+	}
+}
+@media only screen and (max-width: 1350px) {
+	div#casestudies,
+	div#professionalexperiences,
+	div#moreprojects,
+	div#about {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-45vw + 50%) !important;
+		width: 90vw !important;
+	}
+}
+
+/* Homepage Splash section */
+
+.homepagesplash {
+	height: 100vh;
+	width: 100vw;
+	background: rgba(198,226,240,1) 3%;
+	background: linear-gradient(0deg, rgb(188, 223, 240) 3%, rgb(251, 254, 255) 97%);
+	padding: 0;
+	margin: 0;
+
+	/* position: -webkit-sticky;
+	position: fixed !important;
+	top: 0px;
+	z-index: 0;
+	background-position: 0px; */
+}
+
+.splashcontent {
+	position: absolute;
+	width:100vw;
+	height:100vh;
+	z-index: 3;
+	top: 30vh;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.splashcontent div{
+	padding-top: 0px;
+}
+
+/* h1 splash text */
+
+h1.splashmaintext {
+	font-size: 150px;
+	line-height: 157px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+}
+
+@media screen and (max-width: 1050px) {
+	h1.splashmaintext {
+		font-size: 115px;
+		line-height: 122px;
+		margin-block-start: 0px;
+		margin-block-end: 0px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	h1.splashmaintext {
+		font-size: 75px;
+		line-height: 82px;
+		margin-block-start: 0px;
+		margin-block-end: 0px;
+	}
+}
+
+/* Clouds */
+
+#canvas {
+	position: absolute;
+	width:100vw;
+	height:100vh;
+	z-index: 1;
+}
+#canvas2 {
+	position: absolute;
+	width:100vw;
+	height:100vh;
+	z-index: 0;
+}
+
+
+
+/* Remove marginblock on text*/
+
+/* remove top and bottom margin block */
+p.nomarginblock, 
+li.nomarginblock,
+h1.nomarginblock,
+h2.nomarginblock, 
+h3.nomarginblock,
+h4.nomarginblock, 
+h5.nomarginblock {
+	margin-block-start: 0px !important;
+	margin-block-end: 0px !important;
+}
+
+/* remove top margin block */
+p.notopmarginblock, 
+li.notopmarginblock,
+h1.notopmarginblock,
+h2.notopmarginblock, 
+h3.notopmarginblock,
+h4.notopmarginblock, 
+h5.notopmarginblock {
+	margin-block-start: 0px !important;
+}
+
+/* remove bottom margin block */
+p.nobottommarginblock, 
+li.nobottommarginblock,
+h1.nobottommarginblock,
+h2.nobottommarginblock, 
+h3.nobottommarginblock,
+h4.nobottommarginblock, 
+h5.nobottommarginblock {
+	margin-block-end: 0px !important;
+}
+
+/* remove bottom margin block */
+p.nobottommarginblock-light, 
+li.nobottommarginblock-light,
+h1.nobottommarginblock-light,
+h2.nobottommarginblock-light, 
+h3.nobottommarginblock-light,
+h4.nobottommarginblock-light, 
+h5.nobottommarginblock-light {
+	margin-block-end: 20px !important;
+}
+
 
 /*Buttons*/
 
-.btn {
-	font-family: 'Hind', sans-serif;
-	font-size: 14px;
-	border: 2px solid #0686B1;
+button {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
 	border-radius: 6px;
-	background-color: white;
-	width: 153px;
-	height: 40px;
-	color: #0686B1;
-	transition: all 0.1s;
+	width: 160px;
+	height: 50px;
+	transition: all 0.2s;
+	background-color: transparent;
+	border: 2.5px solid dimgray;
+	flex-basis: 1 1 auto;
 }
 
-.btn:hover{
-	background-color: #0686B1;
-	border: 2px solid #0686B1;
+button:hover{
+	border-color: rgb(65, 65, 65);
+	background-color: rgb(65, 65, 65);
 	color: white;
 	cursor: pointer;
+}
+
+.btns {
+	display: flex;
+	gap: 0.6vw;
+	flex-wrap: wrap;
+	margin-top: 3.6vh;
+}
+
+.btnscenter {
+	justify-content: center;
+}
+
+.btnword {
+	font-weight:600;
+	text-decoration-line: underline;
+	text-decoration-thickness: 2.5px;
+	text-underline-offset: 7px;
+	transition: all 0.2s;
+}
+
+.btnword:hover {
+	color: #3a3a3a;
+	font-weight: 1000;
+	text-decoration-thickness: 3px;
+}
+
+.btnword-for-p {
+	font-weight:700;
+	color: #494949;
+	text-decoration-line: underline;
+	text-decoration-thickness: 2.5px;
+	text-underline-offset: 2.75px;
+	transition: all 0.2s;
+}
+
+.btnword-for-p:hover {
+	color: #3a3a3a;
+	font-weight: 1000;
+	text-decoration-thickness: 3px;
 }
 
 /*Footer*/
@@ -198,50 +446,151 @@ p, li {
 	margin-bottom: 30px;
 }
 
-.icon {
-	font-size: 30px;
-	color: dimgray;
-	width:28px;
-}
-
 footer {
 	margin-top: 75px;
 }
 
-/*About Page*/
-
-.intro {
-	padding-top: 15%;
-	padding-bottom:50px;
-	padding-left: 15.5%;
-	padding-right: 15.5%;
-	border-bottom: 1px;
-	display: flex;
+.icon {
+	color: dimgray;
+	font-size: 30px;
+	width:32px;
+	transition: all 0.2s;
 }
 
-.headshot {
-	padding-top: 0px;
-	width: 350px;
-	padding-right: 10px;
-	cursor: default;
+.icon:hover {
+	color: #3a3a3a;
 }
 
-.emailbtn {
-	display: inline-block;
-	margin-top: 5px;
+/* Rounding Images or Divs*/
+.rounded-corners {
+	border-radius: 10px;
 }
 
-/*Project Page CSS*/
+@media screen and (max-width: 1050px) {
+	.rounded-corners {
+		border-radius: 7px;
+	}
+}
+
+/*Project Page*/
+
+.bodypad, #morework {
+	padding-left: 17.5%;
+	padding-right: 17.5%;
+	/* padding-top: 5%; */
+	z-index: 1;
+}
 
 .projectheader {
-	padding-left: 30%;
-	padding-right: 30%;
-	padding-bottom: 70px;
+	padding-right: 12%;
+	padding-left: 12%;
+	padding-top: 85px;;
 }
 
-.bodypad {
-	padding-left: 23%;
-	padding-right: 23%;
+/* Padding text for larger screen sizes */
+@media screen and (min-width: 1050px) {
+
+/* Pad text (or specific image in body */
+.bodypad p,
+.bodypad h1,
+.bodypad h2,
+.bodypad h3, 
+.bodypad h4,
+.bodypad h5,
+.btns-with-body-text {
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+/* Don't pad text in project header container as that would be double padding */
+.bodypad .projectheader p,
+.bodypad .projectheader h1,
+.bodypad .projectheader h2,
+.bodypad .projectheader h3,
+.bodypad .projectheader h4,
+.bodypad .projectheader h5,
+.bodypad .projectheader ul{
+	padding-right: 0%;
+	padding-left: 0%;
+}
+}
+
+/* Full page content will always stay full page */
+.fullpage {
+	padding-left: 0px;
+	padding-right: 0px;
+	position: relative;
+	left: calc(-50vw + 50%) !important;
+	width: 100vw !important;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+/*Extend image to page width for screens bigger than tablet*/
+@media screen and (min-width: 1050px) {
+
+	/*Extend banner to page width for screens bigger than tablet*/
+	.nintypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-45vw + 50%) !important;
+		width: 90vw !important;
+	}
+	.eightypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-40vw + 50%) !important;
+		width: 80vw !important;
+	}
+	.seventypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-35vw + 50%) !important;
+		width: 70vw !important;
+	}
+	.sixtypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-30vw + 50%) !important;
+		width: 60vw !important;
+	}
+	.fiftyfivepercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-27.5vw + 50%) !important;
+		width: 55vw !important;
+	}
+	.fiftypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-25vw + 50%) !important;
+		width: 50vw !important;
+	}
+	.thirtypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-15vw + 50%) !important;
+		width: 30vw !important;
+	}
+
+}
+
+/*Extend image to page width for screens bigger than phone*/
+@media screen and (min-width: 650px) {
+	.fortypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-20vw + 50%) !important;
+		width: 40vw !important;
+	}
 }
 
 .inlineblock {
@@ -249,27 +598,32 @@ footer {
 	justify-content: space-between;
 }
 
-.right {
-	text-align: right;
+img {
+	user-drag: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 .singleimg {
 	width: 100%;
-	padding-top: 3px;
-}
-
-.nextprev {
-	padding-left: 35%;
-	padding-right: 35%;
-	display: flex;
-	justify-content: center;
 }
 
 .padsection {
-	padding-top: 65px;
+	margin-top: 14vh;
 }
 
 .padmidsection {
+	margin-top: 8vh;
+}
+
+.padmidsectionbottom {
+	padding-bottom: 25px;
+}
+.padmidsectiontopbottom {
+	padding-bottom: 25px;
 	padding-top: 25px;
 }
 
@@ -296,30 +650,13 @@ footer {
 	flex-basis: 100%;
 }
 
-/*Hovering on Imgs*/
-img:hover {
-	cursor: pointer;
-	opacity: 0.8;
-}
-
-.noclicking:hover {
-	opacity:1.0;
-	cursor: default;
-}
-
-.noclickbright,.projected:hover {
-	opacity: 1.0;
-}
-
-/*Verticle Padding*/
-
-.notoppad {
-	padding-top: 0px;
+.mockup {
+	gap: 8%;
 }
 
 .textpadsides {
-	padding-right:7%;
-	padding-left:7%;
+	padding-right:5%;
+	padding-left:5%;
 }
 
 .pdfview {
@@ -328,30 +665,35 @@ img:hover {
 }
 
 .shadowimg {
-	box-shadow: 2px 2px 7px 2px darkgray;
+	box-shadow: 0.5px 3px 10px 3px rgba(0, 0, 0, .1);;
 }
 
-.grayback {
-	background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9);  /* Black w/ opacity */
+/* MoreWork Navigation */
+
+#morework {
+	display: flex;
+	justify-content: space-between;
+	gap: 2vw;
+}
+
+#morework h3 {
+	flex: 1;
 }
 
 /*Small Desktop*/
 
 @media only screen and (max-width: 1350px) {
 	
-	.bodypad {
-		padding-left: 16%;
-		padding-right: 16%;
-	}
-	
-	.navright{
-		padding-right: 10%;
-		text-align: right;
+	.bodypad  {
+		padding-left: 13%;
+		padding-right: 13%;
 	}
 
-	.navleft {
-		padding-left: 10%;
+	/* More work reduce padding and gap */
+	#morework {
+		gap: 1.5vw;
+		padding-left: 12%;
+		padding-right: 12%;
 	}
 	
 	.intro {
@@ -360,18 +702,37 @@ img:hover {
 		padding-right: 20%;
 		padding-top: 8%;
 	}
-	
-	.projectheader {
-		padding-left: 25%;
-		padding-right: 25%;
-		padding-bottom: 75px;
+
+	/* minimize extra text padding */
+	.bodypad p,
+	.bodypad h1,
+	.bodypad h2,
+	.bodypad h3,
+	.bodypad h4,
+	.bodypad h5,
+	.btns-with-body-text   {
+		padding-right: 14%;
+		padding-left: 14%;
 	}
-	
-	.flexcont {
-		padding-left: 9%;
-		padding-right: 9%;
-		padding-bottom: 1%;
-	}	
+
+	/* class for when no left right padding is wanted  */
+	.norightleftpadding p,
+	.norightleftpadding h1,
+	.norightleftpadding h2,
+	.norightleftpadding h3,
+	.norightleftpadding h4,
+	.norightleftpadding h5,
+	.norightleftpadding ul,
+	p.norightleftpadding,
+	h1.norightleftpadding,
+	h2.norightleftpadding,
+	h3.norightleftpadding, 
+	h4.norightleftpadding,
+	h5.norightleftpadding,
+	ul.norightleftpadding{
+		padding-right: 0%;
+		padding-left: 0%;
+	}
 }
 
 /*Tablet Page Specifications*/
@@ -385,15 +746,6 @@ img:hover {
 		padding-top: 0%;
 	}
 	
-	.navright{
-		padding-right: 5%;
-		text-align: right;
-	}
-
-	.navleft {
-		padding-left: 5%;
-	}
-	
 	.headshot {
 		width: 305px;
 		padding-top: 100px;
@@ -403,21 +755,23 @@ img:hover {
 		padding-left: 0%;
 		padding-right: 0%;
 		padding-bottom: 20px;
-	}
-	
-	.projectheader {
-		padding-left: 10%;
-		padding-right: 10%;
-		padding-bottom: 75px;
-	}
-	
-	.padstart {
-		padding-top: 70px;
 	}	
 	
-	.bodypad {
+	.bodypad, #nav-bar, .pic-with-background, .projectheader, h4.coded-design-statement {
 		padding-left: 4%;
 		padding-right: 4%;
+	}
+
+	/* More work reduce padding and gap */
+	#morework {
+		gap: 1vw;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	/* Hide this item at tablet screen size */
+	.hideattablet {
+		display: none;
 	}
 	
 	.textpadsides {
@@ -425,45 +779,98 @@ img:hover {
 		padding-left:2%;
 	}
 	
-	.flexcont {
-		padding-left: 4%;
-		padding-right: 4%;
-		padding-bottom: 1%;
-	}	
-	
 	.project-descript {
-		padding-right: 5px;
+		padding-right: 0px;
 		padding-left: 5px;
-	}
-	
-	.btn {
-		width: 100%;
-		display: block; 
-		margin: auto;
-	}
-	
-	.aboutbtns {
-		padding-left:  35%;
-		padding-right:  35%;
 	}
 	
 	.emailbtn {
 		width: 100%;
+	}
+
+	.btns {
+		padding-left: 25%;
+		padding-right: 25%;
+		display: block;
+		width: 100%;
+	}
+
+	button {
+		display: block;
+		margin: auto;
+		width: 100%;
+		margin-bottom: 0.8vh;
+	}
+
+	/* Typesizes */
+	h1 {
+		font-size: 41px;
+		line-height: 48px;
+		font-weight: 900;
+	}
+
+	h2 {
+		font-size: 30px;
+		line-height: 37px;
+		letter-spacing: 0.4px;;
+	}
+	
+	h3 {
+		font-size: 23px;
+		line-height: 30px;
+	}
+	
+	.nav-sect {
+		font-size: 19px;
+		line-height: 26px;
+	}
+
+	/* class for when no left right padding is wanted  */
+	.norightleftpadding p,
+	.norightleftpadding h1,
+	.norightleftpadding h2,
+	.norightleftpadding h3,
+	.norightleftpadding h4,
+	.norightleftpadding h5,
+	.norightleftpadding ul,
+	p.norightleftpadding,
+	h1.norightleftpadding,
+	h2.norightleftpadding,
+	h3.norightleftpadding, 
+	h4.norightleftpadding,
+	h5.norightleftpadding,
+	ul.norightleftpadding{
+		padding-right: 0%;
+		padding-left: 0%;
 	}
 }
 
 /*Phone Size*/
 
 @media only screen and (max-width: 650px) {
+
+	/* get rid of extra text padding */
+	.projectheader,
+	.bodypad p,
+	.bodypad h1,
+	.bodypad h2,
+	.bodypad h3,
+	.bodypad h4,
+	.bodypad h5,
+	.bodypad ul 
+	.btns{
+		padding-right: 0%;
+		padding-left: 0%;
+	}
 	
-	.bodypad {
-		padding-left: 2%;
-		padding-right: 2%;
+	/* padding for nav and body content */
+	.bodypad, #nav-bar, .intro, .pic-with-background, h4.coded-design-statement{
+		padding-left: 4%;
+		padding-right: 4%;
 	}
 	
 	.navright{
 		padding-right: 3.5%;
-		text-align: right;
 	}
 
 	.navleft {
@@ -472,116 +879,27 @@ img:hover {
 	
 	.intro {
 		display: block;
-		padding-left: 2%;
-		padding-right: 2%;
 		padding-top: 0%;
 	}
-	
-	.projectheader {
-		padding-left: 2%;
-		padding-right: 2%;
-		padding-bottom: 75px;
-	}
-	
-	.aboutbtns{
-		padding-right: 0%;
+
+	.btns {
 		padding-left: 0%;
+		padding-right: 0%;
 	}
-	
-	.flexcont {
-		padding-left: 2%;
-		padding-right: 2%;
+
+	/* collapse more work */
+	#morework {
+		display: block;
+		padding-left: 4%;
+		padding-right: 4%;
 		padding-bottom: 1%;
-	}	
-}
-
-/*Slideshow*/
-
-.blur {
-  	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-  	z-index: 2; /* Sit on top */
-  	left: 0;
-    top: 0;
-  	width: 100vw; /* Full width */
-  	height: 100vh; /* Full height */
-    overflow: scroll; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9);  /* Black w/ opacity */
-}
-
-.slideimg {
-	display: table-cell;
-    vertical-align: middle;
-	margin: auto;
-	height: 100vh;
-	width: 100vw;
-}
-
-.close {
-	position:absolute;
-	right: 20px;
-  	color: white;
-  	font-size: 50px;
-	text-shadow: 0px 0px 12px black;
-  	font-weight:normal;
-	overflow: hidden;
-	padding-left: 7px;
-	padding-right: 7px;
-	top: 0px;
-	vertical-align:top;	
-}
-
-.close:hover {
-	cursor: pointer;
-}
-
-.caption {
-	display: none;
-}
-
-/*Scaling Pictures for Slideshow*/
-
-.scaleDownSquare {
-	width: 75vh;
-}
-
-@media only screen and (max-width: 600px) {
-	.scaleDownSquare {
-		width: 44vh;
-	}
-}
-
-@media only screen and (min-width: 1500px) {
-	.scaleDownWhenTooWide {
-		transform: scale(0.88, 0.88);
-	}
-}
-
-.scaleDownTallArt {
-		height: 80vh;
-}
-
-@media only screen and (max-width: 600px) {
-	.scaleDownTallArt {
-		height: 62vh;
-	}
-}
-
-.scaledownArt {
-	width: 92vw;
-}
-
-@media only screen and (min-width: 1100px) {
-	.scaledownArt {
-		width: 65vw;
 	}
 }
 
 /*Our Space*/
 
 .phonewebdiv{
-  	display: flex;
+    display: flex;
 }
 
 .phone {
@@ -596,7 +914,86 @@ img:hover {
 
 .img {
 	width: 100%;
-  	height: auto;
+    height: auto;
+}
+
+/* Voter */
+
+.walkthrough-flex {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	column-gap: 7vw;
+}
+
+.video-cont {
+	flex: 1.1;
+	align-self: center;
+}
+
+.text-cont {
+	flex: 1.75;
+	align-self: center;
+}
+
+.flex-imgs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 8vw;
+	row-gap: 5vh;
+}
+.flex-imgs img {
+	flex: 1;
+}
+
+@media only screen and (max-width: 1050px) {
+	.video-cont {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}
+
+/* Don't pad text in project header container as that would be double padding */
+.text-cont p,
+.text-cont h1,
+.text-cont h2,
+.text-cont h3,
+.text-cont h4,
+.text-cont h5,
+.text-cont ul{
+	padding-right: 0%;
+	padding-left: 0%;
+	margin-block-start: 0;
+}
+
+/* class for when no left right padding is wanted  */
+.norightleftpadding p,
+.norightleftpadding h1,
+.norightleftpadding h2,
+.norightleftpadding h3,
+.norightleftpadding h4,
+.norightleftpadding h5,
+.norightleftpadding ul,
+p.norightleftpadding,
+h1.norightleftpadding,
+h2.norightleftpadding,
+h3.norightleftpadding, 
+h4.norightleftpadding,
+h5.norightleftpadding,
+ul.norightleftpadding{
+	padding-right: 0%;
+	padding-left: 0%;
+}
+
+@media only screen and (max-width: 600px) {
+	.walkthrough-flex {
+		display: block;
+	}
+	.video-cont {
+		padding-top: 2vh;
+		padding-left: 15%;
+		padding-right: 15%;
+	}
 }
 
 /*Youtube Embeded*/
@@ -616,19 +1013,49 @@ img:hover {
     position:absolute;
 }
 
+/* Flex Equal  */
 
 
-	
+.flex-imgs-equal-1,
+.flex-imgs-equal-2,
+.flex-imgs-equal-3,
+.flex-imgs-equal-4 {
+	display: grid;
+	align-items: space-between;
 
+	column-gap: 2vh;
+	row-gap: 2vh;
+	padding-bottom: 1vh;
+	padding-top: 1vh;
+}
 
+.flex-imgs-equal-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
 
+.flex-imgs-equal-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
 
+.flex-imgs-equal-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
 
+.flex-imgs-equal-1 {
+	grid-template-columns: repeat(1, 1fr);
+}
 
+.flex-imgs-equal-1 img,
+.flex-imgs-equal-2 img,
+.flex-imgs-equal-3 img,
+.flex-imgs-equal-4 img {
+	width: 100%;
+}
 
-
-
-
-
-
-
+.flex-imgs-equal-1 div,
+.flex-imgs-equal-2 div,
+.flex-imgs-equal-3 div,
+.flex-imgs-equal-4 div {
+	padding: 0px !important;
+	margin: 0px !important;
+}

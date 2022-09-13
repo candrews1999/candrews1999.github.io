@@ -100,7 +100,6 @@ function parseCsv(d) {
 //load CSV then parse, then sort rows into multi-level data structure, create svg + scales, draw 1976 ElectionYear (0-index) as first state, and set OnClick for Next and Prev Buttons to initialize visualization update
 d3.csv("./csv/1976-2020-president.csv", parseCsv).then(function(data) {
 
-
     /*
     SORT DATA IN ELECTIONYEARS DATA STRUCTURE WITH AN INTERNAL HEIRARCHY OF ElectionYear > CandidateOption > StateVote
     */
@@ -577,17 +576,22 @@ function drawCircles(svgCanvas, currYearStateVotes, fillScale, rScale) {
 
 //toggle between desktop and mobile svg based on window width to optimize for mobile and desktop views
 function toggleDesktopOrMobileSVG(svg, mobileSVG) {
-    //desktop svg active for window widths greater than 950
-    if (window.innerWidth > 950) {
+    //desktop svg active for window widths greater than or equal to 850
+    if (window.innerWidth >= 850) {
         svg.style("display", "initial");
         mobileSVG.style("display", "none");
     }
-    //else if window width is less than 950 and window height is less than 450 then desktop svg should be active
-    else if (window.innerWidth < 950 && window.innerHeight < 450) {
+    //else if window width is less than 850 but window width is greater than 500, and window height is less than 450 then desktop svg should be active
+    else if (window.innerWidth < 850 && window.innerWidth > 500 && window.innerHeight < 750) {
         svg.style("display", "initial");
         mobileSVG.style("display", "none");
     }
-    //mobile svg active for window widths less than 950 with heights greater than 350
+    //else if window width is less than or equal to 500 and window height is less than 450 then desktop svg should be active
+    else if (window.innerWidth <= 500 && window.innerHeight < 450) {
+        svg.style("display", "initial");
+        mobileSVG.style("display", "none");
+    }
+    //else mobile svg is active
     else {
         mobileSVG.style("display", "initial");
         svg.style("display", "none");
