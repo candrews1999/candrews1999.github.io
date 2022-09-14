@@ -30,9 +30,12 @@ function setPageColor(backgroundColor, h1Color, h2Color) {
 	//set h1 and h4, and text-accent-color as given h1Color
 	d3.selectAll("h1").style("color", h1Color);
 	d3.selectAll("h4").style("color", h1Color);
+<<<<<<< HEAD
+=======
 	d3.selectAll(".text-accent-color")
 		.style("color", h1Color)
 		.style("font-weight", "650");
+>>>>>>> 260d90eaa86b4ca7fbb7e4f1f1586f5970ccc8c2
 	d3.selectAll("button")
 		.style("border", `2.5px solid ${h1Color}`)
 		.style("color", h1Color);
@@ -54,6 +57,13 @@ function setPageColor(backgroundColor, h1Color, h2Color) {
 	//set h2 and text-accent-color as given h2Color
 	d3.selectAll("h2")
 		.style("color", h2Color);
+<<<<<<< HEAD
+
+	//text-accent styles
+	d3.selectAll(".text-accent-color")
+		.style("color", h1Color);
+=======
+>>>>>>> 260d90eaa86b4ca7fbb7e4f1f1586f5970ccc8c2
 	d3.selectAll(".text-accent-color2")
 		.style("color", h2Color)
 		.style("font-weight", "900");
@@ -116,6 +126,7 @@ function drawMovingCloudsOnSplash(id, delay, color) {
 
 			// update/set the svg height and width using current width and height values for svg
 			d3.selectAll("svg").attr("width", svgWidth).attr("height", svgHeight);
+<<<<<<< HEAD
 		}
 	});
 
@@ -149,6 +160,41 @@ function drawMovingCloudsOnSplash(id, delay, color) {
 			randomCloudRadius = Math.random() * ((2 * svgWidth)/22) + baseRadius; 
 			randomCloudHeight = Math.random() * ((3.5 * svgHeight)/7) + (svgHeight * 1.2)/4; 
 		}
+=======
+		}
+	});
+
+	// append the SVGs, but don't assign any attr yet
+	const svg = d3.select(id).append("svg");
+
+	//initialize svg dimensions based on current window size
+	let svgWidth;
+	let svgHeight;
+	svgWidth = window.innerWidth * 1.0;
+	svgHeight = window.innerHeight * 1.0;
+
+	//create index variable;
+	let index = 0;
+
+	//Generate Cloud data object
+	function generateCloud() {
+		//Create New Cloud
+		cloudData = new Cloud();
+
+		//initialize variables
+		let randomCloudSpeed;
+		let randomCloudRadius;
+		let randomCloudHeight;
+
+		//generate new cloud random values for unique cloud based on screen dimensions
+		if (window.innerWidth > 1050) {
+			let baseSpeed = svgWidth * 14;
+			let baseRadius = svgWidth / 22;
+			randomCloudSpeed = Math.random() * 4000 + baseSpeed; 
+			randomCloudRadius = Math.random() * ((2 * svgWidth)/22) + baseRadius; 
+			randomCloudHeight = Math.random() * ((3.5 * svgHeight)/7) + (svgHeight * 1.2)/4; 
+		}
+>>>>>>> 260d90eaa86b4ca7fbb7e4f1f1586f5970ccc8c2
 		else if (window.innerWidth > 650 && window.innerWidth < 1050){
 			let baseSpeed = svgWidth * 16;
 			let baseRadius = svgWidth / 17;
