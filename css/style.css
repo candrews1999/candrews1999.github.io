@@ -58,7 +58,7 @@ h5 {
 	font-size: 16px;
 	font-weight: 600;
 	color: #515151;
-	line-height: 23px;
+	line-height: 18.5px;
 }
 
 p, li{
@@ -78,14 +78,6 @@ p, li{
 	font-weight: 500;
 }
 
-.gray {
-	color: dimgray;
-}
-
-.blue {
-	color: #AED6EA;
-}
-
 .nodeco {
 	text-decoration: none;
 	color:black;
@@ -99,6 +91,10 @@ a:hover {
 	text-align: right;
 }
 
+h4.larger{
+	font-size: 32px;
+	line-height: 39px;
+}
 /* Content Styling Extras */
 
 .center {
@@ -126,7 +122,11 @@ a:hover {
 }
 
 .padstart {
-	padding-top: 10vh;
+	padding-top: 8vh;
+}
+
+.padend {
+	padding-bottom: 10vh;
 }
 
 .notoppad {
@@ -188,16 +188,16 @@ a:hover {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: space-between;
-	column-gap: 2.5vw;
-	row-gap: 2.5vw;
+	column-gap: 2vh;
+	row-gap: 2vh;
 }
 
 .flexpanels2 {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: space-between;
-	column-gap: 10vw;
-	row-gap: 2.5vw;
+	column-gap: 2vh;
+	row-gap: 2vh;
 }
 
 .cover{
@@ -215,21 +215,33 @@ a:hover {
 	transition: all 0.3s;
 }
 
-.panel:hover {
-	box-shadow: 0.5px 3px 10px 3px rgba(0, 0, 0, .1);
-	padding-left: 4%;
-	padding-right: 4%;
-	padding-top: 4%;
-	padding-bottom: 4%;
+.panel h5 {
+	font-size: 14px;
+	line-height: 16.5px;
 }
 
-.panel>.cover:hover {
-	width: 92%;
+/* Hover animation stylings for panels */
+.panel:hover {
+	box-shadow: 0.5px 3px 10px 3px rgba(0, 0, 0, .1);
+	padding: 2vh;
+}
+
+@media only screen and (max-width: 1050px) {
+	.panel:hover {
+		padding: 1.5vh;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.panel:hover {
+		padding: 1vh;
+	}
 }
 
 /* Resize width of project panels for small desktop */
 
 @media only screen and (max-width: 1600px) {
+	div#currentjob,
 	div#casestudies,
 	div#professionalexperiences,
 	div#moreprojects,
@@ -242,6 +254,7 @@ a:hover {
 	}
 }
 @media only screen and (max-width: 1350px) {
+	div#currentjob,
 	div#casestudies,
 	div#professionalexperiences,
 	div#moreprojects,
@@ -373,7 +386,18 @@ h2.nobottommarginblock-light,
 h3.nobottommarginblock-light,
 h4.nobottommarginblock-light, 
 h5.nobottommarginblock-light {
-	margin-block-end: 20px !important;
+	margin-block-end: 0.5em !important;
+}
+
+/* remove bottom margin block */
+p.nobottommarginblock-lighter, 
+li.nobottommarginblock-lighter,
+h1.nobottommarginblock-lighter,
+h2.nobottommarginblock-lighter, 
+h3.nobottommarginblock-lighter,
+h4.nobottommarginblock-lighter, 
+h5.nobottommarginblock-lighter {
+	margin-block-end: 0.8em !important;
 }
 
 
@@ -526,6 +550,15 @@ footer {
 	overflow-y: hidden;
 }
 
+/* thirty percent content will always stay thirty page */
+.thirtypercentpage {
+	padding-left: 0px;
+	padding-right: 0px;
+	position: relative !important;
+	left: calc(-15vw + 50%) !important;
+	width: 30vw !important;
+}
+
 /*Extend image to page width for screens bigger than tablet*/
 @media screen and (min-width: 1050px) {
 
@@ -572,6 +605,7 @@ footer {
 		left: calc(-25vw + 50%) !important;
 		width: 50vw !important;
 	}
+	/* thirty percent content will always stay thirty page */
 	.thirtypercentpage {
 		padding-left: 0px;
 		padding-right: 0px;
@@ -580,11 +614,61 @@ footer {
 		width: 30vw !important;
 	}
 
+	/* fifty percent page for screens larger than tablet then becomes 80 percent */
+	.fifty-then-eighty{
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-25vw + 50%) !important;
+		width: 50vw !important;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	/* thirty percent content becomes 50% at small desktop or smaller screen size */
+	.thirtypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-25vw + 50%) !important;
+		width: 50vw !important;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	/* fifty percent page for screens larger than tablet then becomes 80 percent */
+	.fifty-then-eighty{
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-40vw + 50%) !important;
+		width: 80vw !important;
+	}
+
+	/* becomes full screen at tablet size or smaller */
+	.fullscreen-at-tablet {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-50vw + 50%) !important;
+		width: 100vw !important;
+	}
 }
 
 /*Extend image to page width for screens bigger than phone*/
 @media screen and (min-width: 650px) {
 	.fortypercentpage {
+		padding-left: 0px;
+		padding-right: 0px;
+		position: relative !important;
+		left: calc(-20vw + 50%) !important;
+		width: 40vw !important;
+	}
+}
+
+/*Extend image to page width for screens bigger than phone*/
+@media screen and (min-width: 900px) {
+	.fortypercentpage-sooner-tablet {
 		padding-left: 0px;
 		padding-right: 0px;
 		position: relative !important;
@@ -612,11 +696,19 @@ img {
 }
 
 .padsection {
-	margin-top: 14vh;
+	margin-top: 15vh;
+}
+
+.padmidsection-medium {
+	margin-top: 11.5vh;
 }
 
 .padmidsection {
 	margin-top: 8vh;
+}
+
+.padmidsectionend {
+	margin-bottom: 8vh;
 }
 
 .padmidsectionbottom {
@@ -733,6 +825,25 @@ img {
 		padding-right: 0%;
 		padding-left: 0%;
 	}
+
+	/* Removes left right text padding at tablet and smaller screen sizes */
+	.norightleftpadding-sm-desktop p,
+	.norightleftpadding-sm-desktop h1,
+	.norightleftpadding-sm-desktop h2,
+	.norightleftpadding-sm-desktop h3,
+	.norightleftpadding-sm-desktop h4,
+	.norightleftpadding-sm-desktop h5,
+	.norightleftpadding-sm-desktop ul,
+	p.norightleftpadding-sm-desktop,
+	h1.norightleftpadding-sm-desktop,
+	h2.norightleftpadding-sm-desktop,
+	h3.norightleftpadding-sm-desktop, 
+	h4.norightleftpadding-sm-desktop,
+	h5.norightleftpadding-sm-desktop,
+	ul.norightleftpadding-sm-desktop{
+		padding-right: 0%;
+		padding-left: 0%;
+	}
 }
 
 /*Tablet Page Specifications*/
@@ -774,14 +885,9 @@ img {
 		display: none;
 	}
 	
-	.textpadsides {
-		padding-right:2%;
-		padding-left:2%;
-	}
-	
-	.project-descript {
-		padding-right: 0px;
-		padding-left: 5px;
+	.textpadsides, .project-descript {
+		padding-right: 0.25vw;
+		padding-left:0.25vw;
 	}
 	
 	.emailbtn {
@@ -1003,6 +1109,7 @@ ul.norightleftpadding{
     padding-bottom:56.25%;
     position:relative;
     height:0;
+	width: 100%;
 }
 
 .youtubevid {
@@ -1013,13 +1120,16 @@ ul.norightleftpadding{
     position:absolute;
 }
 
-/* Flex Equal  */
-
+/* Flex Equal Used for rows of images to be in a perfect grid */
 
 .flex-imgs-equal-1,
 .flex-imgs-equal-2,
 .flex-imgs-equal-3,
-.flex-imgs-equal-4 {
+.flex-imgs-equal-4, 
+.flex-imgs-equal-1-iframe,
+.flex-imgs-equal-2-iframe,
+.flex-imgs-equal-3-iframe,
+.flex-imgs-equal-4-iframe {
 	display: grid;
 	align-items: space-between;
 
@@ -1029,20 +1139,30 @@ ul.norightleftpadding{
 	padding-top: 1vh;
 }
 
-.flex-imgs-equal-4 {
+.flex-imgs-equal-4, .flex-imgs-equal-4-iframe {
 	grid-template-columns: repeat(4, 1fr);
 }
 
-.flex-imgs-equal-3 {
+.flex-imgs-equal-3, .flex-imgs-equal-3-iframe {
 	grid-template-columns: repeat(3, 1fr);
 }
 
-.flex-imgs-equal-2 {
+.flex-imgs-equal-2, .flex-imgs-equal-2-iframe {
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.flex-imgs-equal-1 {
+.flex-imgs-equal-1, .flex-imgs-equal-1-iframe {
 	grid-template-columns: repeat(1, 1fr);
+}
+
+@media only screen and (max-width: 675px) {
+	.flex-imgs-equal-2-iframe {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.then-two-at-mobile {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .flex-imgs-equal-1 img,
@@ -1058,4 +1178,46 @@ ul.norightleftpadding{
 .flex-imgs-equal-4 div {
 	padding: 0px !important;
 	margin: 0px !important;
+	width: 100%;
 }
+
+.flex-imgs-equal-2-iframe div,
+.flex-imgs-equal-2-iframe div,
+.flex-imgs-equal-3-iframe div,
+.flex-imgs-equal-4-iframe div {
+	width: 100%;
+}
+
+.flex-imgs-equal-1-iframe div iframe,
+.flex-imgs-equal-2-iframe div iframe,
+.flex-imgs-equal-3-iframe div iframe,
+.flex-imgs-equal-4-iframe div iframe{
+	width: 100%;
+}
+
+/* Sets up container of div elements that make up one column and bunch up at the top (like in fine arts section) */
+.gallery-uneven-height {
+	align-items: start;
+	height: max-content;
+}
+
+/* Used for adding padding to a highlight section that matches length of flex imgs-equal container grid gaps*/
+
+.pad-highlight-section {
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+}
+
+.pad-highlight-section-4vh {
+	padding-top: 4vh;
+	padding-bottom: 4vh;
+}
+
+.flextwopics {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 3px;
+	align-items:baseline;
+	column-gap: 1vh;
+}
+

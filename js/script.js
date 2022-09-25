@@ -2,8 +2,19 @@
 
 //ease in nav background at top of page
 onscroll = (event) => { 
+	//get nav bar size for when to animate nav bar to fade
+	let navbarHeight = 87;
+	d3.select(window).on("resize", function(e) {
+		if (window.innerWidth > 1350) {
+			navbarHeight = 87
+		}
+		else if (window.innerWidth <= 1350) {
+			navbarHeight = 65
+		}
+	});
+
 	//no background when user is at less than 20 y pixels scrolled
-	if (window.scrollY < 87) {
+	if (window.scrollY < navbarHeight /2) {
 		d3.select("#nav-bar")
 		.transition()
 		.duration(100)
@@ -54,10 +65,11 @@ function setPageColor(backgroundColor, h1Color, h2Color) {
 
 	//text-accent styles
 	d3.selectAll(".text-accent-color")
-		.style("color", h1Color);
+		.style("color", h1Color)
+		.style("font-weight", "700");
 	d3.selectAll(".text-accent-color2")
 		.style("color", h2Color)
-		.style("font-weight", "900");
+		.style("font-weight", "700");
 
 
 	//set accent backgraound color
@@ -109,14 +121,6 @@ function drawMovingCloudsOnSplash(id, delay, color) {
 		//if window width was changed in resize reload page becauce animation will be messed up
 		if (svgWidth != prevSvgWidth) {
 			location.reload();
-		}
-		//else just window height was resized so just resize svg canvas and animation continues
-		else {
-			svgWidth = window.innerWidth * 1.0;
-			svgHeight = window.innerHeight * 1.0;
-
-			// update/set the svg height and width using current width and height values for svg
-			d3.selectAll("svg").attr("width", svgWidth).attr("height", svgHeight);
 		}
 	});
 
@@ -284,4 +288,35 @@ function drawMovingCloudsOnSplash(id, delay, color) {
 	}, 
 	delay
 	);
+}
+
+// Pause and play video based on presence in the viewport
+function playPauseVideo() {
+    let videos = document.querySelectorAll("video");
+    videos.forEach((video) => {
+        // We can only control playback without insteraction if video is mute
+        video.muted = true;
+        // Play is a promise so we need to check we have it
+        let playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.then((_) => {
+                let observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (
+                                entry.intersectionRatio !== 1 &&
+                                !video.paused
+                            ) {
+                                video.pause();
+                            } else if (video.paused) {
+                                video.play();
+                            }
+                        });
+                    },
+                    { threshold: 0.2 }
+                );
+                observer.observe(video);
+            });
+        }
+    });
 }

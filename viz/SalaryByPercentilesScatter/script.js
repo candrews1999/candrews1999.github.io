@@ -20,6 +20,29 @@ d3.csv("csv/salaries-by-college-type.csv").then(function(data) {
     const transitionDuration = 2000;
     const transitionDelay = 250;
 
+    //record initial window width and height
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+
+    //start from scratch on resize if width was change but for height just update svg height
+    d3.select(window).on("resize", function(e) {
+
+        //save previous svg width and height
+        prevSvgWidth = windowWidth;
+        prevSvgHeight = windowHeight;
+
+        //get new window widths and save them as the current svgWidth and height
+        svgWidth = window.innerWidth * 1.0;
+        svgHeight = window.innerHeight * 1.0;
+
+        //if window width was changed in resize reload page becauce animation will be messed up
+        if (svgWidth != prevSvgWidth) {
+            console.log(prevSvgWidth)
+            console.log(svgWidth)
+            location.reload();
+        }
+    });
+
     // Disables buttons with the given className for the transitionDuration in between data update pattern animation
     function disableForTransitionDuration(className) {
         //disable filters for transition duration to prevent the dataupdate transition from being interrupted

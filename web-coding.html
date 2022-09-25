@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+	<title>CJ Andrews</title>
+	<meta name="viewport" content="width=device-width, initial-scale-1.0">
+	<link href="https://fonts.googleapis.com/css?family=Hind:500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="favicon.png">
+	<link href="css/style.css" rel="stylesheet"/>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div class="bodypad">
+		<div class="projectheader">
+			<h5 class="">P3.js - D3.js - CSS - Python</h5>
+			<h1 class="project-name">Web Coding</h1>
+			<h3 class="">In college, I developed a keen interest in programming through acquiring a computer science minor.</h3>
+			<p>While I understood programmatic thinking would be important to communicating with developers in future, I also began to see the avenues of creativity it unlocks as a designer.</p>
+			<p>Beginning by learning object-oriented programming in Java, I continued my studies by programming visualizations at MORSE, managing Language University's website, and coding my portfolio.</p>
+			<p>Learning to harness these tools has allowed me to approach UI design from a front-end developer's point of view. <span class="callout text-accent-color">Check out some of my projects below.</span></p>
+		</div>
+		<div class="fullpage mockup padsection">
+			<img src="images/project-cover-mockups/cool-mockups-20224.png" class="doubleimg background-color">
+		</div>
+		<div class="padsection">
+			<h2 class="padsection bold">US Presidential Election Returns By State Since 1976</h2>
+			<p> Based on a <a class="btnword-for-p" href="https://dataverse.harvard.edu/file.xhtml?fileId=4299753&version=6.0" target="_blank">dataset</a>  by the Harvard Dataverse and MIT Election Data + Science Lab, this <span class="callout text-accent-color">beeswarm chart</span> illustrates the popular vote distributions from the 1976-2020 US presidential elections. For each election year, the top four candidates, their party, and their vote returns are displayed.</p>
+            <p>This d3.js visualization uses the concept of <span class="callout text-accent-color">force simulation</span> to group circles, each representing a state party's total votes for a candidate, in order to conceptualize the popular vote returns for each election year. In turn, this information also allows one to track the movement in political parties over the past five decades.</p>
+            <h3>Get ready to explore some votes 🇺🇸</h3>
+			<div class="btns btns-with-body-text">
+				<a target="_blank" rel="noopener noreferrer" href="viz/USPresidentialElectionBeeswarm/index.html" class="nodeco"> <button class="btn">Launch</button> </a>
+			</div>
+			<div class="flex-imgs-equal-1 padmidsection">
+				<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+					<source src="images/web-coding/walkthru/prez-walkthru.mp4" type="video/mp4">
+					Your browser does not support video.
+				</video>
+			</div>
+			<div class="flex-imgs-equal-1 fifty-then-eighty">
+				<div class="">
+					<h4 class="norightleftpadding">UI Sketch</h4>
+					<img src="images/web-coding/sketches/prez1.png" class="singleimg">
+				</div>
+			</div>
+		</div>
+		<div class="padsection">
+			<h2 class="padsection bold">Disney Cinema Through the Ages</h2>
+			<p>The visualization explores the key concepts, fan + critic reception, and box office earnings of the seven eras of Disney movies.</p>
+			<p>Sameer Patel’s <a class="btnword-for-p" href="https://www.kaggle.com/datasets/therealsampat/disney-movies-dataset" target="_blank">dataset</a> provides a reliable list of Disney movie titles and release dates ranging from 1937 to August 2021. This dataset is used to retrieve movie posters and critic + fan scores for each entry from OMBD and Movie DB, two movie-related <span class="callout text-accent-color">APIs</span>.</p>
+			<p>All of this information is then used to populate bar graphs comparing each decade's averaged data and an interactive exploration of movie posters sorted by fan rating.</p>
+			<h3>Overall, the design of the page is a journey of nostalgia that allows users to learn more about their favorite movie or Disney era.</h3>
+			<div class="btns btns-with-body-text">
+				<a target="_blank" rel="noopener noreferrer" href="viz/DisneyThroughTheAges/index.html" class="nodeco"> <button class="btn">Launch</button> </a>
+				<a target="_blank" rel="noopener noreferrer" href="images/web-coding/presentations/disney-viz-process-documentation.pdf" class="nodeco"> <button class="btn">Full Process</button> </a>
+			</div>
+			<div class="flex-imgs-equal-1 padmidsection">
+				<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+					<source src="images/web-coding/walkthru/disney-walkthru.mp4" type="video/mp4">
+					Your browser does not support video.
+				</video>
+			</div>
+			<div class="flex-imgs-equal-1 fifty-then-eighty">
+				<div class="">
+					<h4 class="norightleftpadding">UI Sketch</h4>
+					<img src="images/web-coding/sketches/disney-sketch.png" class="singleimg">
+				</div>
+			</div>
+		</div>
+		<div class="padsection">
+			<h2 class="padsection bold">Ethnic Disadvantage in Big Brother</h2>
+			<p>Big Brother is a CBS reality show that follows a house of 12-17 players that must vote out each other to be the last one standing.</p>
+			<p>A big issue with the show since its beginning has been the <span class="callout text-accent-color">lack of diversity</span> in their casting. Due to the larger proportion of white players, minorities are routinely excluded from the major alliances each season and voted out early in the game.</p>
+			<h3>Based on a Kaggle <a class="btnword-for-p" href="https://github.com/vdixon3/big-brother-diversity-data/blob/master/big_brother_data.csv" target="_blank">dataset</a>, this visualization investigates each season's contestant data to illuminate the consistency and severity of this issue.</h3>
+			<p>Starting with a summary of the history, the visualization then presents three visualizations that examine competition wins, season placement, and casting in terms of ethnic distribution.</p>
+			<p>Technically, this project explores the capabilities of <span class="callout text-accent-color">sticky</span> positioning to create the navigation bar and <span class="callout text-accent-color">CSS grid</span> for the overall layout.</p>
+			<div class="btns btns-with-body-text">
+				<a target="_blank" rel="noopener noreferrer" href="viz/BigBrotherMiniProject/index.html" class="nodeco"> <button class="btn">Launch</button> </a>
+				<a target="_blank" rel="noopener noreferrer" href="images/web-coding/presentations/bb-ethnic-disadvantage-revision-report.pdf" class="nodeco"> <button class="btn">Revisions Sum</button> </a>
+			</div>
+			<div class="flex-imgs-equal-1 padmidsection">
+				<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+					<source src="images/web-coding/walkthru/bb-walkthru.mp4" type="video/mp4">
+					Your browser does not support video.
+				</video>
+			</div>
+			<div class="flex-imgs-equal-2">
+				<div class="">
+					<h4 class="norightleftpadding">Sketch of Landing</h4>
+					<img src="images/web-coding/sketches/bb-ethnic-disadvantage-sketch-landing.png" class="singleimg">
+				</div>
+				<div class="">
+					<h4 class="norightleftpadding">Sketch of Body</h4>
+					<img src="images/web-coding/sketches/bb-ethnic-disadvantage-sketch-body.png" class="singleimg">
+				</div>
+			</div>
+		</div>
+		<div class="padsection">
+			<h2 class="padsection bold">Big Brother Demographics by Season</h2>
+			<p>This visualization follows in the vein of the previous project by once again exploring the concept of <span class="callout text-accent-color">ethnic disadvantage</span> within Big Brother.</p>
+			<h3>It differs, however, in its use of interactivity and d3.js transitions to create a dynamically rendered bar chart that illustrates the gender and racial gap in casting and season placement among contestants.</h3>
+			<p>The project employs the d3.js <span class="callout text-accent-color">data update pattern</span> to update the data based on the user's selected filters and subsequently render the corresponding visuals.</p>
+			<div class="btns btns-with-body-text">
+				<a target="_blank" rel="noopener noreferrer" href="viz/BigBrotherStackedBar/index.html" class="nodeco"> <button class="btn">Launch</button> </a>
+			</div>
+			<div class="flex-imgs-equal-1 padmidsection">
+				<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+					<source src="images/web-coding/walkthru/bb-bar-walkthru.mp4" type="video/mp4">
+					Your browser does not support video.
+				</video>
+			</div>
+		</div>
+		<div class="padsection">
+			<h2 class="padsection bold">Top 100 Companies and Investors</h2>
+			<h3>This visualization explores the connections between the world's top 100 companies and top 100 investors.</h3>
+			<p>This project provided the opportunity to investigate how to create visualizations in <span class="callout text-accent-color">p5.js</span>, a visualization library which focuses on drawing shapes based on pixel location in an SVG canvas. Prior to this project, I had mostly concerned myself with the scale-based methodology that d3.js follows.</p>
+			<p>This project also required me to learn more about <span class="callout text-accent-color">absolute</span> positioning to create a modal that displayed each company and investor's list of investments. Finally, within this modal, I dynamically rendered divs with a width proportionate to the investment size it represents, a new way to create a bar chart that I found intriguing.</p>
+			<p>Finally, I used Javascript <span class="callout text-accent-color">classes</span> to store the list of investments associated with each investor and company in the dataset. Organizing the data into objects made it easier to access these important lists of investments and draw them upon the user's hover of a specific company or investor.</p>
+			<div class="btns btns-with-body-text">
+				<a target="_blank" rel="noopener noreferrer" href="viz/TopInvestments/index.html" class="nodeco"> <button class="btn">Launch</button> </a>
+			</div>
+			<div class="flex-imgs-equal-1 padmidsection">
+				<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+					<source src="images/web-coding/walkthru/investors-walkthru.mp4" type="video/mp4">
+					Your browser does not support video.
+				</video>
+			</div>
+		</div>
+		<div class="padsection">
+			<h2 class="padsection bold">Starting vs Mid-Career Salary By College Type</h2>
+			<p>In the United States, around 71.1% of students attend a 4-year institution after graduating high school. To pay the steep college price tag, many students take out student loans to cover their tuition. After graduation, it is important that the job opportunities waiting for them can pay off their debt for financial security.</p>
+			<h3>Based on a WSJ Kaggle <a class="btnword-for-p" href="https://www.kaggle.com/datasets/wsj/college-salaries?select=salaries-by-region.csv" target="_blank">dataset</a>, the scatterplot offers insight into the salary earnings of college graduates based on the type of school they go to: state, "party", engineering, liberal arts, or ivy league.</h3>
+			<p><span class="callout text-accent-color">Filter</span> by college type for a clearer look at where schools of your desired type fall in terms of starting vs mid-career salaries. <span class="callout text-accent-color">Toggle</span> between median mid-career earnings and the 10th, 25th, 75th, and 90th percentiles of mid-career salaries.</p>
+			<div class="btns btns-with-body-text">
+				<a target="_blank" rel="noopener noreferrer" href="viz/SalaryByPercentilesScatter/index.html" class="nodeco"> <button class="btn">Launch</button> </a>
+			</div>
+			<div class="flex-imgs-equal-1 padmidsection">
+				<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+					<source src="images/web-coding/walkthru/salary-walkthru.mp4" type="video/mp4">
+					Your browser does not support video.
+				</video>
+			</div>
+		</div>
+		<div class="padsection">
+			<h2 class="padsection bold">Flappy Circle</h2>
+			<h3>A recreation of the popular Flappy Bird mobile game, this project asks the user to help a yellow circle avoid approaching pipes that seek to bring about the dreaded GAME OVER.</h3>
+			<p>Using Javascript and d3.js, the user's clicks on the space bar are mapped to the upward movement of the circle using Javascript.</p>
+			<p>The game is run using Javascript's built in <span class="callout text-accent-color">setInterval</span> method to redraw the scene at a consistent pace, thus simulating movement.</p>
+			<p>A list of pipes is updated at a consistent time interval with new pipes, the deletion of pipes that have traveled off the screen, and updated positioning of the pipes.</p>
+			<p>Finally, I employed <span class="callout text-accent-color">insertion sort</span> to update the leaderboard with the user's most recent score and sort this incoming score into its ranked position.</p>
+			<div class="btns btns-with-body-text">
+				<a target="_blank" rel="noopener noreferrer" href="flappycirclegame.html" class="nodeco"> <button class="btn">Launch</button> </a>
+				<a target="_blank" rel="noopener noreferrer" href="images/web-coding/presentations/flappy-bird-code-critique.pdf" class="nodeco"> <button class="btn">Code Critique</button> </a>
+			</div>
+			<div class="flex-imgs-equal-1 padmidsection">
+				<video class="shadowimg" width="100%" muted loop playsinline autoplay preload="auto">
+					<source src="images/web-coding/walkthru/flappy-circle-walkthru.mp4" type="video/mp4">
+					Your browser does not support video.
+				</video>
+			</div>
+			<div class="flex-imgs-equal-2">
+				<div class="">
+					<h4 class="norightleftpadding">Sketch of Game Mechanics and UI</h4>
+					<img src="images/flappycircle/FC3.jpg" class="singleimg">
+				</div>
+				<div class="">
+					<h4 class="norightleftpadding">Sketch of Leaderboard</h4>
+					<img src="images/flappycircle/FC4.jpg" class="singleimg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- set color of h1 and h2 and background for the project -->
+	<script>
+		setPageColor("#EEEEBE", "#6C6EB2", "#6C6EB2");
+		playPauseVideo();
+	</script>
+	<!-- nav bar -->
+	<div id="nav-bar">
+		<div id="navleft"> 
+			<a href="index.html" class="nodeco"> <h2 class="btnword navitem ">CJ Andrews</h2> </a>
+		</div>
+		<div id="navright"> 
+			<a href="index.html#casestudies" class="nodeco"> <h4 class="btnword navitem currentpage nav-sect">Work</h4> </a>
+			<a href="index.html#about" class="nodeco"> <h4 class="btnword navitem nav-sect">About</h4></a>
+		</div>
+	</div>
+	<!-- footer -->
+	<footer class="fullpage brand-background-color padmidsectiontopbottom padmidsection">	
+		<div class="">
+			<h5 class="center callout nomarginblock padsection">EXPLORE...</h5>
+			<div class="center" id="morework">
+				<a href="index.html#casestudies" class="nodeco"><h3 class="btnword">Case Studies</h3></a>
+				<a href="index.html#professionalexperiences" class="nodeco"><h3 class="btnword">Professional Experiences</h3></a>
+				<a href="index.html#moreprojects" class="nodeco"><h3 class="btnword">More Projects</h3></a>
+			</div>
+		<h4 class="center nobottommarginblock-light coded-design-statement" style="font-weight: 600;">Coded and Designed by <span class="bold">CJ Andrews</span>&nbsp;👻</h4>
+		<div class="iconcontain">
+			<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
+		</div>
+		</div>
+	</footer>
+</body>
+</html>
