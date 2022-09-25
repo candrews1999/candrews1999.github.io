@@ -13,6 +13,29 @@ d3.csv("csv/big_brother_us_data.csv").then(function(data) {
     const pointOpacity = 0.875;
     const transitionDuration = 1600;
     const transitionDelay = 200;
+
+    //record initial window width and height
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+
+    //start from scratch on resize if width was change but for height just update svg height
+    d3.select(window).on("resize", function(e) {
+
+        //save previous svg width and height
+        prevSvgWidth = windowWidth;
+        prevSvgHeight = windowHeight;
+
+        //get new window widths and save them as the current svgWidth and height
+        svgWidth = window.innerWidth * 1.0;
+        svgHeight = window.innerHeight * 1.0;
+
+        //if window width was changed in resize reload page becauce animation will be messed up
+        if (svgWidth != prevSvgWidth) {
+            console.log(prevSvgWidth)
+            console.log(svgWidth)
+            location.reload();
+        }
+    });
     
     //Rank Filters available in UI
     const rankPercentFilterCategories = [1.0, 0.75, 0.5, 0.25]
@@ -211,6 +234,7 @@ d3.csv("csv/big_brother_us_data.csv").then(function(data) {
     */
     
     function initializeToolTip(xScale, colorScale) {
+        
         // remove left over tooltips
         d3.select("div.tooltip").remove();
         d3.select("div.tooltip-left").remove();
