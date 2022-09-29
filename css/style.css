@@ -1048,6 +1048,7 @@ img {
 	column-gap: 8vw;
 	row-gap: 5vh;
 }
+
 .flex-imgs img {
 	flex: 1;
 }
@@ -1220,4 +1221,3 @@ ul.norightleftpadding{
 	align-items:baseline;
 	column-gap: 1vh;
 }
-
