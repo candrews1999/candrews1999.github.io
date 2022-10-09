@@ -7,154 +7,304 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="icon" href="favicon.png">
 	<link href="css/style.css" rel="stylesheet"/>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/script.js"></script>
 </head>
 <body>
-	<div id="nav-bar">
-		<div class="navleft"> 
-			<a href="index.html" class="nodeco"> <h2 class="gray btnword bold about aboutnav">CJ Andrews</h2> </a>
-		</div>
-		<div class="navright"> 
-			<a href="index.html" class="nodeco"> <h3 class="green btnword navitem">Work</h3> </a>
-			<a href="about.html" class="nodeco"> <h3 class="gray regular btnword navitem aboutnav">About</h3> </a>
-		</div>
-	</div>
-	<div class="padstart projectheader ">
-		<div class="inlineblock">
-			<h5 class="gray">UI Design - Systems Thinking</h5>
-			<h5 class="gray right">From Design Systems Course</h5>
-		</div>
-		<h1 class="">Hawaii Missile Scare</h1>
-		<h3 class="">In January 2018, a wireless emergency alert (WEA) mistakenly informed the state of Hawaii of a non-existent ballistic missile threat. The event sent the public into panic for 38 minutes, at which time the Hawaii Emergency Managment Agency (HEMA) informed the public that it was a false alarm. I investigated the major flaws in the protocol and software that led to the accident in an effort to design solutions that would improve HEMA's ability to keep the public well informed.</h3>
-		<div class="aboutbtns">
-			<a target="_blank" rel="noopener noreferrer" href="https://xd.adobe.com/view/469f6e43-b08c-457b-8a7d-8beec28b7838-13cc/?fullscreen" class="nodeco"> <button class="btn">Desktop Prototype</button> </a>
-			<div class="emailbtn">
-				<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/presentation/d/1vhUrBZcFxi69Xy_ap-xtMkIpYby43QKv70cku7Sq8N4/edit?usp=sharing" class="nodeco"> <button class="btn">Process Deck</button> </a>
-			</div>
-		</div>
-	</div>
 	<div class="bodypad">
-		<a onclick="slideshow(0)"><img src="images/accident/presentation/cover.png" class="singleimg"></a>
-		<h2 class="padsection center bold green">Analysis</h2>
-		<div class="">
-			<div class="padmidsection">
-				<h2 class="bold">Who's to Blame?</h2>
-				<p class="gray">Since the introduction of WEAs in 2012, this black swan occurrence exemplifies of the need to safeguard against false alarms within this public messaging platform. The FCC claims the accident resulted from a lack of "reasonable safeguards and process controls", but how did the state's alibi differ from the HEMA operator's (Employee 1) alibi?</p>
-				<a onclick="slideshow(1)"><img src="images/accident/presentation/slide1.png" class="singleimg"></a>
-			</div>
-			<div class="">
-				<h2 class="bold">Investigating the WEA Software</h2>
-				<p class="gray">In order to better understand the software in use by HEMA, I investigated the process which operators follow to send a WEA. AlertSense is a public messaging software similar to the system utilized in the accident.</p>
-				<a onclick="slideshow(2)"><img src="images/accident/presentation/slide2.png" class="singleimg"></a>
-			</div>
-			<div class="pad">
-				<h2 class="bold">HEMA's System of Sending WEAs</h2>
-				<p class="gray">Mapping out the system of sending WEAs allowed me to better understand the roles of the software, operator, and HEMA and how they collectively produced the accident.</p>
-				<a onclick="slideshow(3)"><img src="images/accident/presentation/systemdrawing1.jpg" class="singleimg"></a>
-			</div>
-			<div class="">
-				<h2 class="bold">Summative Mindmap of the Hawaii Nuclear Scare</h2>
-				<p class="gray">After researching the context of the accident, I made this mindmap to connect the various aspects that contributed to the event.</p>
-				<a onclick="slideshow(4)"><img src="images/accident/presentation/mindmap.jpg" class="singleimg"></a>
+		<div class="projectheader">
+			<h5 class="gray">UI Design - Systems Thinking</h5>
+			<h1 class="project-name">Wireless Emergency Alert System Redesign</h1>
+			<h3>Wireless emergency alerts (WEAs) are the notifications from the state we receive on our phones about emergencies like Amber Alerts or natural disasters.</h3>
+			<p>Using a specific example where WEAs disastrously misinformed the inhabitants of Hawaii about a non-existent ballistic missile, I investigate how the human systems and UI that produce these vital messages can be further streamlined and secured for efficient and accurate messaging.<p>
+			<div class="btns">
+				<a target="_blank" rel="noopener noreferrer" href="https://xd.adobe.com/view/469f6e43-b08c-457b-8a7d-8beec28b7838-13cc/?fullscreen" class="nodeco"> <button class="btn">Prototype</button> </a>
+				<a target="_blank" rel="noopener noreferrer" href="images/accident/Full Hawaii’s Nuclear Warning Scare.pdf" class="nodeco"> <button class="btn">Slide Deck</button> </a>
 			</div>
 		</div>
-		<h2 class="padsection center bold green">Synthesis</h2>
+		<div class="fullpage mockup padsection">
+			<img src="images/project-cover-mockups/cool-mockups-20226.png" class="doubleimg background-color">
+		</div>
 		<div class="">
-			<div class="padmidsection">
-				<h2 class="bold">Title</h2>
-				<p class="gray">Relive preformances of the past and present through crowsourced preformance footage that covers each of the most anticipated and exciting moments from the event. See shows your friends are going to and tours your favorite artists are currently on.</p>
-				<a onclick="slideshow(5)"><img src="images/accident/presentation/Slide5.png" class="singleimg"></a>
-			</div>
-			<div class="padmidsection">
-				<h2 class="bold">Title</h2>
-				<p class="gray">Relive preformances of the past and present through crowsourced preformance footage that covers each of the most anticipated and exciting moments from the event. See shows your friends are going to and tours your favorite artists are currently on.</p>
-				<a onclick="slideshow(6)"><img src="images/accident/presentation/systemdrawing2.jpg" class="singleimg"></a>
-			</div>
-			<div class="padmidsection">
-				<h2 class="bold">Title</h2>
-				<p class="gray">Relive preformances of the past and present through crowsourced preformance footage that covers each of the most anticipated and exciting moments from the event. See shows your friends are going to and tours your favorite artists are currently on.</p>
-				<a onclick="slideshow(7)"><img src="images/accident/presentation/slide3.png" class="singleimg"></a>
-			</div>
-			<div class="padmidsection">
-				<h2 class="bold">Title</h2>
-				<p class="gray">Relive preformances of the past and present through crowsourced preformance footage that covers each of the most anticipated and exciting moments from the event. See shows your friends are going to and tours your favorite artists are currently on.</p>
-				<a onclick="slideshow(8)"><img src="images/accident/presentation/slide4.png" class="singleimg"></a>
+			<div class="padsection">
+				<div>
+					<h2 class="bold">Background</h2>
+					<p><span class="text-accent-color">Wireless emergency alerts (WEAs)</span> were introduced in 2012 as a way of modernizing TV alerts and providing important government updates conveniently via mobile devices.</p>
+					<p>Most federal, state, local, tribal, and territorial organizations have the capabilities to send WEAs in order to address emergencies of various scales.</p> 
+					<p>More than 30,000 alerts have been sent since its introduction. WEAs are available on all mobile carriers.</p>
+					<h3>WEAs are criticized for their ability to cause rapid widespread panic due to the lack of guidance it provides citizens when informing them of important news.</h3>
+				</div>
+				<div class="padmidsection-medium">
+					<h4 class="larger nobottommarginblock-lighter">A Black Swan Occurrence</h4>
+					<p>As designers, it is vital to prepare for the worst case scenario, otherwise known as a black swan occurrence, to ensure system fortitude.</p>
+					<p>When it comes to government systems, the ramifications of poor planning can have truly disastrous effects on the health and wellbeing of the general public.</p>
+					<h3>In January 2018, a WEA mistakenly informed the state of Hawaii of a non-existent ballistic missile threat.</h3>
+					<p>The event sent the public into sheer panic for 38 minutes, at which time the <span class="text-accent-color">Hawaii Emergency Management Agency (HEMA)</span> informed the public that it was a false alarm.</p> 
+					<p>In reading about the failure of this vital tool for government-constituent communication, I began investigating the protocol and software that were involved in the accident.</p>
+					<p><span class="callout">With this, I became determined to locate and resolve the system failures that produced this erroneous mistake.</span></p>
+				</div>
+				<div class="padmidsection-medium">
+					<h4 class="larger nobottommarginblock-lighter">State vs Operator: Who's to Blame</h4>
+					<h3>The investigation started by empathizing with the parties involved with the accident.</h3>
+					<p >The FCC claims the accident resulted from a lack of "reasonable safeguards and process controls", but how did the state's alibi differ from the alibi of <span class="text-accent-color">HEMA operator (Employee 1)</span>?</p>
+					<div class="flex-imgs text-flex-column-gap phone-and-smaller-1 seventypercentpage norightleftpadding">
+						<div>
+							<h3 class="text-accent-color">EMPLOYEE 1</h2>
+							<p class="callout">Didn’t hear the part of the informing phone call where it was stated that the ballistic missile WEA was a drill</p>
+							<p>“Drills were not done routinely in the office.”</p>
+							<p>“There was an error in the phone call transmission.”</p>
+							<p>“Drill occurred near a shift change.”</p>
+						</div>
+						<div>
+							<h3 class="text-accent-color">STATE (HAWAII)</h2>
+							<p class="callout">Believes informing phone call stated it was a drill multiple times</p>
+							<p>Fired Employee 1 after he received death threats from anonymous callers to HEMA</p>
+							<p>“We simply need to address the problems in order to fix them -- not just in Hawaii, but anywhere… they may exist.”</p>
+						</div>
+					</div>
+					<p class="">Regardless of the truth, both the UI and the state's protocol need to be reevaluated. <span class="callout">Rather than play the blame game, we need to accept the inevitability of human error and design safeguards accordingly.</span></p>
+				</div>
 			</div>
 			<div class="padsection">
-				<h2 class="bold">Workflow and UI Redesign of Sending a WEA</h2>
-				<p class="gray">Take videos and photos, then string them together into a single concert story so your memories are saved forever. The footage you upload could appear in the artist's crowdsourced tour story.</p>
-				<h4 class="padmidsection">Caption</h4>
-				<a onclick="slideshow(9)"><img src="images/accident/screens/Home.png" class="doubleimg"></a>
-				<h4>Caption</h4>
-				<a onclick="slideshow(10)"><img src="images/accident/screens/View Template.png" class="doubleimg"></a>
-				<h4>Caption</h4>
-				<a onclick="slideshow(11)"><img src="images/accident/screens/Prepare to Send- LIVE.png" class="doubleimg"></a>
-				<h4>Caption</h4>
-				<a onclick="slideshow(12)"><img src="images/accident/screens/Confirmation Modal.png" class="doubleimg"></a>
+				<div>
+					<h2 class="bold">Investigating the Existing UI</h2>
+					<p>Without clear answers about what the exact sources of error were from those involved, I needed to better understand the user workflow for sending a WEA.</p>
+					<h3><span class="text-accent-color">AlertSense</span> is the leading software in the WEA space. Based on my research, it is likely that it was utilized by HEMA operators leading up to the accident.</h3>
+					<div class="flex-imgs-equal-3 tablet-and-smaller-2 nintypercentpage padmidsection">
+						<div>
+							<img src="images/accident/alertsense/step1.png" class="singleimg">
+							<h5 class="norightleftpadding center notopmarginblock callout text-accent-color nobottommarginblock">STEP 1</h5>
+							<h5 class="norightleftpadding center nomarginblock">Select "Send A Public Message" from Homepage</h5>
+						</div>
+						<div>
+							<img src="images/accident/alertsense/step2.png" class="singleimg">
+							<h5 class="norightleftpadding center notopmarginblock callout text-accent-color nobottommarginblock">STEP 2</h5>
+							<h5 class="norightleftpadding center nomarginblock">Select Existing Message Template from Drop Down</h5>
+						</div>
+						<div>
+							<img src="images/accident/alertsense/step3.png" class="singleimg">
+							<h5 class="norightleftpadding center notopmarginblock callout text-accent-color nobottommarginblock">STEP 3</h5>
+							<h5 class="norightleftpadding center nomarginblock">Verify Message Details and Modify Fields as Needed</h5>
+						</div>
+						<div>
+							<img src="images/accident/alertsense/step4.png" class="singleimg">
+							<h5 class="norightleftpadding center notopmarginblock callout text-accent-color nobottommarginblock">STEP 4</h5>
+							<h5 class="norightleftpadding center nomarginblock">Preview Message and Select Geographic Location</h5>
+						</div>
+						<div>
+							<img src="images/accident/alertsense/step5.png" class="singleimg">
+							<h5 class="norightleftpadding center notopmarginblock callout text-accent-color nobottommarginblock">STEP 5</h5>
+							<h5 class="norightleftpadding center nomarginblock">Send Alert After Confirming in the Modal</h5>
+						</div>
+					</div>
+					<p class="padmidsection">While these specs are not the most detailed look into the UI, they provided familiarity with the existing workflow operators follow to send a WEA.</p> 
+					<p>A major win was discovering that message <span class="text-accent-color">templates</span> are used to pre-populate the fields within a WEA message. When operators are instructed to send out a WEA they must select the appropriate template from a lengthy <span class="text-accent-color">drop down</span>.</p>
+					<h3>Without a clear answer as to what exactly caused Operator 1's error, it highly possible that the operator selected the incorrect template from this template selection drop down.</h3>
+				</div>
+				<div class="padmidsection-medium">
+					<h4 class="larger nobottommarginblock-lighter">Distinction Between WEA Template Types</h4>
+					<p class="">A WEA template is either a DEMO or LIVE type. It is important to understand the difference between the two types.</p>
+					<div class="flex-imgs text-flex-column-gap phone-and-smaller-1 seventypercentpage norightleftpadding">
+						<div>
+							<h3 class="text-accent-color2">DEMO WEA</h2>
+							<p class="callout bottom">Used for testing purposes to ensure operators and system are prepared when needed</p>
+							<p>Usually associated with a specific disaster or event, but not always</p>
+							<p>Often signified to public as drill only by appending “TEST” in the message</p>
+						</div>
+						<div>
+							<h3 class="text-accent-color2">LIVE WEA</h2>
+							<p class="callout"> Informs the public of an actual impending disaster or event</p>
+							<p>Mentions the disaster and what should be done for the public’s safety</p>
+						</div>
+					</div>
+					<p>When studying AlertSense's UI, I noticed that operators have to specify and save a specific template as a DEMO or LIVE type. The only indicator of its type is in the template name and description.</p>
+					<p>This means that AlertSense would require users to create a separate DEMO and LIVE template based on if there was a tornado drill vs a real tornado warning.</p>
+					<h3>This unnecessarily leads to a large amount of template duplication. This further complicates finding the right template among the long list of items in the UI's template selection drop down.</h3>
+				</div>
+				<div class="padmidsection-medium">
+					<h4 class="larger nobottommarginblock-lighter">Mapping the Process of Sending a WEA</h4>
+					<p class="gray">Mapping out the system of sending WEAs allowed me to visualize the roles of the software, operator, and larger HEMA organization and their interactions. It helps create a mental model for understanding the processes that lead to a WEA being sent, either correctly or incorrectly.</p>
+					<div class="norightleftpadding nintypercentpage padmidsection">
+						<h4>Existing System Diagram for Sending WEAs</h4>
+						<img src="images/accident/charts/process-before.svg" class="singleimg">
+					</div>
+				</div>
 			</div>
-			<div class="padsection">
-				<h2 class="bold">Title</h2>
-				<p class="gray">Relive preformances of the past and present through crowsourced preformance footage that covers each of the most anticipated and exciting moments from the event. See shows your friends are going to and tours your favorite artists are currently on.</p>
-				<a onclick="slideshow(13)"><img src="images/accident/presentation/slide6.png" class="singleimg padmidsection"></a>
+		</div>
+		<div class="padsection nintypercentpage norightleftpadding">
+			<h2 class="gray-text">PROBLEM STATMENT</h2>
+			<h1>How can we improve the processes surrounding wireless emergency alerts to reduce the chance of error and keep the public well informed?</h1>
+		</div>
+		<h3 class="padmidsection light-callout">With this problem statement in mind, I made the following mindmap to connect the various aspects that contributed to the accident.</h3>
+		<div class="nintypercentpage norightleftpadding padmidsection">
+			<h4 class="bold">Summative Mindmap of the Hawaii Nuclear Scare</h4>
+			<img src="images/accident/charts/mind-map.svg" class="singleimg">
+		</div>
+		<div class="padsection">
+			<h2 class="bold">Major Issues with WEA Software UI</h2>
+			<p class="gray">Using my mindmap as a reference, I arrived at three key issues with the software UI.</p>
+			<div class="flex-imgs-equal-3 text-flex-column-gap phone-and-smaller-1 nintypercentpage norightleftpadding">
+				<div>
+					<h3 class="">Template names are responsible for communicating message type</h3>
+					<p><span class="callout small-p">EVIDENCE</span> Poor naming choices by operators that don’t highlight DEMO vs LIVE type</p>
+					<p><span class="callout small-p">SOLUTION</span> Remove template naming from the responsibility of declaring DEMO vs LIVE by choosing message type when sending a WEA</p>
+				</div>
+				<div>
+					<h3 class="">Previews for LIVE alerts do not appear different from DEMO alerts </h3>
+					<p><span class="callout small-p">EVIDENCE</span> DEMO previews often appear similar to LIVE previews at quick glance, only distinguished by mention of “test”</p>
+					<p><span class="callout small-p">SOLUTION</span> Require preview to better emphasize message type so operator understands what they’re sending</p>
+				</div>
+				<div>
+					<h3 class="">Confirmation modal does not display any preview</h3>
+					<p><span class="callout small-p">EVIDENCE</span> Operator confirmed their sending of the LIVE WEA while believing it was a DEMO</p>
+					<p><span class="callout small-p">SOLUTION</span> Display important details about the WEA in confirmation modal, emphasize if LIVE</p>
+				</div>
 			</div>
-			<div class="">
-				<h2 class="bold padsection">Surrounded By Systems: A Workbook in Design Systems</h2>
-				<p class="gray">This 54 page workbook details my exploration into the systems that surround design, technology, human behavior, and beyond. Exploring these systems strategically in the context of design process allows designers to meet careful problem analysis with holisitically considered intervention. Includes original sketches, diagrams, and writings from my work in Design Systems at Northeastern University.</p>
-				<div class="aboutbtns">
-					<a target="_blank" rel="noopener noreferrer" href="images/designsystems/Design Systems Workbook + Charles Andrews.pdf" class="nodeco"> <button class="btn">View Workbook</button> </a>
+			<div class="padmidsection-medium">
+				<h4 class="larger nobottommarginblock-lighter">WEA Message Type Iconography</h4>
+				<p>I started resolving the UI by first designing an icon to visually represent each template type.</p>
+				<h3>These icons are to appear in conjunction with the written message type in order to aid in quick recognition.</h3>
+				<div class="pad-highlight-section-4vh pic-with-background background-color fullpage padmidsection">
+					<div class="flex-imgs seventypercentpage">
+						<div>
+							<img src="images/accident/icons/demo.svg" class="doubleimg">
+							<h4 class="norightleftpadding center callout gray-text nomarginblock">DEMO WEA</h4>
+						</div>
+						<div>
+							<img src="images/accident/icons/live.svg" class="doubleimg">
+							<h4 class="norightleftpadding center callout gray-text nomarginblock">LIVE WEA</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="padmidsection-medium">
+				<h4 class="larger nobottommarginblock-lighter">A Redesigned UI</h4>
+				<p class="gray">To visually show how these issues could be resolved, I designed a clickable prototype that demonstrates how I might better organize the process of sending a WEA to improve system transparency for operators.</p>
+				<div class="padmidsection">
+					<h3>The <span class="text-accent-color2">homepage</span> features all WEA templates alphabetized in a scrollable Template Directory.</h3>
+					<p>Compared to the previous UI's template selection drop down, users are able to search through the database of WEA templates with more fluidity and clarity.</p>
+					<p>The homepage also conveniently displays active messages with appropriate message type iconography to improve system visibility about active WEAs.</p>
+					<img src="images/accident/screens/Home.png" class="singleimg shadowimg padmidsection-xs">
+				</div>
+				<div class="padmidsection">
+					<h3>Each <span class="text-accent-color2">template page</span> acts as the hub for sending a LIVE or DEMO version of the template.</h3>
+					<p>Click “Prepare to Send” button to begin the WEA sending process or "Edit" to amend the template. These action buttons separate the task of sending or editing a WEA from the process of reviewing a template's content.</p> 
+					<img src="images/accident/screens/View Template.png" class="singleimg shadowimg padmidsection-xs">
+				</div>
+				<div class="padmidsection">
+					<h3>While <span class="text-accent-color2">preparing to send</span> the WEA, users manually select the message type (DEMO vs LIVE) in the moment to force conscious decision making.</h3>
+					<p>The number of templates in the system is reduced because the DEMO and LIVE version of a template are stored under one entity. With less templates and a clearer choice between LIVE or DEMO, it will be harder for operators to mess up the WEA message type they are sending. 
+					<p>Press the “Confirm and Send” button when ready to send WEA after last minute editing is complete.</p>
+					<div class="flex-imgs-equal-1 padmidsection-xs">
+						<video class="shadowimg" width="100%" preload="auto" loop playsinline webkit-playsinline autoplay muted>
+							<source src="images/accident/screens/preparing-wea.mp4" type="video/mp4">
+							Your browser does not support video.
+						</video>
+					</div>
+				</div>
+				<div class="padmidsection">
+					<h3>The improved <span class="text-accent-color2">confirmation modal</span> uses more pronounced signifiers to show a more detailed preview of the message that operators are intending to send.</h3>
+					<p>The modal features message type iconography paired with a warning statement that more clearly highlights the WEA type.</p>
+					<p>Finally, I ordered the "Cancel" button before the now red-filled "Send" button to further encourage careful decision making.</p> 
+					<img src="images/accident/screens/Confirmation Modal.png" class="singleimg shadowimg padmidsection-xs">
+				</div>
+			</div>
+			<div class="padmidsection-medium">
+				<h4 class="larger nobottommarginblock-lighter">Imagining A More Empathetic WEA</h4>
+				<p>Most of my solutions seek to improve the current system of sending WEAs to prevent human error. <span class="">However, they do not address how the current style of WEAs impact the general public.</span></p>
+				<h3> Wireless Emergency Alerts lack the empathy necessary to encourage rational, productive behavior. Their messaging should instill a more productive sense of urgent preparedness rather than causing panic and stress.</h3>
+				<div class="pad-highlight-section-4vh pic-with-background background-color fullpage padmidsection">
+					<div class="walkthrough-flex bodypad">
+						<div class="text-cont">
+							<h3 class="larger text-accent-color nobottommarginblock-lighter">A Redesigned WEA</h3>
+							<p>Instead of declaring disaster and offering minimal support to the public, this redesigned WEA offers <span class="text-accent-color">informational and emotional resources</span> to prevent panic.</p>
+							<p><span class="text-accent-color">Videos with guidance</span> from government officials, psychologists, and scientists offer more personal assistance from trusted sources.</p>
+							<p>An <span class="text-accent-color">emergency preparation helpline</span> allows recipients to speak to a representative that can help them respond to the event safely.</p>
+						</div>
+						<div class="video-cont-sm">
+							<img src="images/accident/screens/Redesigned WEA.png" class="singleimg shadowimg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="padsection">
+			<h2 class="bold">Major Issues with System Safeguards</h2>
+			<p class="gray">With the UI aspects of my synthesis resolved, I wanted to return to my analysis of the system processes. Taking into account the details of the accident once more, I arrived at three main problems and crafted a high-level solution for each.</p>
+			<div class="flex-imgs-equal-3 text-flex-column-gap phone-and-smaller-1 nintypercentpage norightleftpadding">
+				<div>
+					<h3 class="">Lack of monitoring of WEAs after operators send the messages</h3>
+					<p><span class="callout small-p">EVIDENCE</span> Operator responsible realized his error later when he checked his phone</p>
+					<p><span class="callout small-p">SOLUTION</span> Require two people to send the alert together to reduce chance of error and have HEMA director approve major alerts</p>
+				</div>
+				<div>
+					<h3 class="">Unclear resolution process in place in the event of a WEA mistake</h3>
+					<p><span class="callout small-p">EVIDENCE</span> Took 38 minutes for HEMA to send out an alert about their mistake</p>
+					<p><span class="callout small-p">SOLUTION</span> Create more formalized response process in the event of a mistake</p>
+				</div>
+				<div>
+					<h3 class="">Operators do not have enough training for their important role</h3>
+					<p><span class="callout small-p">EVIDENCE</span> HEMA did not have regular WEA testing or training</p>
+					<p><span class="callout small-p">SOLUTION</span> Require more frequent WEA drills to give operators experience with the task</p>
+				</div>
+			</div>
+			<h4 class="larger nobottommarginblock-lighter">Optimizing the Process of Sending a WEA</h4>
+			<p class="">To visualize these solutions within the larger process, I mapped out an improved process diagram that summarizes my thoughts on improving HEMA's established system...</p>
+			<div class="norightleftpadding nintypercentpage padmidsection">
+				<h4>Improved System Diagram for Sending WEAs</h4>
+				<img src="images/accident/charts/process-after.svg" class="singleimg">
+			</div>
+		</div>
+		<div class="padsection">
+			<h1 class="norightleftpadding padsection center">See More About This Project</h1>
+			<div class="btns btnscenter">
+				<a target="_blank" rel="noopener noreferrer" href="https://xd.adobe.com/view/469f6e43-b08c-457b-8a7d-8beec28b7838-13cc/?fullscreen" class="nodeco"> <button class="btn">Prototype</button> </a>
+				<a target="_blank" rel="noopener noreferrer" href="images/accident/Full Hawaii’s Nuclear Warning Scare.pdf" class="nodeco"> <button class="btn">Slide Deck</button> </a>
+			</div>
+			<div class="padmidsection-medium">
+				<h4 class="gray-text center">ALSO CHECK OUT...</h4>
+				<h2 class="bold">Surrounded By Systems: A Workbook in Design Systems</h2>
+				<p><span class="callout">This 54-page workbook details my exploration into example systems that surround design, technology, human behavior, and beyond.</span> The piece heavily considers how design process in itself is a system and how designers can leverage this heuristic can be leveraged to meet careful problem analysis with holistically considered intervention.</p>
+				<div class="btns">
+					<a target="_blank" rel="noopener noreferrer" href="images/designsystems/Design Systems Workbook + Charles Andrews.pdf" class="nodeco btns-with-body-text"> <button class="btn">View Workbook</button> </a>
 				</div>
 				<h4 class="padmidsection"></h4>
-				<a onclick=""><img src="images/designsystems/designsystems.jpg" class="singleimg"></a>
+				<img src="images/designsystems/designsystems.jpg" class="singleimg shadowimg">
 			</div>
 		</div>
 	</div>
-	<div class="blur">
-		<span class="close">&times;</span>
-		<div class="slideimg">
+	<!-- set color of h1 and h2 and background for the project -->
+	<script>
+		setPageColor("#EEEEEE", "#3A6998", "#CC403F");
+		playPauseVideo();
+	</script>
+	<!-- nav bar -->
+	<div id="nav-bar">
+		<div id="navleft"> 
+			<a href="index.html" class="nodeco"> <h2 class="btnword navitem ">CJ Andrews</h2> </a>
+		</div>
+		<div id="navright"> 
+			<a href="index.html#casestudies" class="nodeco"> <h4 class="btnword navitem currentpage nav-sect">Work</h4> </a>
+			<a href="index.html#about" class="nodeco"> <h4 class="btnword navitem nav-sect">About</h4></a>
 		</div>
 	</div>
-<!--	List of All Captions for Page-->
-	<div>
-		<h4 class="caption">Mockup: Login Screen</h4>
-		<h4 class="caption">Mockup: Venue Page</h4>
-		<h4 class="caption">Mockup: Artists Feed</h4>
-		<h4 class="caption">Friends Feed</h4>
-		<h4 class="caption">Artists Feed</h4>
-		<h4 class="caption">Comment and Like</h4>
-		<h4 class="caption">Personal Profile</h4>
-		<h4 class="caption">Adding Footage to Story</h4>
-		<h4 class="caption">Inside a Concert Story</h4>
-		<h4 class="caption">Friends Profiles</h4>
-		<h4 class="caption">Venues Profiles</h4>
-		<h4 class="caption">Artists Profiles</h4>
-		<h4 class="caption">Explore Page</h4>
-		<h4 class="caption">Tour Info Page</h4>
-		<h4 class="caption">Stay Updated</h4>
-		<h4 class="caption">Poorly Designed Concert Video Sharing Platform: Gigit!</h4>
-		<h4 class="caption">Gigit! Page Heirarchy / Application Critique</h4>
-	  	<h4 class="caption">Well Designed Concert Ticket Purchasing Site: Vivid Seats</h4>
-		<h4 class="caption">Vivid Seats Page Heirarchy / Application Critique</h4>
-		<h4 class="caption">Main Goals for Front Row</h4>
-		<h4 class="caption">Overall Application Heirarchy</h4>
-		<h4 class="caption">Feed Heirarchy</h4>
-		<h4 class="caption">Personal Profile Heirarchy</h4>
-		<h4 class="caption">Explore Heirarchy</h4>
-		<h4 class="caption">Adding a New Memory to a Concert Story Sequence</h4>
-		<h4 class="caption">Branding Style Guide</h4>
-		<h4 class="caption">Testing Results Summary</h4>
-	</div>
-	<script src="js/script.js"></script>
-	<footer>
-		<div class="nextprev center">
-			<a href="toast.html" class="nodeco"><p class="btnword">Prev</p></a>
-			<p class="">&nbsp;&nbsp;/&nbsp;&nbsp;</p>
-			<a href="web-management.html" class="nodeco"><p class="btnword">Next</p></a>
+	<!-- footer -->
+	<footer class="fullpage brand-background-color padmidsectiontopbottom padmidsection">	
+		<div class="">
+			<h5 class="center callout nomarginblock padsection">EXPLORE...</h5>
+			<div class="center" id="morework">
+				<a href="index.html#casestudies" class="nodeco"><h3 class="btnword">Case Studies</h3></a>
+				<a href="index.html#professionalexperiences" class="nodeco"><h3 class="btnword">Professional Experiences</h3></a>
+				<a href="index.html#moreprojects" class="nodeco"><h3 class="btnword">More Projects</h3></a>
+			</div>
+		<h4 class="center nobottommarginblock-light coded-design-statement" style="font-weight: 600;">Coded and Designed by <span class="bold">CJ Andrews</span>&nbsp;👻</h4>
+		<div class="iconcontain">
+			<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
 		</div>
-	<p class="center gray">Coded and Designed by CJ Andrews</p>
-	<div class="iconcontain">
-		<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/charlesrandrews" class="nodeco icon fa fa-linkedin-square"></a>
-		<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/crandrewsdesign/" class="nodeco icon fa fa-instagram"></a>
-		<a target="_blank" rel="noopener noreferrer" href="https://github.com/candrews1999" class="nodeco icon fa fa-github-square"></a>
-	</div>
+		</div>
 	</footer>
 </body>
 </html>

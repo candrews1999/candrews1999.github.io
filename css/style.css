@@ -95,6 +95,11 @@ h4.larger{
 	font-size: 32px;
 	line-height: 39px;
 }
+
+.gray-text {
+	color: #515151 !important;
+}
+
 /* Content Styling Extras */
 
 .center {
@@ -138,6 +143,11 @@ h4.larger{
 	background: linear-gradient(180deg, rgb(255, 255, 255) 3%, rgb(198,226,240,1) 97%);
 }
 
+.small-p {
+	font-size: 15px;
+	line-height: 22px;
+}
+
 /*Navigation Bar*/
 
 #nav-bar{
@@ -173,6 +183,8 @@ h4.larger{
 }
 
 #navleft {
+	display: flex;
+	justify-content: flex-start;
 	width:50%;
 }
 
@@ -559,6 +571,15 @@ footer {
 	width: 30vw !important;
 }
 
+/* twenty percent content will always stay thirty page */
+.twentypercentpage {
+	padding-left: 0px;
+	padding-right: 0px;
+	position: relative !important;
+	left: calc(-10vw + 50%) !important;
+	width: 20vw !important;
+}
+
 /*Extend image to page width for screens bigger than tablet*/
 @media screen and (min-width: 1050px) {
 
@@ -701,6 +722,10 @@ img {
 
 .padmidsection-medium {
 	margin-top: 11.5vh;
+}
+
+.padmidsection-xs {
+	margin-top: 2vh;
 }
 
 .padmidsection {
@@ -1032,9 +1057,13 @@ img {
 	column-gap: 7vw;
 }
 
-.video-cont {
+.video-cont, .video-cont-sm {
 	flex: 1.1;
 	align-self: center;
+}
+
+.video-cont-sm {
+	flex: 0.9;
 }
 
 .text-cont {
@@ -1220,4 +1249,29 @@ ul.norightleftpadding{
 	margin-top: 3px;
 	align-items:baseline;
 	column-gap: 1vh;
+}
+
+/* Change to flex-imgs containers items per row for tablet and smaller*/
+
+
+@media only screen and (max-width: 1050px) {
+	.flex-imgs-equal-3.tablet-and-smaller-2,
+	.flex-imgs-equal-3.tablet-and-smaller-2 {
+			grid-template-columns: repeat(2, 1fr) !important;
+	}
+}
+
+/* Change to flex-imgs containers items per row for phone and smaller*/
+
+@media only screen and (max-width: 650px) {
+	.flex-imgs-equal-3.phone-and-smaller-1,
+	.flex-imgs-equal-2.phone-and-smaller-1,
+	.flex-imgs.phone-and-smaller-1 {
+		grid-template-columns: repeat(1, 1fr) !important;
+	}
+}
+
+.text-flex-column-gap {
+	column-gap: 6vw;
+	row-gap: 0vh;
 }

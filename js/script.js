@@ -319,4 +319,18 @@ function playPauseVideo() {
             });
         }
     });
+
+	d3.select(window).on("resize", function(e) {
+		// if (window.screenWidth = 600) {
+		// 	videos.forEach((video) => {
+		// 		video.play();
+		// 	}
+		// }
+
+		// else if (window.screenWidth = 600) {
+		// 	videos.forEach((video) => {
+		// 		video.pause();
+		// 	}
+		// }
+	});
 }
