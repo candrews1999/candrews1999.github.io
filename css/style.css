@@ -42,28 +42,28 @@ h2 {
 
 h3 {
 	font-size: 26px;
-	line-height: 35px;
+	line-height: 32.5px;
 	font-weight: 650;
 	color: #515151;
 }
 
 h4 {
 	font-size: 23px;
+	line-height: 29px;
 	font-weight: 625;
-	line-height: 30px;
 	color: #335464;
 }
 
 h5 {
 	font-size: 16px;
+	line-height: 18.5px;
 	font-weight: 600;
 	color: #515151;
-	line-height: 18.5px;
 }
 
 p, li{
 	font-size: 18.5px;
-	line-height: 25.5px;
+	line-height: 25px;
 	color: #494949;
 	font-weight: 500;
 }
@@ -93,7 +93,7 @@ a:hover {
 
 h4.larger{
 	font-size: 32px;
-	line-height: 39px;
+	line-height: 38px;
 }
 
 .gray-text {
@@ -145,7 +145,7 @@ h4.larger{
 
 .small-p {
 	font-size: 15px;
-	line-height: 22px;
+	line-height: 21px;
 }
 
 /*Navigation Bar*/
@@ -941,19 +941,24 @@ img {
 	}
 
 	h2 {
-		font-size: 30px;
+		font-size: 31px;
 		line-height: 37px;
-		letter-spacing: 0.4px;;
+		letter-spacing: 0.3px;;
 	}
 	
 	h3 {
-		font-size: 23px;
-		line-height: 30px;
+		font-size: 23.5px;
+		line-height: 29px;
+	}
+
+	h4.larger{
+		font-size: 27px;
+		line-height: 33px;
 	}
 	
 	.nav-sect {
 		font-size: 19px;
-		line-height: 26px;
+		line-height: 25px;
 	}
 
 	/* class for when no left right padding is wanted  */
