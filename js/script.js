@@ -2,7 +2,7 @@
 
 //ease in nav background at top of page
 onscroll = (event) => { 
-	//get nav bar size for when to animate nav bar to fade
+	//get nav bar size to determine when to animate nav bar to fade
 	let navbarHeight = 87;
 	d3.select(window).on("resize", function(e) {
 		if (window.innerWidth > 1350) {
